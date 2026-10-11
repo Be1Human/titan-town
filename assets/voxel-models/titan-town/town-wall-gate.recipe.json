@@ -1,0 +1,34 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "dda64515cf4b727956a49be654578d00e11f10742d55c5c1c28acdc6cfadd861",
+ "assetId": "titan-town/town-wall-gate",
+ "kind": "kenney-assembly",
+ "pack": "kenney-fantasy-town-kit-2.0",
+ "scale": 5,
+ "tiles": 19,
+ "rows": 4,
+ "thicknessCells": 6,
+ "piece": "wall",
+ "gatePiece": "wall-doorway-round",
+ "gateTiles": [
+  9
+ ],
+ "breach": [
+  42.5,
+  52.5,
+  9
+ ],
+ "materialMap": {
+  "plaster": "stone",
+  "stone": "stone",
+  "wood": "brick",
+  "darkwood": "brick",
+  "roof": "stone",
+  "glass": "stone"
+ },
+ "tags": [
+  "fortification",
+  "town-wall"
+ ]
+}

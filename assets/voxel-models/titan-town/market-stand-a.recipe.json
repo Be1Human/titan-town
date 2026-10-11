@@ -1,0 +1,32 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "310fe04bfa2a5b04bb97dd9d340d71ae2f4c5088928fd59e7994b867adee4fd9",
+ "assetId": "titan-town/market-stand-a",
+ "kind": "quaternius-prop",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Props/OBJ/MarketStand_1.obj",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "tags": [
+  "prop"
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "31fffef53dcd28cad944329f3c1af96e9595cffa133d3f3636453a6c520fbceb",
+ "assetId": "titan-town/pine-small",
+ "kind": "kenney-prop",
+ "pack": "kenney-fantasy-town-kit-2.0",
+ "mesh": "Models/GLB format/tree.glb",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "colorClasses": "classifyTownColor",
+ "tags": [
+  "prop"
+ ]
+}

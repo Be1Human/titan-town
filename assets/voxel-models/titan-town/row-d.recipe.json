@@ -1,0 +1,112 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "722f786df77763e4cf153aae3c9cc35631b8fd3e9dcd784cace6670bc7321caf",
+ "assetId": "titan-town/row-d",
+ "kind": "townhouse-construction",
+ "authorship": "project-original-with-cc0-furniture",
+ "construction": {
+  "groundH": 32,
+  "upperH": 28,
+  "floorDepth": 4,
+  "joist": {
+   "width": 2,
+   "depth": 3,
+   "spacing": 12
+  },
+  "plinth": {
+   "height": 5,
+   "proud": 1
+  },
+  "stoneWall": [
+   "stone",
+   "stone",
+   "brick",
+   "brick",
+   "plaster"
+  ],
+  "infill": [
+   "plaster",
+   "brick",
+   "brick",
+   "plaster"
+  ],
+  "partition": [
+   "plaster",
+   "wood",
+   "wood",
+   "plaster"
+  ],
+  "post": {
+   "width": 2,
+   "maxPanel": 14
+  },
+  "plate": 2,
+  "door": {
+   "width": 15,
+   "height": 24
+  },
+  "window": {
+   "width": 11,
+   "ground": {
+    "sill": 9,
+    "height": 17
+   },
+   "upper": {
+    "sill": 8,
+    "height": 15
+   }
+  },
+  "lintel": 2,
+  "stair": {
+   "width": 10,
+   "run": 3,
+   "rise": 4,
+   "landing": 5,
+   "thick": 6
+  },
+  "roof": {
+   "overhang": 4,
+   "barge": 2,
+   "rafter": {
+    "width": 2,
+    "depth": 3,
+    "spacing": 8
+   },
+   "battenEvery": 3
+  },
+  "chimney": {
+   "size": 6,
+   "flue": 2,
+   "above": 8
+  }
+ },
+ "spec": {
+  "width": 58,
+  "depth": 70,
+  "storeys": 4,
+  "jetty": 4,
+  "ridge": "z",
+  "pitch": 1.2,
+  "backDoor": true,
+  "furniture": {
+   "ground": [
+    "table",
+    "cabinet",
+    "barrel",
+    "crate"
+   ],
+   "upper": [
+    "bed",
+    "cabinet",
+    "crate"
+   ]
+  }
+ },
+ "tags": [
+  "residence",
+  "half-timber",
+  "four-storey",
+  "front-gable"
+ ]
+}

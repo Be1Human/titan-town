@@ -1,0 +1,189 @@
+{
+ "schema": "crew-material-palette-v1",
+ "id": "titan-town-palette-v1",
+ "authorship": "project-original",
+ "materials": {
+  "plaster": {
+   "color": "#e2d5b6",
+   "appearance": {
+    "roughness": 0.94,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "plaster",
+    "densityKgM3": 900,
+    "destructionProfile": "plaster"
+   },
+   "structuralLoadProfile": null
+  },
+  "stone": {
+   "color": "#9a988f",
+   "appearance": {
+    "roughness": 0.96,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "stone",
+    "densityKgM3": 2400,
+    "destructionProfile": "stone"
+   },
+   "structuralLoadProfile": null
+  },
+  "brick": {
+   "color": "#6f6a66",
+   "appearance": {
+    "roughness": 0.92,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "brick",
+    "densityKgM3": 1800,
+    "destructionProfile": "brick"
+   },
+   "structuralLoadProfile": null
+  },
+  "concrete": {
+   "color": "#8b8274",
+   "appearance": {
+    "roughness": 0.95,
+    "metalness": 0,
+    "grain": 0.007
+   },
+   "physics": {
+    "class": "stone",
+    "densityKgM3": 2200,
+    "destructionProfile": "concrete"
+   },
+   "structuralLoadProfile": null
+  },
+  "wood": {
+   "color": "#5e3b26",
+   "appearance": {
+    "roughness": 0.9,
+    "metalness": 0,
+    "grain": 0.006
+   },
+   "physics": {
+    "class": "wood",
+    "densityKgM3": 570,
+    "destructionProfile": "wood"
+   },
+   "structuralLoadProfile": null
+  },
+  "darkwood": {
+   "color": "#3f2a1d",
+   "appearance": {
+    "roughness": 0.94,
+    "metalness": 0,
+    "grain": 0.006
+   },
+   "physics": {
+    "class": "wood",
+    "densityKgM3": 620,
+    "destructionProfile": "darkwood"
+   },
+   "structuralLoadProfile": null
+  },
+  "roof": {
+   "color": "#a5543a",
+   "appearance": {
+    "roughness": 0.86,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "plaster",
+    "densityKgM3": 700,
+    "destructionProfile": "roof"
+   },
+   "structuralLoadProfile": null
+  },
+  "metal": {
+   "color": "#6d6a5e",
+   "appearance": {
+    "roughness": 0.53,
+    "metalness": 0.18,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "metal",
+    "densityKgM3": 7800,
+    "destructionProfile": "metal"
+   },
+   "structuralLoadProfile": null
+  },
+  "rust": {
+   "color": "#8a6a4a",
+   "appearance": {
+    "roughness": 0.7,
+    "metalness": 0.18,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "metal",
+    "densityKgM3": 7200,
+    "destructionProfile": "rust"
+   },
+   "structuralLoadProfile": null
+  },
+  "dark": {
+   "color": "#2f2f2c",
+   "appearance": {
+    "roughness": 0.7,
+    "metalness": 0.18,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "metal",
+    "densityKgM3": 7800,
+    "destructionProfile": "dark"
+   },
+   "structuralLoadProfile": null
+  },
+  "glass": {
+   "color": "#8fa7b0",
+   "appearance": {
+    "roughness": 0.17,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "glass",
+    "densityKgM3": 2500,
+    "destructionProfile": "glass"
+   },
+   "structuralLoadProfile": null
+  },
+  "leaf": {
+   "color": "#6c8a46",
+   "appearance": {
+    "roughness": 0.98,
+    "metalness": 0,
+    "grain": 0.025
+   },
+   "physics": {
+    "class": "foliage",
+    "densityKgM3": 100,
+    "destructionProfile": "leaf"
+   },
+   "structuralLoadProfile": null
+  },
+  "fuel": {
+   "color": "#b88a45",
+   "appearance": {
+    "roughness": 0.76,
+    "metalness": 0,
+    "grain": 0.004
+   },
+   "physics": {
+    "class": "plastic",
+    "densityKgM3": 850,
+    "destructionProfile": "fuel"
+   },
+   "structuralLoadProfile": null
+  }
+ }
+}

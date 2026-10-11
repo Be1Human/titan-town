@@ -1,0 +1,71 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/arcade",
+ "authorship": "project-original",
+ "tags": [
+  "cover",
+  "arcade",
+  "prop"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "posts",
+   "file": "voxel-models/titan-town/arcade.voxel.json",
+   "object": "posts",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "beams",
+   "file": "voxel-models/titan-town/arcade.voxel.json",
+   "object": "beams",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "roof",
+   "file": "voxel-models/titan-town/arcade.voxel.json",
+   "object": "roof",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": []
+ }
+}

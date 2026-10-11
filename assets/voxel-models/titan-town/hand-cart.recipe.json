@@ -1,0 +1,15 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "c4a5b3e9d09e50d9bc172b98566f61d796e3062e3ad088657953f231af3c3cce",
+ "assetId": "titan-town/hand-cart",
+ "kind": "kenney-prop",
+ "pack": "kenney-fantasy-town-kit-2.0",
+ "mesh": "Models/GLB format/cart.glb",
+ "scale": 2.5,
+ "thickenMinCells": 2,
+ "colorClasses": "classifyTownColor",
+ "tags": [
+  "prop"
+ ]
+}

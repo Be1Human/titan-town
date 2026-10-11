@@ -1,0 +1,1143 @@
+{
+ "schema": "crew-third-party-import-v1",
+ "generatedBy": "scripts/import-titan-town.mjs",
+ "cellSize": 0.1,
+ "packs": {
+  "quaternius-medieval-village-2020": {
+   "id": "quaternius-medieval-village-2020",
+   "title": "LowPoly Medieval Village Pack (Dec 2020)",
+   "author": "Quaternius",
+   "license": "CC0 1.0 Universal",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://opengameart.org/content/lowpoly-medieval-village-pack",
+   "download": "https://opengameart.org/sites/default/files/medieval_village_pack_-_dec_2020.zip",
+   "archive": "quaternius-medieval-village.zip",
+   "root": "quaternius/Medieval Village Pack - Dec 2020",
+   "licenseFile": "License.txt",
+   "archiveSha256": "c38d8632c3c883043809a5db9b2f47b7033e298ab4bd073bb5c29ad323df60fc",
+   "archiveBytes": 8345512,
+   "licenseCopy": "source/third-party/quaternius-medieval-village-2020/LICENSE.txt"
+  },
+  "kenney-fantasy-town-kit-2.0": {
+   "id": "kenney-fantasy-town-kit-2.0",
+   "title": "Fantasy Town Kit 2.0",
+   "author": "Kenney (www.kenney.nl)",
+   "license": "CC0 1.0 Universal",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://opengameart.org/content/fantasy-town-kit",
+   "download": "https://opengameart.org/sites/default/files/kenney_fantasy-town-kit_2.0.zip",
+   "archive": "kenney-fantasy-town-2.0.zip",
+   "root": "kenney",
+   "licenseFile": "License.txt",
+   "archiveSha256": "1a7530c09f4d2fa2cdee259876f089334f8b1f27fa86a0c4f54ef86cdd8676ef",
+   "archiveBytes": 3854691,
+   "licenseCopy": "source/third-party/kenney-fantasy-town-kit-2.0/LICENSE.txt"
+  }
+ },
+ "files": [
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/stall-stool.glb",
+   "sha256": "50c6b512d810687f40e27c7a43b2864e5f7bc84f16ff7a4112cea4807676c336"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/Textures/colormap.png",
+   "sha256": "4aac939dc33195e35caf8c382ee3cb170054da763577f22d3c22692ec6afccdf"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/stall-bench.glb",
+   "sha256": "5a4b379488241394916991c4b482ec4863c05bb548ca8751f5c3935f1f6e5b9c"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Crate.obj",
+   "sha256": "60abe952262ab989028b474077bf4b61079c75e2df99b0da521e0d8223623612"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Crate.mtl",
+   "sha256": "f15400eef868e868fd33d291e5c0ca314dbf2136726f3201e6f1a560c9850642"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Barrel.obj",
+   "sha256": "a5b7aadcf07bb643a71d11b8797106decccc426be9ef2a1ecba61c503ffff897"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Barrel.mtl",
+   "sha256": "00a1e3c3efb014c0a9676c8847985c6ddd83046870b3bd21e39a220dd83bdb60"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Bags.obj",
+   "sha256": "afc060c080c7f7f6ffffc9464d11bb7e5a3173ee583e1ba1cbfff6ded8955881"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Bags.mtl",
+   "sha256": "47f65eb11cddff27da2bb037bdcc3de9e0131923596fc719b2e90018f82c21f3"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/banner-green.glb",
+   "sha256": "5c9a1bb7d564270306fe438fd4a141fc6de0d102b355bbd1d2710249c489868a"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Inn.obj",
+   "sha256": "efd1ce867f270314cbcb96cd8f15b91e7637fd8cec8ebb38991c60676c1874d3"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Inn.mtl",
+   "sha256": "2843be8a4b1ae66e36e398e5677f47e62fb97003e3af74fbcbf7f32c39aa2f5a"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Bell_Tower.obj",
+   "sha256": "197140ba8ee3d0f69a4f968b985be4a273a7033dccc5ec596625eb6f124ce64c"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Bell_Tower.mtl",
+   "sha256": "7dd5a911b02c98e044197742d85624dfeedee144bfbbc233a7ddd454f361d131"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Blacksmith.obj",
+   "sha256": "49b3ca2b02664239d6810b8816081db53b7d779558b94b12d2bf9a6421faa68a"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Blacksmith.mtl",
+   "sha256": "eee6042ef6e520ab7a4af10a11478a848c4aa6de637d7e5a73035d5c22625ffe"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Stable.obj",
+   "sha256": "d86ef7ffa56b490bdfe1790cfe94cd82b6312dbe95c571a4028d4032cd8e4d1d"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Stable.mtl",
+   "sha256": "e88b5467dc08f2fa53479c04a198e651f0b6848839dc1cbe0b24355022a76e02"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Sawmill.obj",
+   "sha256": "2b7a27612e6be65bbfeb9dee12d9c9af8d99e03fd854fb2ac51c13ac7427f2e8"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Sawmill.mtl",
+   "sha256": "822edbe46316c55c9e0d6a696d90181be81aa5b47a4631c2ec967bf9902358ef"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/House_4.obj",
+   "sha256": "ebfa070e6b4947a3b54b5da2eff1682120d0f310bd23dfbf47dbfc332c4f0c64"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/House_4.mtl",
+   "sha256": "e9497dc78c38598aa3fc46d6c15d491bcfba316b069450bcb342d6407241400f"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Mill.obj",
+   "sha256": "0701b39aeb69e37c103be543c202f49620fb084ec97cb54ab41fb48583e52456"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/Mill.mtl",
+   "sha256": "1020f8bc8b3f2c17cd1082369178d0ee7a07d306886edfbfa138380035e5a0ba"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/House_3.obj",
+   "sha256": "926020ac0da1407fba73f7924a5190bf642b59d64f5a168adc22579dea57e1f3"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Buildings/OBJ/House_3.mtl",
+   "sha256": "a64016896711c6772cab56ba8b381d4ced0634615d9c363654fb212b7b98d0ed"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Gazebo.obj",
+   "sha256": "c2c1f87f4918bb9d55d8dd8cd85732f6c4d481d655be024f2cf17b336df59eb8"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Gazebo.mtl",
+   "sha256": "046900ee5a1178d3ee42f2cb65c9c0a6d36dedfbdf96948dff15cf3c710d4ddc"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Well.obj",
+   "sha256": "6b3dfba58f273a9859fb0733914951385e0bcdf1624a64a1095e815f25c4d359"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Well.mtl",
+   "sha256": "dec96f6825d9a3551f64ce9502acdcf0317609c562a20aee9f56d932120895e0"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/MarketStand_1.obj",
+   "sha256": "e732c75ae0e2254020abaffa6c16f891335d2ab243ee8df3a554c891659c03f6"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/MarketStand_1.mtl",
+   "sha256": "44c47832996520dc4ea81e587732608915b2ca9e1caebfda6ca3be651214a08d"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/MarketStand_2.obj",
+   "sha256": "e2c6a0989685efd5b7786094abfe9dc5a1b65edde887dbc3e2c27bebce90ed1b"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/MarketStand_2.mtl",
+   "sha256": "229cd83812bfa2cd3405788821197a44c824af6570dcdac19a307df49aa85a76"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Cart.obj",
+   "sha256": "a2e13b05f7413fdf42229848d3378a868fcdda16b413bd3aab9943144a04c9f3"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Cart.mtl",
+   "sha256": "57bcdd645adf0a67965efa194de3d4d008b7ba4e3c50a0a1d688a9d330db3b4d"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Hay.obj",
+   "sha256": "8faf992ef76d14250f637e21530d9ad5b0342805748dddd69e1130d533998188"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Hay.mtl",
+   "sha256": "0f7ac2ac30d737c2fcd0892633fe21d88939c26593bb1bf2da3536b8b2ef3967"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Bench_1.obj",
+   "sha256": "fecffb749e0b58941af3c91eee446d82f1b815dbdc14a4f17ed8d2dafb4b1246"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Bench_1.mtl",
+   "sha256": "b03754d333852aaf07375410976225f4e61b2a749f14e61b84e119006e567973"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_1.obj",
+   "sha256": "236a94a3a4f142bd20d8b76978fc2cc363ef4ff8ca4bfc12ce2050edde8f070e"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_1.mtl",
+   "sha256": "8808dbc749122cb78c7f75dde1956c8e4cb8f588d0c2bbb14f9847e9530d216c"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_2.obj",
+   "sha256": "72e86c8a7de8fc6db4df9b391229c82c213c6e605fd6ed501503f30889863a80"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_2.mtl",
+   "sha256": "0815e0cd72a51a822ac3a29eb52359fa967d29a9aa4e1fcd12283a6055f08179"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_3.obj",
+   "sha256": "a44b051ddc552df8a2671e25f36d66eaa15097afc85693633d261ea55c0c1c29"
+  },
+  {
+   "pack": "quaternius-medieval-village-2020",
+   "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Rock_3.mtl",
+   "sha256": "8a36e8a3451b8c48bb6f99f353f080a123e52e9d9d3a69cdcf2e39cc4030be55"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/fountain-round.glb",
+   "sha256": "8d19741e2cca6cbdce114b950b4aa12af625979bbc17b2910ef2366834af5565"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/stall-red.glb",
+   "sha256": "aa20a630f417032c46aaefbc779fd2b3355b451bf05d31acc36fd664146866b1"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/stall-green.glb",
+   "sha256": "2da2f7b31cde5d943d7c08c457bbb39797ef0a607921fde0b8455f338ce40205"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/tree-high.glb",
+   "sha256": "2dbb718a81d9c3697c069495f58840f6c2002c8cdd13388be560c2199f6d03e7"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/tree.glb",
+   "sha256": "e8d81b97297de62699b92559cee7b247da84b1815df2515e42fd5a318a30b8d7"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/lantern.glb",
+   "sha256": "f270637e3083d6e84a30626ee05df2b09597a642985a7f5c3e4ab5bb1c7a8d55"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/cart.glb",
+   "sha256": "63503cd0a7398310e01aabc8e3663f711a7517394d23d179d0695157fee99d40"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/wall.glb",
+   "sha256": "cab1dff37610e2a214237cc62ec0b1506e8fd76bb66c29f6c585b4b643b569c4"
+  },
+  {
+   "pack": "kenney-fantasy-town-kit-2.0",
+   "file": "source/third-party/kenney-fantasy-town-kit-2.0/Models/GLB format/wall-doorway-round.glb",
+   "sha256": "773ccde0f2b39d7fa61e5093fc4f11b137732a5becbe278c9dae03917895fe98"
+  }
+ ],
+ "resources": {
+  "inn": {
+   "models": [
+    "structure:122997",
+    "roof:83514",
+    "windows:19",
+    "floors:28417",
+    "stairs:10098",
+    "furniture:1693"
+   ],
+   "voxels": 246738,
+   "surfaceCells": 139478,
+   "sealedInterior": 0,
+   "thickened": 72370,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 25792
+    },
+    {
+     "y": 4.7,
+     "band": "above",
+     "cells": 2621
+    }
+   ],
+   "doors": 6,
+   "windows": 5,
+   "stairs": 1,
+   "furniture": 6,
+   "pocketsFilled": 6532,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "bell-tower": {
+   "models": [
+    "structure:89654",
+    "roof:11471",
+    "floors:9793",
+    "stairs:2376",
+    "furniture:4750"
+   ],
+   "voxels": 118044,
+   "surfaceCells": 75290,
+   "sealedInterior": 0,
+   "thickened": 36694,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 7954
+    },
+    {
+     "y": 3.3,
+     "band": "above",
+     "cells": 120
+    },
+    {
+     "y": 8.1,
+     "band": "above",
+     "cells": 86
+    },
+    {
+     "y": 11.2,
+     "band": "above",
+     "cells": 1629
+    }
+   ],
+   "doors": 1,
+   "windows": 8,
+   "stairs": 1,
+   "furniture": 12,
+   "pocketsFilled": 221,
+   "sealedRooms": 1,
+   "sealedRoomCells": 17853
+  },
+  "smithy": {
+   "models": [
+    "structure:108561",
+    "roof:47812",
+    "floors:20296",
+    "stairs:8580",
+    "furniture:1022"
+   ],
+   "voxels": 186271,
+   "surfaceCells": 110196,
+   "sealedInterior": 0,
+   "thickened": 52664,
+   "floorSlabs": [
+    {
+     "y": 0.2,
+     "band": "above",
+     "cells": 14602
+    },
+    {
+     "y": 3.8,
+     "band": "above",
+     "cells": 5690
+    }
+   ],
+   "doors": 2,
+   "windows": 3,
+   "stairs": 1,
+   "furniture": 2,
+   "pocketsFilled": 1842,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "stable": {
+   "models": [
+    "structure:118820",
+    "roof:41752",
+    "windows:29",
+    "floors:19597",
+    "furniture:2453"
+   ],
+   "voxels": 182651,
+   "surfaceCells": 110690,
+   "sealedInterior": 0,
+   "thickened": 49436,
+   "floorSlabs": [
+    {
+     "y": 0.1,
+     "band": "above",
+     "cells": 13235
+    },
+    {
+     "y": 3,
+     "band": "above",
+     "cells": 6362
+    }
+   ],
+   "doors": 2,
+   "windows": 1,
+   "stairs": 0,
+   "furniture": 7,
+   "pocketsFilled": 3611,
+   "sealedRooms": 2,
+   "sealedRoomCells": 66405
+  },
+  "barracks": {
+   "models": [
+    "structure:108115",
+    "roof:49694",
+    "windows:104",
+    "floors:18565",
+    "stairs:6732",
+    "furniture:3761"
+   ],
+   "voxels": 186971,
+   "surfaceCells": 98869,
+   "sealedInterior": 0,
+   "thickened": 59884,
+   "floorSlabs": [
+    {
+     "y": 0.1,
+     "band": "above",
+     "cells": 12536
+    },
+    {
+     "y": 3.8,
+     "band": "above",
+     "cells": 6029
+    }
+   ],
+   "doors": 2,
+   "windows": 3,
+   "stairs": 1,
+   "furniture": 10,
+   "pocketsFilled": 5664,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "supply-depot": {
+   "models": [
+    "structure:25338",
+    "floors:7962",
+    "furniture:1464"
+   ],
+   "voxels": 34764,
+   "surfaceCells": 16490,
+   "sealedInterior": 0,
+   "thickened": 13243,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 7954
+    },
+    {
+     "y": 3.3,
+     "band": "above",
+     "cells": 0
+    }
+   ],
+   "doors": 2,
+   "windows": 2,
+   "stairs": 0,
+   "furniture": 5,
+   "pocketsFilled": 36,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "church": {
+   "models": [
+    "structure:200354",
+    "windows:19",
+    "floors:28417",
+    "stairs:10098",
+    "furniture:1693"
+   ],
+   "voxels": 240581,
+   "surfaceCells": 139478,
+   "sealedInterior": 0,
+   "thickened": 72370,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 25792
+    },
+    {
+     "y": 4.7,
+     "band": "above",
+     "cells": 2621
+    }
+   ],
+   "doors": 6,
+   "windows": 7,
+   "stairs": 1,
+   "furniture": 6,
+   "pocketsFilled": 4997,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "granary": {
+   "models": [
+    "structure:96855",
+    "roof:35700",
+    "windows:266",
+    "floors:16748",
+    "stairs:5610",
+    "furniture:3761"
+   ],
+   "voxels": 158940,
+   "surfaceCells": 95421,
+   "sealedInterior": 0,
+   "thickened": 44981,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 12119
+    },
+    {
+     "y": 3.4,
+     "band": "above",
+     "cells": 1597
+    },
+    {
+     "y": 8.4,
+     "band": "above",
+     "cells": 3028
+    }
+   ],
+   "doors": 4,
+   "windows": 3,
+   "stairs": 1,
+   "furniture": 10,
+   "pocketsFilled": 324,
+   "sealedRooms": 1,
+   "sealedRoomCells": 29442
+  },
+  "safehouse": {
+   "models": [
+    "structure:43807",
+    "floors:14834",
+    "stairs:3564",
+    "furniture:2196"
+   ],
+   "voxels": 64401,
+   "surfaceCells": 28536,
+   "sealedInterior": 0,
+   "thickened": 21075,
+   "floorSlabs": [
+    {
+     "y": 0,
+     "band": "above",
+     "cells": 8037
+    },
+    {
+     "y": 2.7,
+     "band": "above",
+     "cells": 7647
+    },
+    {
+     "y": 6.4,
+     "band": "above",
+     "cells": 0
+    }
+   ],
+   "doors": 2,
+   "windows": 4,
+   "stairs": 1,
+   "furniture": 6,
+   "pocketsFilled": 68,
+   "sealedRooms": 0,
+   "sealedRoomCells": 0
+  },
+  "row-a": {
+   "models": [
+    "plinth:11046",
+    "floors:24024",
+    "sills:1008",
+    "frames:3174",
+    "doors:598",
+    "furniture:6136",
+    "stairs:3780",
+    "partitions:9664",
+    "chimney:5068",
+    "quoins:4490",
+    "walls-stone:24610",
+    "glass:1539",
+    "lintels:1970",
+    "joists:7812",
+    "timber-frame:38576",
+    "infill:40592",
+    "rafters:4656",
+    "fascia:304",
+    "battens:2028",
+    "roof:11624",
+    "gable:13728",
+    "ridge:544"
+   ],
+   "voxels": 216971,
+   "parts": {
+    "plinth": 11046,
+    "floors": 24024,
+    "sills": 1008,
+    "frames": 3174,
+    "doors": 598,
+    "furniture": 6136,
+    "stairs": 3780,
+    "partitions": 9664,
+    "chimney": 5068,
+    "quoins": 4490,
+    "walls-stone": 24610,
+    "glass": 1539,
+    "lintels": 1970,
+    "joists": 7812,
+    "timber-frame": 38576,
+    "infill": 40592,
+    "rafters": 4656,
+    "fascia": 304,
+    "battens": 2028,
+    "roof": 11624,
+    "gable": 13728,
+    "ridge": 544
+   },
+   "storeys": 4,
+   "eave": 11.6,
+   "doors": 2,
+   "windows": 13,
+   "stairs": 3,
+   "furniture": 8,
+   "chimney": {
+    "x": [
+     5,
+     11
+    ],
+    "z": [
+     41,
+     47
+    ],
+    "top": 158,
+    "flue": [
+     7,
+     43,
+     2
+    ]
+   }
+  },
+  "row-b": {
+   "models": [
+    "plinth:10662",
+    "floors:25048",
+    "sills:1268",
+    "frames:3942",
+    "doors:598",
+    "furniture:7846",
+    "stairs:4980",
+    "partitions:9984",
+    "chimney:5484",
+    "quoins:4490",
+    "walls-stone:23530",
+    "glass:2007",
+    "lintels:2450",
+    "joists:9162",
+    "timber-frame:50592",
+    "infill:50112",
+    "rafters:4434",
+    "fascia:320",
+    "battens:1908",
+    "roof:16212",
+    "gable:10032",
+    "ridge:640"
+   ],
+   "voxels": 245701,
+   "parts": {
+    "plinth": 10662,
+    "floors": 25048,
+    "sills": 1268,
+    "frames": 3942,
+    "doors": 598,
+    "furniture": 7846,
+    "stairs": 4980,
+    "partitions": 9984,
+    "chimney": 5484,
+    "quoins": 4490,
+    "walls-stone": 23530,
+    "glass": 2007,
+    "lintels": 2450,
+    "joists": 9162,
+    "timber-frame": 50592,
+    "infill": 50112,
+    "rafters": 4434,
+    "fascia": 320,
+    "battens": 1908,
+    "roof": 16212,
+    "gable": 10032,
+    "ridge": 640
+   },
+   "storeys": 5,
+   "eave": 14.4,
+   "doors": 2,
+   "windows": 17,
+   "stairs": 4,
+   "furniture": 10,
+   "chimney": {
+    "x": [
+     5,
+     11
+    ],
+    "z": [
+     41,
+     47
+    ],
+    "top": 171,
+    "flue": [
+     7,
+     43,
+     2
+    ]
+   }
+  },
+  "row-c": {
+   "models": [
+    "plinth:10854",
+    "floors:18148",
+    "sills:852",
+    "frames:2790",
+    "doors:598",
+    "furniture:2806",
+    "stairs:2580",
+    "partitions:7776",
+    "chimney:4012",
+    "quoins:4490",
+    "walls-stone:84070",
+    "glass:1071",
+    "lintels:1730",
+    "joists:4704",
+    "rafters:4008",
+    "fascia:296",
+    "battens:1808",
+    "roof:10288",
+    "gable:11520",
+    "ridge:560"
+   ],
+   "voxels": 174961,
+   "parts": {
+    "plinth": 10854,
+    "floors": 18148,
+    "sills": 852,
+    "frames": 2790,
+    "doors": 598,
+    "furniture": 2806,
+    "stairs": 2580,
+    "partitions": 7776,
+    "chimney": 4012,
+    "quoins": 4490,
+    "walls-stone": 84070,
+    "glass": 1071,
+    "lintels": 1730,
+    "joists": 4704,
+    "rafters": 4008,
+    "fascia": 296,
+    "battens": 1808,
+    "roof": 10288,
+    "gable": 11520,
+    "ridge": 560
+   },
+   "storeys": 3,
+   "eave": 8.8,
+   "doors": 2,
+   "windows": 9,
+   "stairs": 2,
+   "furniture": 4,
+   "chimney": {
+    "x": [
+     5,
+     11
+    ],
+    "z": [
+     39,
+     45
+    ],
+    "top": 125,
+    "flue": [
+     7,
+     41,
+     2
+    ]
+   }
+  },
+  "row-d": {
+   "models": [
+    "plinth:10470",
+    "floors:21300",
+    "sills:1086",
+    "frames:3434",
+    "doors:598",
+    "furniture:6136",
+    "stairs:3780",
+    "partitions:7264",
+    "chimney:4556",
+    "quoins:4490",
+    "walls-stone:21840",
+    "glass:1674",
+    "lintels:2120",
+    "joists:7512",
+    "timber-frame:37448",
+    "infill:37688",
+    "rafters:4302",
+    "fascia:328",
+    "battens:1792",
+    "roof:16128",
+    "gable:8720",
+    "ridge:656"
+   ],
+   "voxels": 203322,
+   "parts": {
+    "plinth": 10470,
+    "floors": 21300,
+    "sills": 1086,
+    "frames": 3434,
+    "doors": 598,
+    "furniture": 6136,
+    "stairs": 3780,
+    "partitions": 7264,
+    "chimney": 4556,
+    "quoins": 4490,
+    "walls-stone": 21840,
+    "glass": 1674,
+    "lintels": 2120,
+    "joists": 7512,
+    "timber-frame": 37448,
+    "infill": 37688,
+    "rafters": 4302,
+    "fascia": 328,
+    "battens": 1792,
+    "roof": 16128,
+    "gable": 8720,
+    "ridge": 656
+   },
+   "storeys": 4,
+   "eave": 11.6,
+   "doors": 2,
+   "windows": 14,
+   "stairs": 3,
+   "furniture": 8,
+   "chimney": {
+    "x": [
+     5,
+     11
+    ],
+    "z": [
+     41,
+     47
+    ],
+    "top": 142,
+    "flue": [
+     7,
+     43,
+     2
+    ]
+   }
+  },
+  "row-e": {
+   "models": [
+    "plinth:10854",
+    "floors:19284",
+    "sills:1580",
+    "frames:4982",
+    "doors:598",
+    "furniture:4426",
+    "stairs:2580",
+    "partitions:7360",
+    "chimney:4236",
+    "quoins:4490",
+    "walls-stone:19470",
+    "glass:2547",
+    "lintels:3050",
+    "joists:5412",
+    "timber-frame:23856",
+    "infill:20176",
+    "rafters:4304",
+    "fascia:296",
+    "battens:1892",
+    "roof:16212",
+    "gable:12256",
+    "ridge:544"
+   ],
+   "voxels": 170405,
+   "parts": {
+    "plinth": 10854,
+    "floors": 19284,
+    "sills": 1580,
+    "frames": 4982,
+    "doors": 598,
+    "furniture": 4426,
+    "stairs": 2580,
+    "partitions": 7360,
+    "chimney": 4236,
+    "quoins": 4490,
+    "walls-stone": 19470,
+    "glass": 2547,
+    "lintels": 3050,
+    "joists": 5412,
+    "timber-frame": 23856,
+    "infill": 20176,
+    "rafters": 4304,
+    "fascia": 296,
+    "battens": 1892,
+    "roof": 16212,
+    "gable": 12256,
+    "ridge": 544
+   },
+   "storeys": 3,
+   "eave": 8.8,
+   "doors": 2,
+   "windows": 21,
+   "stairs": 2,
+   "furniture": 6,
+   "chimney": {
+    "x": [
+     5,
+     11
+    ],
+    "z": [
+     40,
+     46
+    ],
+    "top": 132,
+    "flue": [
+     7,
+     42,
+     2
+    ]
+   }
+  },
+  "market": {
+   "models": [
+    "structure:8313",
+    "roof:12976"
+   ],
+   "voxels": 21289,
+   "thickened": 5978
+  },
+  "well": {
+   "models": [
+    "body:4295"
+   ],
+   "voxels": 4295,
+   "thickened": 113
+  },
+  "market-stand-a": {
+   "models": [
+    "body:5774"
+   ],
+   "voxels": 5774,
+   "thickened": 844
+  },
+  "market-stand-b": {
+   "models": [
+    "body:5136"
+   ],
+   "voxels": 5136,
+   "thickened": 1205
+  },
+  "cart": {
+   "models": [
+    "body:1968"
+   ],
+   "voxels": 1968,
+   "thickened": 446
+  },
+  "barrel": {
+   "models": [
+    "body:179"
+   ],
+   "voxels": 179,
+   "thickened": 13
+  },
+  "crate": {
+   "models": [
+    "body:212"
+   ],
+   "voxels": 212,
+   "thickened": 0
+  },
+  "hay": {
+   "models": [
+    "body:92"
+   ],
+   "voxels": 92,
+   "thickened": 6
+  },
+  "bench": {
+   "models": [
+    "body:546"
+   ],
+   "voxels": 546,
+   "thickened": 47
+  },
+  "rubble-a": {
+   "models": [
+    "body:522"
+   ],
+   "voxels": 522,
+   "thickened": 10
+  },
+  "rubble-b": {
+   "models": [
+    "body:172"
+   ],
+   "voxels": 172,
+   "thickened": 4
+  },
+  "rubble-c": {
+   "models": [
+    "body:253"
+   ],
+   "voxels": 253,
+   "thickened": 24
+  },
+  "fountain": {
+   "models": [
+    "body:17972"
+   ],
+   "voxels": 17972,
+   "thickened": 10
+  },
+  "stall-red": {
+   "models": [
+    "body:4620"
+   ],
+   "voxels": 4620,
+   "thickened": 565
+  },
+  "stall-green": {
+   "models": [
+    "body:4700"
+   ],
+   "voxels": 4700,
+   "thickened": 601
+  },
+  "pine": {
+   "models": [
+    "body:9277"
+   ],
+   "voxels": 9277,
+   "thickened": 169
+  },
+  "pine-small": {
+   "models": [
+    "body:8745"
+   ],
+   "voxels": 8745,
+   "thickened": 184
+  },
+  "lantern": {
+   "models": [
+    "body:844"
+   ],
+   "voxels": 844,
+   "thickened": 8
+  },
+  "hand-cart": {
+   "models": [
+    "body:3352"
+   ],
+   "voxels": 3352,
+   "thickened": 88
+  },
+  "arcade": {
+   "models": [
+    "posts:832",
+    "beams:1136",
+    "roof:6698"
+   ],
+   "voxels": 8666,
+   "posts": 8,
+   "clear": 2.8
+  },
+  "town-wall": {
+   "models": [
+    "masonry:881752",
+    "trim:259448"
+   ],
+   "voxels": 1141200
+  },
+  "town-wall-gate": {
+   "models": [
+    "masonry:839984",
+    "trim:247216"
+   ],
+   "voxels": 1087200
+  }
+ }
+}

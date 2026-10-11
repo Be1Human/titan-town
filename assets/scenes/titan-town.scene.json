@@ -1,0 +1,5230 @@
+{
+ "schema": "crew-scene-v1",
+ "id": "titan-town-v1",
+ "revision": 3,
+ "name": "墙内小镇 · 夺回城墙",
+ "authorship": "mixed-cc0-and-project",
+ "palette": "materials/titan-town.palette.json",
+ "prefabs": {
+  "inn": "prefabs/titan-town/inn.prefab.json",
+  "bell-tower": "prefabs/titan-town/bell-tower.prefab.json",
+  "smithy": "prefabs/titan-town/smithy.prefab.json",
+  "stable": "prefabs/titan-town/stable.prefab.json",
+  "barracks": "prefabs/titan-town/barracks.prefab.json",
+  "supply-depot": "prefabs/titan-town/supply-depot.prefab.json",
+  "church": "prefabs/titan-town/church.prefab.json",
+  "granary": "prefabs/titan-town/granary.prefab.json",
+  "safehouse": "prefabs/titan-town/safehouse.prefab.json",
+  "row-a": "prefabs/titan-town/row-a.prefab.json",
+  "row-b": "prefabs/titan-town/row-b.prefab.json",
+  "row-c": "prefabs/titan-town/row-c.prefab.json",
+  "row-d": "prefabs/titan-town/row-d.prefab.json",
+  "row-e": "prefabs/titan-town/row-e.prefab.json",
+  "market": "prefabs/titan-town/market.prefab.json",
+  "well": "prefabs/titan-town/well.prefab.json",
+  "market-stand-a": "prefabs/titan-town/market-stand-a.prefab.json",
+  "market-stand-b": "prefabs/titan-town/market-stand-b.prefab.json",
+  "cart": "prefabs/titan-town/cart.prefab.json",
+  "barrel": "prefabs/titan-town/barrel.prefab.json",
+  "crate": "prefabs/titan-town/crate.prefab.json",
+  "hay": "prefabs/titan-town/hay.prefab.json",
+  "bench": "prefabs/titan-town/bench.prefab.json",
+  "rubble-a": "prefabs/titan-town/rubble-a.prefab.json",
+  "rubble-b": "prefabs/titan-town/rubble-b.prefab.json",
+  "rubble-c": "prefabs/titan-town/rubble-c.prefab.json",
+  "fountain": "prefabs/titan-town/fountain.prefab.json",
+  "stall-red": "prefabs/titan-town/stall-red.prefab.json",
+  "stall-green": "prefabs/titan-town/stall-green.prefab.json",
+  "pine": "prefabs/titan-town/pine.prefab.json",
+  "pine-small": "prefabs/titan-town/pine-small.prefab.json",
+  "lantern": "prefabs/titan-town/lantern.prefab.json",
+  "hand-cart": "prefabs/titan-town/hand-cart.prefab.json",
+  "arcade": "prefabs/titan-town/arcade.prefab.json",
+  "town-wall": "prefabs/titan-town/town-wall.prefab.json",
+  "town-wall-gate": "prefabs/titan-town/town-wall-gate.prefab.json"
+ },
+ "instances": [
+  {
+   "id": "wall-north",
+   "prefab": "town-wall",
+   "position": [
+    -47.5,
+    0.3,
+    -47.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "wall-east",
+   "prefab": "town-wall",
+   "position": [
+    47.5,
+    0.3,
+    -47.5
+   ],
+   "rotation": [
+    0,
+    -90,
+    0
+   ]
+  },
+  {
+   "id": "wall-south",
+   "prefab": "town-wall-gate",
+   "position": [
+    47.5,
+    0.3,
+    47.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "wall-west",
+   "prefab": "town-wall",
+   "position": [
+    -47.5,
+    0.3,
+    47.5
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "id": "fountain",
+   "prefab": "fountain",
+   "position": [
+    0,
+    0.3,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "well",
+   "prefab": "well",
+   "position": [
+    -5.5,
+    0.3,
+    5.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "stall-a",
+   "prefab": "stall-red",
+   "position": [
+    -5.5,
+    0.3,
+    -4.5
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "id": "stall-b",
+   "prefab": "stall-green",
+   "position": [
+    5.5,
+    0.3,
+    -4.5
+   ],
+   "rotation": [
+    0,
+    -90,
+    0
+   ]
+  },
+  {
+   "id": "safehouse-north",
+   "prefab": "safehouse",
+   "position": [
+    7.5,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "supply-depot",
+   "prefab": "supply-depot",
+   "position": [
+    15.5,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "church",
+   "prefab": "church",
+   "position": [
+    33,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "ne-docs",
+   "prefab": "row-b",
+   "position": [
+    7.5,
+    0.3,
+    -28.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "ne-2",
+   "prefab": "row-d",
+   "position": [
+    7.5,
+    0.3,
+    -38
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "ne-3",
+   "prefab": "row-a",
+   "position": [
+    15.5,
+    0.3,
+    -28.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "ne-4",
+   "prefab": "row-c",
+   "position": [
+    15.5,
+    0.3,
+    -38
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "inn",
+   "prefab": "inn",
+   "position": [
+    33,
+    0.3,
+    -33
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bell-tower",
+   "prefab": "bell-tower",
+   "position": [
+    -7.5,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "nw-1",
+   "prefab": "row-e",
+   "position": [
+    -15.5,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "barracks",
+   "prefab": "barracks",
+   "position": [
+    -33,
+    0.3,
+    -13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "nw-2",
+   "prefab": "row-d",
+   "position": [
+    -7.5,
+    0.3,
+    -28.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "nw-3",
+   "prefab": "row-c",
+   "position": [
+    -7.5,
+    0.3,
+    -38
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "nw-4",
+   "prefab": "row-b",
+   "position": [
+    -15.5,
+    0.3,
+    -28.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "nw-5",
+   "prefab": "row-a",
+   "position": [
+    -15.5,
+    0.3,
+    -38
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "smithy",
+   "prefab": "smithy",
+   "position": [
+    -33,
+    0.3,
+    -33
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "sw-rescue",
+   "prefab": "row-a",
+   "position": [
+    -7.5,
+    0.3,
+    13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "sw-1",
+   "prefab": "row-c",
+   "position": [
+    -15.5,
+    0.3,
+    13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "granary",
+   "prefab": "granary",
+   "position": [
+    -33,
+    0.3,
+    13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "sw-2",
+   "prefab": "row-b",
+   "position": [
+    -7.5,
+    0.3,
+    28.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "gatehouse-west",
+   "prefab": "row-d",
+   "position": [
+    -7.5,
+    0.3,
+    40.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "sw-3",
+   "prefab": "row-d",
+   "position": [
+    -15.5,
+    0.3,
+    28.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "sw-4",
+   "prefab": "row-a",
+   "position": [
+    -15.5,
+    0.3,
+    38
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "safehouse-southwest",
+   "prefab": "safehouse",
+   "position": [
+    -28,
+    0.3,
+    30
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "sw-5",
+   "prefab": "row-e",
+   "position": [
+    -37,
+    0.3,
+    30
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "market",
+   "prefab": "market",
+   "position": [
+    13,
+    0.3,
+    12
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "safehouse-east",
+   "prefab": "safehouse",
+   "position": [
+    28,
+    0.3,
+    13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "se-1",
+   "prefab": "row-e",
+   "position": [
+    37,
+    0.3,
+    13
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "se-2",
+   "prefab": "row-d",
+   "position": [
+    7.5,
+    0.3,
+    28.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "gatehouse-east",
+   "prefab": "row-d",
+   "position": [
+    7.5,
+    0.3,
+    40.5
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "se-3",
+   "prefab": "row-b",
+   "position": [
+    15.5,
+    0.3,
+    28.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "se-4",
+   "prefab": "row-c",
+   "position": [
+    15.5,
+    0.3,
+    38
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "stable",
+   "prefab": "stable",
+   "position": [
+    33,
+    0.3,
+    33
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "stall-c",
+   "prefab": "market-stand-a",
+   "position": [
+    9,
+    0.3,
+    16.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "stall-d",
+   "prefab": "market-stand-b",
+   "position": [
+    17,
+    0.3,
+    16.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "cart-1",
+   "prefab": "cart",
+   "position": [
+    4.5,
+    0.3,
+    20
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "id": "cart-2",
+   "prefab": "hand-cart",
+   "position": [
+    -1.8,
+    0.3,
+    -24
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "barrels-1",
+   "prefab": "barrel",
+   "position": [
+    4.2,
+    0.3,
+    7.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "barrels-2",
+   "prefab": "barrel",
+   "position": [
+    4.9,
+    0.3,
+    8.3
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "crates-1",
+   "prefab": "crate",
+   "position": [
+    -4,
+    0.3,
+    7.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "crates-2",
+   "prefab": "crate",
+   "position": [
+    -3.6500000000000004,
+    0.3,
+    8.7
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "hay-1",
+   "prefab": "hay",
+   "position": [
+    -25,
+    0.3,
+    22
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "hay-2",
+   "prefab": "hay",
+   "position": [
+    25,
+    0.3,
+    40
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bench-1",
+   "prefab": "bench",
+   "position": [
+    4,
+    0.3,
+    -8.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bench-2",
+   "prefab": "bench",
+   "position": [
+    -4,
+    0.3,
+    -8.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "lantern-1",
+   "prefab": "lantern",
+   "position": [
+    4,
+    0.3,
+    4
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "lantern-2",
+   "prefab": "lantern",
+   "position": [
+    -3.25,
+    0.3,
+    -4
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "lantern-3",
+   "prefab": "lantern",
+   "position": [
+    3.25,
+    0.3,
+    -4
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "lantern-4",
+   "prefab": "lantern",
+   "position": [
+    -4,
+    0.3,
+    3.75
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-1",
+   "prefab": "arcade",
+   "position": [
+    -24,
+    0.3,
+    -23.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-2",
+   "prefab": "arcade",
+   "position": [
+    -14,
+    0.3,
+    -21.9
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-3",
+   "prefab": "arcade",
+   "position": [
+    -4,
+    0.3,
+    -18.85
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-4",
+   "prefab": "arcade",
+   "position": [
+    6,
+    0.3,
+    -18.85
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-5",
+   "prefab": "arcade",
+   "position": [
+    16,
+    0.3,
+    -18.85
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-6",
+   "prefab": "arcade",
+   "position": [
+    24,
+    0.3,
+    -23.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-7",
+   "prefab": "arcade",
+   "position": [
+    -24,
+    0.3,
+    -5.75
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-8",
+   "prefab": "arcade",
+   "position": [
+    -14,
+    0.3,
+    -6.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-9",
+   "prefab": "arcade",
+   "position": [
+    14,
+    0.3,
+    -7.5
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-10",
+   "prefab": "arcade",
+   "position": [
+    24,
+    0.3,
+    -4.75
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-11",
+   "prefab": "arcade",
+   "position": [
+    -14,
+    0.3,
+    6
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-12",
+   "prefab": "arcade",
+   "position": [
+    -24,
+    0.3,
+    6
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-13",
+   "prefab": "arcade",
+   "position": [
+    24,
+    0.3,
+    6
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-14",
+   "prefab": "arcade",
+   "position": [
+    -14,
+    0.3,
+    21
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "arcade-15",
+   "prefab": "arcade",
+   "position": [
+    13,
+    0.3,
+    21
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "rubble-1",
+   "prefab": "rubble-a",
+   "position": [
+    -2.5,
+    0.3,
+    45
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "rubble-2",
+   "prefab": "rubble-b",
+   "position": [
+    3,
+    0.3,
+    45.5
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "id": "rubble-3",
+   "prefab": "rubble-c",
+   "position": [
+    0.5,
+    0.3,
+    49.6
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "pine-0",
+   "prefab": "pine-small",
+   "position": [
+    -41,
+    0.3,
+    -41
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "pine-1",
+   "prefab": "pine",
+   "position": [
+    41,
+    0.3,
+    -41
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "id": "pine-2",
+   "prefab": "pine-small",
+   "position": [
+    -41,
+    0.3,
+    41
+   ],
+   "rotation": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "id": "pine-3",
+   "prefab": "pine",
+   "position": [
+    41,
+    0.3,
+    41
+   ],
+   "rotation": [
+    0,
+    270,
+    0
+   ]
+  },
+  {
+   "id": "pine-4",
+   "prefab": "pine-small",
+   "position": [
+    -41,
+    0.3,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "pine-5",
+   "prefab": "pine",
+   "position": [
+    41,
+    0.3,
+    0
+   ],
+   "rotation": [
+    0,
+    90,
+    0
+   ]
+  }
+ ],
+ "bounds": {
+  "minX": -51,
+  "maxX": 51,
+  "minZ": -51,
+  "maxZ": 51
+ },
+ "points": {
+  "middle": {
+   "x": 6.65,
+   "y": 0.32,
+   "z": -13.15,
+   "yaw": -0.1920480172407299,
+   "pitch": 0
+  },
+  "safehouse": {
+   "x": 6.65,
+   "y": 0.32,
+   "z": -13.15,
+   "yaw": -0.1920480172407299,
+   "pitch": 0
+  },
+  "plaza": {
+   "x": 0,
+   "y": 0.32,
+   "z": -6.5,
+   "yaw": 3.141592653589793,
+   "pitch": 0.05
+  },
+  "west": {
+   "x": -22,
+   "y": 0.32,
+   "z": 0,
+   "yaw": -1.5707963267948966,
+   "pitch": 0
+  },
+  "east": {
+   "x": 22,
+   "y": 0.32,
+   "z": 0,
+   "yaw": 1.5707963267948966,
+   "pitch": 0
+  },
+  "overview": {
+   "x": 0,
+   "y": 58,
+   "z": 66,
+   "yaw": 0,
+   "pitch": -0.62
+  },
+  "breach": {
+   "x": 0,
+   "y": 0.32,
+   "z": 40.9,
+   "yaw": 0,
+   "pitch": 0.12
+  },
+  "walltop": {
+   "x": 0,
+   "y": 45.32,
+   "z": -47.85,
+   "yaw": 3.141592653589793,
+   "pitch": -0.2
+  }
+ },
+ "environment": {
+  "id": "titan-town-anime-v2",
+  "sunDirection": [
+   -0.58,
+   0.4,
+   0.58
+  ],
+  "sunColor": [
+   1.28,
+   0.98,
+   0.74
+  ],
+  "ambientColor": [
+   0.3,
+   0.33,
+   0.44
+  ],
+  "constant": [
+   0.034,
+   0.036,
+   0.046
+  ],
+  "ambientExponent": 1.5,
+  "ambientOcclusionStrength": 0.55,
+  "sunShadowStrength": 0.85,
+  "exposure": [
+   1.15,
+   1.7
+  ],
+  "brightness": 1,
+  "fogColor": [
+   0.68,
+   0.72,
+   0.8
+  ],
+  "fog": [
+   65,
+   200,
+   0.12,
+   3
+  ],
+  "horizonColor": [
+   0.9,
+   0.86,
+   0.76
+  ],
+  "zenithColor": [
+   0.2,
+   0.42,
+   0.8
+  ],
+  "anime": {
+   "stops": 1,
+   "softness": 0.03,
+   "ink": 0.95,
+   "crease": 0.8,
+   "inkDepth": 0.02,
+   "creaseFar": 60,
+   "saturation": 1.35,
+   "shadowTint": [
+    0.74,
+    0.6,
+    1.08
+   ],
+   "tint": 0.8,
+   "warm": [
+    1.28,
+    1.02,
+    0.7
+   ],
+   "edgeInk": 0.9,
+   "haze": [
+    0.98,
+    0.8,
+    0.72
+   ],
+   "hazeDensity": 0.006,
+   "hazeMax": 0.38,
+   "grade": [
+    1.14,
+    0.98,
+    0.8
+   ],
+   "rim": 1.4,
+   "inkColor": [
+    0.13,
+    0.08,
+    0.05
+   ],
+   "inkFade": [
+    60,
+    140
+   ],
+   "bandFloor": -2,
+   "flatten": 0.35
+  }
+ },
+ "terrain": {
+  "min": [
+   -51,
+   -51
+  ],
+  "max": [
+   51,
+   51
+  ],
+  "heightCells": 3,
+  "streamHeightCells": 1,
+  "paths": [
+   {
+    "points": [
+     [
+      0,
+      51
+     ],
+     [
+      0,
+      -46
+     ]
+    ],
+    "width": 6
+   },
+   {
+    "points": [
+     [
+      -46,
+      0
+     ],
+     [
+      46,
+      0
+     ]
+    ],
+    "width": 6
+   },
+   {
+    "points": [
+     [
+      -22,
+      -46
+     ],
+     [
+      -22,
+      46
+     ]
+    ],
+    "width": 4
+   },
+   {
+    "points": [
+     [
+      22,
+      -46
+     ],
+     [
+      22,
+      46
+     ]
+    ],
+    "width": 4
+   },
+   {
+    "points": [
+     [
+      -46,
+      -22
+     ],
+     [
+      46,
+      -22
+     ]
+    ],
+    "width": 4
+   },
+   {
+    "points": [
+     [
+      -46,
+      22
+     ],
+     [
+      46,
+      22
+     ]
+    ],
+    "width": 4
+   },
+   {
+    "points": [
+     [
+      -44,
+      -44
+     ],
+     [
+      44,
+      -44
+     ],
+     [
+      44,
+      44
+     ],
+     [
+      -44,
+      44
+     ],
+     [
+      -44,
+      -44
+     ]
+    ],
+    "width": 3
+   }
+  ],
+  "plazas": [
+   {
+    "center": [
+     0,
+     0
+    ],
+    "radius": 8
+   },
+   {
+    "center": [
+     0,
+     43.9
+    ],
+    "radius": 6
+   }
+  ],
+  "stream": {
+   "points": [
+    [
+     -50.4,
+     -50.4
+    ],
+    [
+     -50.4,
+     50.4
+    ]
+   ],
+   "width": 1
+  }
+ },
+ "stringLights": [],
+ "mapLabels": [
+  {
+   "text": "钟楼",
+   "x": -7.5,
+   "z": -13
+  },
+  {
+   "text": "教堂",
+   "x": 33,
+   "z": -13
+  },
+  {
+   "text": "旅馆",
+   "x": 33,
+   "z": -33
+  },
+  {
+   "text": "兵营",
+   "x": -33,
+   "z": -13
+  },
+  {
+   "text": "铁匠铺",
+   "x": -33,
+   "z": -33
+  },
+  {
+   "text": "粮仓",
+   "x": -33,
+   "z": 13
+  },
+  {
+   "text": "市场",
+   "x": 13,
+   "z": 12
+  },
+  {
+   "text": "马厩",
+   "x": 33,
+   "z": 33
+  },
+  {
+   "text": "补给站",
+   "x": 15.5,
+   "z": -13
+  },
+  {
+   "text": "广场",
+   "x": 0,
+   "z": 0
+  },
+  {
+   "text": "破损南门",
+   "x": 0,
+   "z": 44.9
+  },
+  {
+   "text": "安全屋",
+   "x": 6.65,
+   "z": -13.15,
+   "kind": "safehouse"
+  },
+  {
+   "text": "安全屋",
+   "x": -28.85,
+   "z": 29.85,
+   "kind": "safehouse"
+  },
+  {
+   "text": "安全屋",
+   "x": 27.15,
+   "z": 12.85,
+   "kind": "safehouse"
+  }
+ ],
+ "farWall": {
+  "id": "titan-town-far-wall-v1",
+  "bottom": 20.3,
+  "top": 45.3,
+  "deck": 3.2,
+  "material": "stone",
+  "boxes": [
+   {
+    "id": "north",
+    "min": [
+     -50.8,
+     20.3,
+     -50.8
+    ],
+    "max": [
+     50.8,
+     45.3,
+     -46.9
+    ]
+   },
+   {
+    "id": "south",
+    "min": [
+     -50.8,
+     20.3,
+     46.9
+    ],
+    "max": [
+     50.8,
+     45.3,
+     50.8
+    ]
+   },
+   {
+    "id": "west",
+    "min": [
+     -50.8,
+     20.3,
+     -46.9
+    ],
+    "max": [
+     -46.9,
+     45.3,
+     46.9
+    ]
+   },
+   {
+    "id": "east",
+    "min": [
+     46.9,
+     20.3,
+     -46.9
+    ],
+    "max": [
+     50.8,
+     45.3,
+     46.9
+    ]
+   }
+  ],
+  "merlons": {
+   "height": 1.6,
+   "width": 1.4,
+   "gap": 1.6
+  }
+ },
+ "inner": {
+  "minX": -46.9,
+  "maxX": 46.9,
+  "minZ": -46.9,
+  "maxZ": 46.9
+ },
+ "titans": {
+  "spawns": [
+   {
+    "x": 0,
+    "z": 50.9,
+    "yaw": 3.141592653589793
+   },
+   {
+    "x": -3,
+    "z": 51.5,
+    "yaw": 3.141592653589793
+   },
+   {
+    "x": 3,
+    "z": 51.5,
+    "yaw": 3.141592653589793
+   }
+  ],
+  "breach": {
+   "x": 0,
+   "z": 47.2
+  },
+  "count": 2,
+  "respawnSeconds": 30,
+  "town": {
+   "minX": -43.9,
+   "maxX": 43.9,
+   "minZ": -43.9,
+   "maxZ": 43.9
+  },
+  "climbSpawns": [
+   {
+    "id": "north",
+    "x": -22,
+    "z": -50,
+    "dir": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "east",
+    "x": 50,
+    "z": -22,
+    "dir": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "west",
+    "x": -50,
+    "z": 22,
+    "dir": [
+     1,
+     0
+    ]
+   }
+  ],
+  "climbTop": 45.3
+ },
+ "ape": {
+  "id": "wall-ape",
+  "name": "城垣巨猿",
+  "height": 15,
+  "y": 45.3,
+  "loop": true,
+  "patrol": [
+   [
+    -48.85,
+    -48.85
+   ],
+   [
+    48.85,
+    -48.85
+   ],
+   [
+    48.85,
+    48.85
+   ],
+   [
+    -48.85,
+    48.85
+   ]
+  ],
+  "start": [
+   0,
+   -48.85
+  ],
+  "speed": 1.6,
+  "cornerPause": 0.8,
+  "napeHealth": 300,
+  "respawnSeconds": 60
+ },
+ "gear": [
+  {
+   "id": "supply-safehouse-north",
+   "x": 7.55,
+   "y": 0.32,
+   "z": -12.25,
+   "yaw": -0.1920480172407299
+  },
+  {
+   "id": "supply-safehouse-southwest",
+   "x": -27.95,
+   "y": 0.32,
+   "z": 30.75,
+   "yaw": -0.19204801724073078
+  },
+  {
+   "id": "supply-safehouse-east",
+   "x": 28.05,
+   "y": 0.32,
+   "z": 13.75,
+   "yaw": -0.19204801724073087
+  },
+  {
+   "id": "supply-depot",
+   "x": 13.85,
+   "y": 0.32,
+   "z": -12.25,
+   "yaw": 0
+  }
+ ],
+ "gearAutoEquip": true,
+ "safehouses": [
+  {
+   "id": "safehouse-north",
+   "name": "北安全屋",
+   "x": 6.65,
+   "z": -13.15,
+   "spawn": {
+    "x": 6.65,
+    "y": 0.32,
+    "z": -13.15,
+    "yaw": -0.1920480172407299
+   },
+   "door": {
+    "x": 7.35,
+    "z": -16.75
+   }
+  },
+  {
+   "id": "safehouse-southwest",
+   "name": "西南安全屋",
+   "x": -28.85,
+   "z": 29.85,
+   "spawn": {
+    "x": -28.85,
+    "y": 0.32,
+    "z": 29.85,
+    "yaw": -0.19204801724073078
+   },
+   "door": {
+    "x": -28.15,
+    "z": 26.25
+   }
+  },
+  {
+   "id": "safehouse-east",
+   "name": "东安全屋",
+   "x": 27.15,
+   "z": 12.85,
+   "spawn": {
+    "x": 27.15,
+    "y": 0.32,
+    "z": 12.85,
+    "yaw": -0.19204801724073087
+   },
+   "door": {
+    "x": 27.85,
+    "z": 9.25
+   }
+  }
+ ],
+ "missions": [
+  {
+   "id": "supply",
+   "name": "取补给",
+   "stars": 1,
+   "danger": "低",
+   "kind": "interact",
+   "at": {
+    "x": 14.75,
+    "y": 0.32,
+    "z": -13.15
+   },
+   "hint": "补给站室内的补给箱"
+  },
+  {
+   "id": "documents",
+   "name": "寻找文件",
+   "stars": 2,
+   "danger": "中",
+   "kind": "interact",
+   "at": {
+    "x": 8.05,
+    "y": 3.52,
+    "z": -26.25
+   },
+   "hint": "北街民房二楼"
+  },
+  {
+   "id": "rescue",
+   "name": "救援镇民",
+   "stars": 2,
+   "danger": "中",
+   "kind": "escort",
+   "at": {
+    "x": -7.15,
+    "y": 0.32,
+    "z": 11.15
+   },
+   "hint": "西南民房一楼的镇民，护送到任意安全屋"
+  },
+  {
+   "id": "signal",
+   "name": "点燃信号烟",
+   "stars": 3,
+   "danger": "高",
+   "kind": "interact",
+   "at": {
+    "x": -5.95,
+    "y": 8.42,
+    "z": -13.15
+   },
+   "reachY": 3.2,
+   "hint": "钟楼顶层，正对巨猿视线"
+  },
+  {
+   "id": "hunt",
+   "name": "讨伐巨人",
+   "stars": 3,
+   "danger": "高",
+   "kind": "hunt",
+   "count": 2,
+   "at": {
+    "x": 0,
+    "y": 0.32,
+    "z": 0
+   },
+   "hint": "斩击后颈，击倒 2 个巨人"
+  },
+  {
+   "id": "seal",
+   "name": "封堵城门破口",
+   "stars": 4,
+   "danger": "极高",
+   "kind": "seal",
+   "at": {
+    "x": 0,
+    "y": 0.32,
+    "z": 44.9
+   },
+   "box": {
+    "min": [
+     -5,
+     0.4,
+     45.4
+    ],
+    "max": [
+     5,
+     2.8,
+     49.1
+    ]
+   },
+   "threshold": 0.4,
+   "hint": "炸塌南门两侧的门楼，用真实碎块堵住破口"
+  },
+  {
+   "id": "reclaim",
+   "name": "夺回城墙",
+   "stars": 5,
+   "danger": "致命",
+   "kind": "reclaim",
+   "at": {
+    "x": 0,
+    "y": 45.3,
+    "z": -48.85
+   },
+   "minY": 44,
+   "hint": "登上北墙墙顶，击退城垣巨猿"
+  }
+ ],
+ "access": {
+  "safehouse-north": {
+   "prefab": "safehouse",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      7.35,
+      0.3,
+      -16.75
+     ],
+     "inside": [
+      7.35,
+      0.3,
+      -14.25
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      7.35,
+      0.3,
+      -9.05
+     ],
+     "inside": [
+      7.35,
+      0.3,
+      -11.95
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      6.65,
+      0.3,
+      -13.15
+     ]
+    },
+    {
+     "y": 3,
+     "reach": "stairs",
+     "point": [
+      6.75,
+      3,
+      -12.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3,
+     "kind": "straight",
+     "bottom": [
+      8.85,
+      0.3,
+      -14.65
+     ],
+     "top": [
+      8.85,
+      3,
+      -11.95
+     ]
+    }
+   ]
+  },
+  "supply-depot": {
+   "prefab": "supply-depot",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      15.45,
+      0.3,
+      -16.75
+     ],
+     "inside": [
+      15.45,
+      0.3,
+      -14.25
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      15.45,
+      0.3,
+      -9.15
+     ],
+     "inside": [
+      15.45,
+      0.3,
+      -11.95
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      14.75,
+      0.3,
+      -13.15
+     ]
+    }
+   ],
+   "stairs": []
+  },
+  "church": {
+   "prefab": "church",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      32.85,
+      0.3,
+      -19.65
+     ],
+     "inside": [
+      32.85,
+      0.3,
+      -15.55
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      32.85,
+      0.3,
+      -6.25
+     ],
+     "inside": [
+      32.85,
+      0.3,
+      -10.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      34.65,
+      0.3,
+      -19.65
+     ],
+     "inside": [
+      34.65,
+      0.3,
+      -8.25
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      30.85,
+      0.3,
+      -19.65
+     ],
+     "inside": [
+      30.85,
+      0.3,
+      -17.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      34.95,
+      0.3,
+      -19.65
+     ],
+     "inside": [
+      34.95,
+      0.3,
+      -17.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      30.85,
+      0.3,
+      -19.65
+     ],
+     "inside": [
+      30.85,
+      0.3,
+      -8.25
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      34.65,
+      0.3,
+      -13.65
+     ]
+    },
+    {
+     "y": 5,
+     "reach": "stairs",
+     "point": [
+      34.65,
+      5,
+      -12.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 5,
+     "kind": "straight",
+     "bottom": [
+      30.65,
+      0.3,
+      -16.05
+     ],
+     "top": [
+      30.65,
+      5,
+      -11.85
+     ]
+    }
+   ]
+  },
+  "ne-docs": {
+   "prefab": "row-b",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      7.95,
+      0.3,
+      -23.85
+     ],
+     "inside": [
+      7.95,
+      0.3,
+      -26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      8.85,
+      0.3,
+      -33.15
+     ],
+     "inside": [
+      8.85,
+      0.3,
+      -30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      7.35,
+      0.3,
+      -26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      8.05,
+      3.5,
+      -26.25
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      7.85,
+      6.3,
+      -25.95
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      7.85,
+      9.1,
+      -25.95
+     ]
+    },
+    {
+     "y": 11.9,
+     "reach": "stairs",
+     "point": [
+      7.85,
+      11.9,
+      -25.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      5.5,
+      0.3,
+      -25.9
+     ],
+     "top": [
+      5.5,
+      3.5,
+      -28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      6.5,
+      3.5,
+      -28.8
+     ],
+     "top": [
+      6.5,
+      6.3,
+      -26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      5.5,
+      6.3,
+      -26.2
+     ],
+     "top": [
+      5.5,
+      9.1,
+      -28.8
+     ]
+    },
+    {
+     "from": 9.1,
+     "to": 11.9,
+     "kind": "straight",
+     "bottom": [
+      6.5,
+      9.1,
+      -28.8
+     ],
+     "top": [
+      6.5,
+      11.9,
+      -26.2
+     ]
+    }
+   ]
+  },
+  "ne-2": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      6.95,
+      0.3,
+      -42.65
+     ],
+     "inside": [
+      6.95,
+      0.3,
+      -40.15
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      6.25,
+      0.3,
+      -33.35
+     ],
+     "inside": [
+      6.25,
+      0.3,
+      -35.85
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      7.55,
+      0.3,
+      -39.85
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      7.05,
+      3.5,
+      -40.55
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      7.25,
+      6.3,
+      -40.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      7.25,
+      9.1,
+      -40.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      9.4,
+      0.3,
+      -40.6
+     ],
+     "top": [
+      9.4,
+      3.5,
+      -37.7
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      8.4,
+      3.5,
+      -37.7
+     ],
+     "top": [
+      8.4,
+      6.3,
+      -40.3
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      9.4,
+      6.3,
+      -40.3
+     ],
+     "top": [
+      9.4,
+      9.1,
+      -37.7
+     ]
+    }
+   ]
+  },
+  "ne-3": {
+   "prefab": "row-a",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      15.75,
+      0.3,
+      -23.85
+     ],
+     "inside": [
+      15.75,
+      0.3,
+      -26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      17.05,
+      0.3,
+      -33.15
+     ],
+     "inside": [
+      17.05,
+      0.3,
+      -30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      15.15,
+      0.3,
+      -26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      16.05,
+      3.5,
+      -26.15
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      16.05,
+      6.3,
+      -25.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      16.05,
+      9.1,
+      -25.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      13.3,
+      0.3,
+      -25.9
+     ],
+     "top": [
+      13.3,
+      3.5,
+      -28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      14.3,
+      3.5,
+      -28.8
+     ],
+     "top": [
+      14.3,
+      6.3,
+      -26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      13.3,
+      6.3,
+      -26.2
+     ],
+     "top": [
+      13.3,
+      9.1,
+      -28.8
+     ]
+    }
+   ]
+  },
+  "ne-4": {
+   "prefab": "row-c",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      15.35,
+      0.3,
+      -42.45
+     ],
+     "inside": [
+      15.35,
+      0.3,
+      -39.95
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      13.85,
+      0.3,
+      -33.55
+     ],
+     "inside": [
+      13.85,
+      0.3,
+      -36.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      15.95,
+      0.3,
+      -39.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      14.95,
+      3.5,
+      -39.65
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      14.95,
+      6.3,
+      -39.65
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      17.8,
+      0.3,
+      -40.4
+     ],
+     "top": [
+      17.8,
+      3.5,
+      -37.5
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      16.8,
+      3.5,
+      -37.5
+     ],
+     "top": [
+      16.8,
+      6.3,
+      -40.1
+     ]
+    }
+   ]
+  },
+  "inn": {
+   "prefab": "inn",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      32.85,
+      0.3,
+      -39.65
+     ],
+     "inside": [
+      32.85,
+      0.3,
+      -35.55
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      32.85,
+      0.3,
+      -26.25
+     ],
+     "inside": [
+      32.85,
+      0.3,
+      -30.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      34.65,
+      0.3,
+      -39.65
+     ],
+     "inside": [
+      34.65,
+      0.3,
+      -28.25
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      30.85,
+      0.3,
+      -39.65
+     ],
+     "inside": [
+      30.85,
+      0.3,
+      -37.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      34.95,
+      0.3,
+      -39.65
+     ],
+     "inside": [
+      34.95,
+      0.3,
+      -37.45
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      30.85,
+      0.3,
+      -39.65
+     ],
+     "inside": [
+      30.85,
+      0.3,
+      -28.25
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      34.65,
+      0.3,
+      -33.65
+     ]
+    },
+    {
+     "y": 5,
+     "reach": "stairs",
+     "point": [
+      34.65,
+      5,
+      -32.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 5,
+     "kind": "straight",
+     "bottom": [
+      30.65,
+      0.3,
+      -36.05
+     ],
+     "top": [
+      30.65,
+      5,
+      -31.85
+     ]
+    }
+   ]
+  },
+  "bell-tower": {
+   "prefab": "bell-tower",
+   "doors": [
+    {
+     "side": "+z",
+     "outside": [
+      -7.55,
+      0.3,
+      -8.85
+     ],
+     "inside": [
+      -7.55,
+      0.3,
+      -11.95
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -6.75,
+      0.3,
+      -13.25
+     ]
+    },
+    {
+     "y": 3.6,
+     "reach": "stairs",
+     "point": [
+      -7.25,
+      3.6,
+      -12.95
+     ]
+    },
+    {
+     "y": 8.4,
+     "reach": "grapple",
+     "point": [
+      -5.95,
+      8.4,
+      -13.15
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.6,
+     "kind": "steep",
+     "bottom": [
+      -8.85,
+      0.3,
+      -14.25
+     ],
+     "top": [
+      -6.45,
+      3.6,
+      -14.25
+     ]
+    }
+   ]
+  },
+  "nw-1": {
+   "prefab": "row-e",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -15.25,
+      0.3,
+      -8.45
+     ],
+     "inside": [
+      -15.25,
+      0.3,
+      -10.95
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -13.95,
+      0.3,
+      -17.55
+     ],
+     "inside": [
+      -13.95,
+      0.3,
+      -15.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.85,
+      0.3,
+      -11.25
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      3.5,
+      -10.75
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      6.3,
+      -10.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -17.7,
+      0.3,
+      -10.5
+     ],
+     "top": [
+      -17.7,
+      3.5,
+      -13.4
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -16.7,
+      3.5,
+      -13.4
+     ],
+     "top": [
+      -16.7,
+      6.3,
+      -10.8
+     ]
+    }
+   ]
+  },
+  "barracks": {
+   "prefab": "barracks",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -33.05,
+      0.4,
+      -18.65
+     ],
+     "inside": [
+      -33.05,
+      0.4,
+      -15.15
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -33.05,
+      0.4,
+      -7.25
+     ],
+     "inside": [
+      -33.05,
+      0.4,
+      -11.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.4,
+     "reach": "door",
+     "point": [
+      -33.55,
+      0.4,
+      -13.15
+     ]
+    },
+    {
+     "y": 4.1,
+     "reach": "stairs",
+     "point": [
+      -32.85,
+      4.1,
+      -11.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.4,
+     "to": 4.1,
+     "kind": "straight",
+     "bottom": [
+      -30.95,
+      0.4,
+      -15.55
+     ],
+     "top": [
+      -30.95,
+      4.1,
+      -11.95
+     ]
+    }
+   ]
+  },
+  "nw-2": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -6.95,
+      0.3,
+      -23.85
+     ],
+     "inside": [
+      -6.95,
+      0.3,
+      -26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -6.25,
+      0.3,
+      -33.15
+     ],
+     "inside": [
+      -6.25,
+      0.3,
+      -30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -7.55,
+      0.3,
+      -26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -7.05,
+      3.5,
+      -25.95
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -7.25,
+      6.3,
+      -25.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -7.25,
+      9.1,
+      -25.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -9.4,
+      0.3,
+      -25.9
+     ],
+     "top": [
+      -9.4,
+      3.5,
+      -28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -8.4,
+      3.5,
+      -28.8
+     ],
+     "top": [
+      -8.4,
+      6.3,
+      -26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -9.4,
+      6.3,
+      -26.2
+     ],
+     "top": [
+      -9.4,
+      9.1,
+      -28.8
+     ]
+    }
+   ]
+  },
+  "nw-3": {
+   "prefab": "row-c",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -7.65,
+      0.3,
+      -42.45
+     ],
+     "inside": [
+      -7.65,
+      0.3,
+      -39.95
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -9.15,
+      0.3,
+      -33.55
+     ],
+     "inside": [
+      -9.15,
+      0.3,
+      -36.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -7.05,
+      0.3,
+      -39.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      3.5,
+      -39.65
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      6.3,
+      -39.65
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -5.2,
+      0.3,
+      -40.4
+     ],
+     "top": [
+      -5.2,
+      3.5,
+      -37.5
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -6.2,
+      3.5,
+      -37.5
+     ],
+     "top": [
+      -6.2,
+      6.3,
+      -40.1
+     ]
+    }
+   ]
+  },
+  "nw-4": {
+   "prefab": "row-b",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -15.05,
+      0.3,
+      -23.85
+     ],
+     "inside": [
+      -15.05,
+      0.3,
+      -26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -14.15,
+      0.3,
+      -33.15
+     ],
+     "inside": [
+      -14.15,
+      0.3,
+      -30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.65,
+      0.3,
+      -26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      3.5,
+      -26.25
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -15.15,
+      6.3,
+      -25.95
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -15.15,
+      9.1,
+      -25.95
+     ]
+    },
+    {
+     "y": 11.9,
+     "reach": "stairs",
+     "point": [
+      -15.15,
+      11.9,
+      -25.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -17.5,
+      0.3,
+      -25.9
+     ],
+     "top": [
+      -17.5,
+      3.5,
+      -28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -16.5,
+      3.5,
+      -28.8
+     ],
+     "top": [
+      -16.5,
+      6.3,
+      -26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -17.5,
+      6.3,
+      -26.2
+     ],
+     "top": [
+      -17.5,
+      9.1,
+      -28.8
+     ]
+    },
+    {
+     "from": 9.1,
+     "to": 11.9,
+     "kind": "straight",
+     "bottom": [
+      -16.5,
+      9.1,
+      -28.8
+     ],
+     "top": [
+      -16.5,
+      11.9,
+      -26.2
+     ]
+    }
+   ]
+  },
+  "nw-5": {
+   "prefab": "row-a",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -15.75,
+      0.3,
+      -42.65
+     ],
+     "inside": [
+      -15.75,
+      0.3,
+      -40.15
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -17.05,
+      0.3,
+      -33.35
+     ],
+     "inside": [
+      -17.05,
+      0.3,
+      -35.85
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.15,
+      0.3,
+      -39.85
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -16.05,
+      3.5,
+      -40.35
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -16.05,
+      6.3,
+      -40.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -16.05,
+      9.1,
+      -40.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -13.3,
+      0.3,
+      -40.6
+     ],
+     "top": [
+      -13.3,
+      3.5,
+      -37.7
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -14.3,
+      3.5,
+      -37.7
+     ],
+     "top": [
+      -14.3,
+      6.3,
+      -40.3
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -13.3,
+      6.3,
+      -40.3
+     ],
+     "top": [
+      -13.3,
+      9.1,
+      -37.7
+     ]
+    }
+   ]
+  },
+  "smithy": {
+   "prefab": "smithy",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -33.05,
+      0.5,
+      -38.65
+     ],
+     "inside": [
+      -33.05,
+      0.5,
+      -35.15
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -33.05,
+      0.5,
+      -27.35
+     ],
+     "inside": [
+      -33.05,
+      0.5,
+      -31.15
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.5,
+     "reach": "door",
+     "point": [
+      -34.25,
+      0.5,
+      -33.25
+     ]
+    },
+    {
+     "y": 4.1,
+     "reach": "stairs",
+     "point": [
+      -33.05,
+      4.1,
+      -31.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.5,
+     "to": 4.1,
+     "kind": "switchback",
+     "bottom": [
+      -30.95,
+      0.5,
+      -34.55
+     ],
+     "top": [
+      -32.05,
+      4.1,
+      -34.25
+     ]
+    }
+   ]
+  },
+  "sw-rescue": {
+   "prefab": "row-a",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -7.75,
+      0.3,
+      8.35
+     ],
+     "inside": [
+      -7.75,
+      0.3,
+      10.85
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -9.05,
+      0.3,
+      17.65
+     ],
+     "inside": [
+      -9.05,
+      0.3,
+      15.15
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -7.15,
+      0.3,
+      11.15
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      3.5,
+      10.65
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      6.3,
+      10.25
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      9.1,
+      10.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -5.3,
+      0.3,
+      10.4
+     ],
+     "top": [
+      -5.3,
+      3.5,
+      13.3
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -6.3,
+      3.5,
+      13.3
+     ],
+     "top": [
+      -6.3,
+      6.3,
+      10.7
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -5.3,
+      6.3,
+      10.7
+     ],
+     "top": [
+      -5.3,
+      9.1,
+      13.3
+     ]
+    }
+   ]
+  },
+  "sw-1": {
+   "prefab": "row-c",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -15.65,
+      0.3,
+      8.55
+     ],
+     "inside": [
+      -15.65,
+      0.3,
+      11.05
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -17.15,
+      0.3,
+      17.45
+     ],
+     "inside": [
+      -17.15,
+      0.3,
+      14.95
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.05,
+      0.3,
+      11.35
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -16.05,
+      3.5,
+      11.35
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -16.05,
+      6.3,
+      11.35
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -13.2,
+      0.3,
+      10.6
+     ],
+     "top": [
+      -13.2,
+      3.5,
+      13.5
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -14.2,
+      3.5,
+      13.5
+     ],
+     "top": [
+      -14.2,
+      6.3,
+      10.9
+     ]
+    }
+   ]
+  },
+  "granary": {
+   "prefab": "granary",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -33.05,
+      0.3,
+      8.25
+     ],
+     "inside": [
+      -33.05,
+      0.3,
+      11.75
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -33.05,
+      0.3,
+      17.95
+     ],
+     "inside": [
+      -33.05,
+      0.3,
+      14.05
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      -36.25,
+      0.3,
+      8.25
+     ],
+     "inside": [
+      -36.25,
+      0.3,
+      11.55
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      -29.85,
+      0.3,
+      8.25
+     ],
+     "inside": [
+      -29.85,
+      0.3,
+      11.55
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -29.75,
+      0.3,
+      14.85
+     ]
+    },
+    {
+     "y": 3.7,
+     "reach": "stairs",
+     "point": [
+      -33.35,
+      3.7,
+      13.35
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.7,
+     "kind": "straight",
+     "bottom": [
+      -31.65,
+      0.3,
+      11.35
+     ],
+     "top": [
+      -31.65,
+      3.7,
+      14.65
+     ]
+    }
+   ]
+  },
+  "sw-2": {
+   "prefab": "row-b",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -7.95,
+      0.3,
+      23.85
+     ],
+     "inside": [
+      -7.95,
+      0.3,
+      26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -8.85,
+      0.3,
+      33.15
+     ],
+     "inside": [
+      -8.85,
+      0.3,
+      30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -7.35,
+      0.3,
+      26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -8.05,
+      3.5,
+      26.25
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -7.85,
+      6.3,
+      25.95
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -7.85,
+      9.1,
+      25.95
+     ]
+    },
+    {
+     "y": 11.9,
+     "reach": "stairs",
+     "point": [
+      -7.85,
+      11.9,
+      25.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -5.5,
+      0.3,
+      25.9
+     ],
+     "top": [
+      -5.5,
+      3.5,
+      28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -6.5,
+      3.5,
+      28.8
+     ],
+     "top": [
+      -6.5,
+      6.3,
+      26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -5.5,
+      6.3,
+      26.2
+     ],
+     "top": [
+      -5.5,
+      9.1,
+      28.8
+     ]
+    },
+    {
+     "from": 9.1,
+     "to": 11.9,
+     "kind": "straight",
+     "bottom": [
+      -6.5,
+      9.1,
+      28.8
+     ],
+     "top": [
+      -6.5,
+      11.9,
+      26.2
+     ]
+    }
+   ]
+  },
+  "gatehouse-west": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -6.95,
+      0.3,
+      45.15
+     ],
+     "inside": [
+      -6.95,
+      0.3,
+      42.65
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -6.25,
+      0.3,
+      35.85
+     ],
+     "inside": [
+      -6.25,
+      0.3,
+      38.35
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -7.55,
+      0.3,
+      42.35
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -7.05,
+      3.5,
+      43.05
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -7.25,
+      6.3,
+      43.25
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -7.25,
+      9.1,
+      43.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -9.4,
+      0.3,
+      43.1
+     ],
+     "top": [
+      -9.4,
+      3.5,
+      40.2
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -8.4,
+      3.5,
+      40.2
+     ],
+     "top": [
+      -8.4,
+      6.3,
+      42.8
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -9.4,
+      6.3,
+      42.8
+     ],
+     "top": [
+      -9.4,
+      9.1,
+      40.2
+     ]
+    }
+   ]
+  },
+  "sw-3": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -16.05,
+      0.3,
+      23.85
+     ],
+     "inside": [
+      -16.05,
+      0.3,
+      26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -16.75,
+      0.3,
+      33.15
+     ],
+     "inside": [
+      -16.75,
+      0.3,
+      30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.45,
+      0.3,
+      26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -15.95,
+      3.5,
+      25.95
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -15.75,
+      6.3,
+      25.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -15.75,
+      9.1,
+      25.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -13.6,
+      0.3,
+      25.9
+     ],
+     "top": [
+      -13.6,
+      3.5,
+      28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -14.6,
+      3.5,
+      28.8
+     ],
+     "top": [
+      -14.6,
+      6.3,
+      26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -13.6,
+      6.3,
+      26.2
+     ],
+     "top": [
+      -13.6,
+      9.1,
+      28.8
+     ]
+    }
+   ]
+  },
+  "sw-4": {
+   "prefab": "row-a",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -15.25,
+      0.3,
+      42.65
+     ],
+     "inside": [
+      -15.25,
+      0.3,
+      40.15
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -13.95,
+      0.3,
+      33.35
+     ],
+     "inside": [
+      -13.95,
+      0.3,
+      35.85
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -15.85,
+      0.3,
+      39.85
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      3.5,
+      40.35
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      6.3,
+      40.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      -14.95,
+      9.1,
+      40.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -17.7,
+      0.3,
+      40.6
+     ],
+     "top": [
+      -17.7,
+      3.5,
+      37.7
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -16.7,
+      3.5,
+      37.7
+     ],
+     "top": [
+      -16.7,
+      6.3,
+      40.3
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      -17.7,
+      6.3,
+      40.3
+     ],
+     "top": [
+      -17.7,
+      9.1,
+      37.7
+     ]
+    }
+   ]
+  },
+  "safehouse-southwest": {
+   "prefab": "safehouse",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -28.15,
+      0.3,
+      26.25
+     ],
+     "inside": [
+      -28.15,
+      0.3,
+      28.75
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -28.15,
+      0.3,
+      33.95
+     ],
+     "inside": [
+      -28.15,
+      0.3,
+      31.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -28.85,
+      0.3,
+      29.85
+     ]
+    },
+    {
+     "y": 3,
+     "reach": "stairs",
+     "point": [
+      -28.75,
+      3,
+      30.05
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3,
+     "kind": "straight",
+     "bottom": [
+      -26.65,
+      0.3,
+      28.35
+     ],
+     "top": [
+      -26.65,
+      3,
+      31.05
+     ]
+    }
+   ]
+  },
+  "sw-5": {
+   "prefab": "row-e",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      -36.75,
+      0.3,
+      34.55
+     ],
+     "inside": [
+      -36.75,
+      0.3,
+      32.05
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      -35.45,
+      0.3,
+      25.45
+     ],
+     "inside": [
+      -35.45,
+      0.3,
+      27.95
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      -37.35,
+      0.3,
+      31.75
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      -36.45,
+      3.5,
+      32.25
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      -36.45,
+      6.3,
+      32.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      -39.2,
+      0.3,
+      32.5
+     ],
+     "top": [
+      -39.2,
+      3.5,
+      29.6
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      -38.2,
+      3.5,
+      29.6
+     ],
+     "top": [
+      -38.2,
+      6.3,
+      32.2
+     ]
+    }
+   ]
+  },
+  "safehouse-east": {
+   "prefab": "safehouse",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      27.85,
+      0.3,
+      9.25
+     ],
+     "inside": [
+      27.85,
+      0.3,
+      11.75
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      27.85,
+      0.3,
+      16.95
+     ],
+     "inside": [
+      27.85,
+      0.3,
+      14.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      27.15,
+      0.3,
+      12.85
+     ]
+    },
+    {
+     "y": 3,
+     "reach": "stairs",
+     "point": [
+      27.25,
+      3,
+      13.05
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3,
+     "kind": "straight",
+     "bottom": [
+      29.35,
+      0.3,
+      11.35
+     ],
+     "top": [
+      29.35,
+      3,
+      14.05
+     ]
+    }
+   ]
+  },
+  "se-1": {
+   "prefab": "row-e",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      36.75,
+      0.3,
+      8.45
+     ],
+     "inside": [
+      36.75,
+      0.3,
+      10.95
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      35.45,
+      0.3,
+      17.55
+     ],
+     "inside": [
+      35.45,
+      0.3,
+      15.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      37.35,
+      0.3,
+      11.25
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      36.45,
+      3.5,
+      10.75
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      36.45,
+      6.3,
+      10.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      39.2,
+      0.3,
+      10.5
+     ],
+     "top": [
+      39.2,
+      3.5,
+      13.4
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      38.2,
+      3.5,
+      13.4
+     ],
+     "top": [
+      38.2,
+      6.3,
+      10.8
+     ]
+    }
+   ]
+  },
+  "se-2": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      6.95,
+      0.3,
+      23.85
+     ],
+     "inside": [
+      6.95,
+      0.3,
+      26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      6.25,
+      0.3,
+      33.15
+     ],
+     "inside": [
+      6.25,
+      0.3,
+      30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      7.55,
+      0.3,
+      26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      7.05,
+      3.5,
+      25.95
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      7.25,
+      6.3,
+      25.75
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      7.25,
+      9.1,
+      25.75
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      9.4,
+      0.3,
+      25.9
+     ],
+     "top": [
+      9.4,
+      3.5,
+      28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      8.4,
+      3.5,
+      28.8
+     ],
+     "top": [
+      8.4,
+      6.3,
+      26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      9.4,
+      6.3,
+      26.2
+     ],
+     "top": [
+      9.4,
+      9.1,
+      28.8
+     ]
+    }
+   ]
+  },
+  "gatehouse-east": {
+   "prefab": "row-d",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      8.05,
+      0.3,
+      45.15
+     ],
+     "inside": [
+      8.05,
+      0.3,
+      42.65
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      8.75,
+      0.3,
+      35.85
+     ],
+     "inside": [
+      8.75,
+      0.3,
+      38.35
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      7.45,
+      0.3,
+      42.35
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      7.95,
+      3.5,
+      43.05
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      7.75,
+      6.3,
+      43.25
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      7.75,
+      9.1,
+      43.25
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      5.6,
+      0.3,
+      43.1
+     ],
+     "top": [
+      5.6,
+      3.5,
+      40.2
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      6.6,
+      3.5,
+      40.2
+     ],
+     "top": [
+      6.6,
+      6.3,
+      42.8
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      5.6,
+      6.3,
+      42.8
+     ],
+     "top": [
+      5.6,
+      9.1,
+      40.2
+     ]
+    }
+   ]
+  },
+  "se-3": {
+   "prefab": "row-b",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      15.05,
+      0.3,
+      23.85
+     ],
+     "inside": [
+      15.05,
+      0.3,
+      26.35
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      14.15,
+      0.3,
+      33.15
+     ],
+     "inside": [
+      14.15,
+      0.3,
+      30.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      15.65,
+      0.3,
+      26.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      14.95,
+      3.5,
+      26.25
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      15.15,
+      6.3,
+      25.95
+     ]
+    },
+    {
+     "y": 9.1,
+     "reach": "stairs",
+     "point": [
+      15.15,
+      9.1,
+      25.95
+     ]
+    },
+    {
+     "y": 11.9,
+     "reach": "stairs",
+     "point": [
+      15.15,
+      11.9,
+      25.95
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      17.5,
+      0.3,
+      25.9
+     ],
+     "top": [
+      17.5,
+      3.5,
+      28.8
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      16.5,
+      3.5,
+      28.8
+     ],
+     "top": [
+      16.5,
+      6.3,
+      26.2
+     ]
+    },
+    {
+     "from": 6.3,
+     "to": 9.1,
+     "kind": "straight",
+     "bottom": [
+      17.5,
+      6.3,
+      26.2
+     ],
+     "top": [
+      17.5,
+      9.1,
+      28.8
+     ]
+    },
+    {
+     "from": 9.1,
+     "to": 11.9,
+     "kind": "straight",
+     "bottom": [
+      16.5,
+      9.1,
+      28.8
+     ],
+     "top": [
+      16.5,
+      11.9,
+      26.2
+     ]
+    }
+   ]
+  },
+  "se-4": {
+   "prefab": "row-c",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      15.65,
+      0.3,
+      42.45
+     ],
+     "inside": [
+      15.65,
+      0.3,
+      39.95
+     ]
+    },
+    {
+     "side": "+z",
+     "outside": [
+      17.15,
+      0.3,
+      33.55
+     ],
+     "inside": [
+      17.15,
+      0.3,
+      36.05
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.3,
+     "reach": "door",
+     "point": [
+      15.05,
+      0.3,
+      39.65
+     ]
+    },
+    {
+     "y": 3.5,
+     "reach": "stairs",
+     "point": [
+      16.05,
+      3.5,
+      39.65
+     ]
+    },
+    {
+     "y": 6.3,
+     "reach": "stairs",
+     "point": [
+      16.05,
+      6.3,
+      39.65
+     ]
+    }
+   ],
+   "stairs": [
+    {
+     "from": 0.3,
+     "to": 3.5,
+     "kind": "straight",
+     "bottom": [
+      13.2,
+      0.3,
+      40.4
+     ],
+     "top": [
+      13.2,
+      3.5,
+      37.5
+     ]
+    },
+    {
+     "from": 3.5,
+     "to": 6.3,
+     "kind": "straight",
+     "bottom": [
+      14.2,
+      3.5,
+      37.5
+     ],
+     "top": [
+      14.2,
+      6.3,
+      40.1
+     ]
+    }
+   ]
+  },
+  "stable": {
+   "prefab": "stable",
+   "doors": [
+    {
+     "side": "-z",
+     "outside": [
+      26.65,
+      0.4,
+      28.45
+     ],
+     "inside": [
+      26.65,
+      0.4,
+      31.75
+     ]
+    },
+    {
+     "side": "-z",
+     "outside": [
+      32.95,
+      0.4,
+      28.45
+     ],
+     "inside": [
+      32.95,
+      0.4,
+      31.65
+     ]
+    }
+   ],
+   "storeys": [
+    {
+     "y": 0.4,
+     "reach": "door",
+     "point": [
+      33.35,
+      0.4,
+      34.05
+     ]
+    }
+   ],
+   "stairs": []
+  }
+ },
+ "townsfolk": [
+  {
+   "id": "townsfolk-0",
+   "x": -1.5,
+   "z": 14,
+   "route": [
+    [
+     -1.5,
+     14
+    ],
+    [
+     -1.5,
+     18
+    ]
+   ]
+  },
+  {
+   "id": "townsfolk-1",
+   "x": 1.5,
+   "z": -16,
+   "route": [
+    [
+     1.5,
+     -16
+    ],
+    [
+     1.5,
+     -20
+    ]
+   ]
+  },
+  {
+   "id": "townsfolk-2",
+   "x": -14,
+   "z": 1.5,
+   "route": [
+    [
+     -14,
+     1.5
+    ],
+    [
+     -18,
+     1.5
+    ]
+   ]
+  },
+  {
+   "id": "townsfolk-3",
+   "x": 14,
+   "z": -1.5,
+   "route": [
+    [
+     14,
+     -1.5
+    ],
+    [
+     18,
+     -1.5
+    ]
+   ]
+  },
+  {
+   "id": "townsfolk-4",
+   "x": 22,
+   "z": 8,
+   "route": [
+    [
+     22,
+     8
+    ],
+    [
+     22,
+     13
+    ]
+   ]
+  },
+  {
+   "id": "townsfolk-5",
+   "x": -22,
+   "z": -8,
+   "route": [
+    [
+     -22,
+     -8
+    ],
+    [
+     -22,
+     -13
+    ]
+   ]
+  }
+ ],
+ "rescue": {
+  "id": "rescue-villager",
+  "name": "镇民 · 艾琳",
+  "x": -7.15,
+  "y": 0.32,
+  "z": 11.15
+ },
+ "sources": [
+  {
+   "id": "quaternius-medieval-village-2020",
+   "title": "LowPoly Medieval Village Pack (Dec 2020)",
+   "author": "Quaternius",
+   "license": "CC0 1.0 Universal",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://opengameart.org/content/lowpoly-medieval-village-pack",
+   "download": "https://opengameart.org/sites/default/files/medieval_village_pack_-_dec_2020.zip"
+  },
+  {
+   "id": "kenney-fantasy-town-kit-2.0",
+   "title": "Fantasy Town Kit 2.0",
+   "author": "Kenney (www.kenney.nl)",
+   "license": "CC0 1.0 Universal",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://opengameart.org/content/fantasy-town-kit",
+   "download": "https://opengameart.org/sites/default/files/kenney_fantasy-town-kit_2.0.zip"
+  }
+ ]
+}

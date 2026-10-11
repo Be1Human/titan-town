@@ -1,0 +1,378 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/row-a",
+ "authorship": "project-original-with-cc0-furniture",
+ "tags": [
+  "residence",
+  "half-timber",
+  "four-storey"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "plinth",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "plinth",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "floors",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "floors",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "sills",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "sills",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "frames",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "frames",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "doors",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "doors",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "furniture",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "furniture",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "stairs",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "stairs",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "partitions",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "partitions",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "chimney",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "chimney",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "quoins",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "quoins",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "walls-stone",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "walls-stone",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "glass",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "glass",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "lintels",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "lintels",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "joists",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "joists",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "timber-frame",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "timber-frame",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "infill",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "infill",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "rafters",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "rafters",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "fascia",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "fascia",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "battens",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "battens",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "roof",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "roof",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "gable",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "gable",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "ridge",
+   "file": "voxel-models/titan-town/row-a.voxel.json",
+   "object": "ridge",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "kenney-fantasy-town-kit-2.0",
+   "quaternius-medieval-village-2020"
+  ]
+ }
+}

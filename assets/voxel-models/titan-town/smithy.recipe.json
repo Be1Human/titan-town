@@ -1,0 +1,92 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "3be0ad8e3e62bd16ae6f9b40bf6e55bcc849497601f5783bf6f5f402e7c36d98",
+ "assetId": "titan-town/smithy",
+ "kind": "quaternius-building",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Buildings/OBJ/Blacksmith.obj",
+ "scale": 3,
+ "surfaceOnly": true,
+ "thickenMinCells": 3,
+ "floors": [
+  {
+   "y": 0
+  }
+ ],
+ "floorMaterial": "wood",
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "doors": [
+  "-z",
+  "+z"
+ ],
+ "door": {
+  "width": 13,
+  "height": 23
+ },
+ "window": {
+  "width": 13,
+  "sill": 4,
+  "height": 20,
+  "spacing": 30
+ },
+ "stairs": {
+  "width": 11,
+  "run": 3,
+  "rise": 4,
+  "landing": 6
+ },
+ "furniture": {
+  "ground": [
+   "table",
+   "stool",
+   "stool",
+   "cabinet",
+   "crate",
+   "barrel"
+  ],
+  "upper": [
+   "bed",
+   "cabinet",
+   "bags",
+   "crate"
+  ],
+  "workshop": [
+   "bench",
+   "bench",
+   "table",
+   "crate",
+   "crate",
+   "barrel",
+   "cabinet"
+  ]
+ },
+ "parts": {
+  "roof": [
+   "roof"
+  ],
+  "windows": [
+   "glass"
+  ]
+ },
+ "tags": [
+  "workshop"
+ ]
+}

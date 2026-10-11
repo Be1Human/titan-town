@@ -1,0 +1,39 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/rubble-a",
+ "authorship": "third-party-cc0",
+ "tags": [
+  "rubble"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "body",
+   "file": "voxel-models/titan-town/rubble-a.voxel.json",
+   "object": "body",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "quaternius-medieval-village-2020"
+  ]
+ }
+}

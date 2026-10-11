@@ -1,0 +1,14 @@
+{
+  "name": "titan-town",
+  "version": "0.1.0",
+  "description": "Titan Town: a destructible voxel walled-town sandbox with giants, grapple gear and missions (browser, Three.js + Rapier).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test --test-concurrency=4 tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

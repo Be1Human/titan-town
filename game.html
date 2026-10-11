@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#252c2e"><title>Titan Town · 墙内小镇</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="main-menu.css"></head>
+<body>
+<section class="departure-screen" aria-label="正在出发"><div class="departure-copy"><small>TITAN TOWN</small><h2>进城</h2>    <div id="loading" role="status" aria-live="polite">正在加载游戏脚本与地图</div>
+    <p id="startup-hint" hidden>首次启动需要准备地图和画面，请稍等。如果长时间没有变化，可以重新加载。</p>
+    <button id="startup-retry" hidden>重新加载</button><div class="departure-track" aria-hidden="true"><i></i></div></div></section>
+<canvas id="game" tabindex="0" aria-label="Titan Town 体素游戏"></canvas>
+<div id="menu" class="menu">
+  <div class="menu-content">
+    <div class="crew-tag">TITAN TOWN</div>
+    <h1 class="game-logo"><span>墙内小镇</span><strong>Titan Town</strong></h1>
+    <p class="game-subtitle">可破坏的体素围城：躲避巨人、飞索机动、夺回城墙。</p>
+    <nav class="main-options" aria-label="主菜单">
+      <button id="start-sandbox" class="ui-button-green" disabled><span>进入小镇</span><small>单人 · 夺回城墙</small></button>
+      <button id="continue-save" class="ui-button-grey" hidden disabled>继续存档</button>
+      <button id="menu-help" class="ui-button-grey" disabled>操作说明</button>
+    </nav>
+    <details class="spawn-setting"><summary>出发位置</summary><select id="spawn-point" aria-label="出生位置"><option value="middle">北街</option><option value="ct">南门内</option><option value="mid">中央广场</option><option value="tunnel">西环街</option><option value="site">东环街</option><option value="repair">钟楼前</option><option value="warehouse">旅馆前</option><option value="overview">俯视全镇</option><option value="breach">南门破口</option></select></details>
+  </div>
+  <div class="menu-footnote"><span>项目为风格致敬的原创体素游戏，素材许可见 THIRD_PARTY.md。</span></div>
+</div><section id="hud" hidden>
+  <div class="radar-name">Titan Town <small id="mode-label">自由探索</small></div>
+  <div class="map-wrap ui-paper"><canvas id="minimap" width="240" height="240"></canvas></div>
+  <div id="phase" class="phase"><span id="phase-label"></span><strong id="timer"></strong><small id="phase-hint"></small></div>
+  <button id="map-toggle" class="ui-button-grey" aria-label="查看工地地图" aria-expanded="false" aria-controls="minimap" title="工地地图 · M">M <small>地图</small></button>
+    <button id="view-button" class="ui-button-grey" title="切换视角 · V" aria-label="切换第三人称视角" aria-pressed="false">V <small>第一人称</small></button>
+  <button id="pause-button" class="ui-button-grey" title="暂停" aria-label="暂停游戏">Ⅱ <small>ESC</small></button>
+  <section class="objectives"><div><span id="objectives-title">行动目标</span><span id="target-count"></span></div><div id="target-list"></div><div class="escape-label"></div></section>
+  <div id="crosshair"><i></i><i></i><i></i><i></i><span></span></div>
+  <div id="material-hint" hidden></div><div id="interaction"></div><div id="toast" role="status"></div>
+  <div id="camera-hint" hidden></div>
+  <div id="gear-status" class="ui-paper" hidden><b>飞索腰具</b><strong id="gear-gas">气体 100%</strong><i id="gear-bar"><em></em></i><small id="gear-hooks"></small><span>Space 对准星出钩（左右交替）· 按住收绳<br>无可钩目标时 Space 跳跃 · B 双刃</span></div>
+  <div id="cargo-status" class="ui-paper" hidden><b>寻宝背架</b><strong id="cargo-status-count"></strong><small id="cargo-status-slots"></small><span>E 拿起 · F 装架 · G 卸下<br>V 查看背后的货物</span></div>
+  <div class="telemetry"><span id="destroyed"></span><span id="fps"></span></div>
+  <div class="tool-belt">
+    <button class="tool ui-slot selected" data-tool="0" aria-label="大锤 · 1"><span>大锤</span><kbd>1</kbd></button>
+    <button class="tool ui-slot" data-tool="1" aria-label="霰弹枪 · 2"><span>霰弹枪</span><kbd>2</kbd></button>
+    <button class="tool ui-slot" data-tool="2" aria-label="塑胶炸药 · 3"><span>塑胶炸药</span><kbd>3</kbd></button>
+    <button class="tool ui-slot" data-tool="3" aria-label="RPG · 4"><span>RPG</span><kbd>4</kbd></button>
+    <button class="tool ui-slot" data-tool="4" aria-label="手雷 · 5"><span>手雷</span><kbd>5</kbd></button>
+  </div>
+  <div class="tool-detail"><strong id="tool-name">大锤</strong><span id="tool-action"></span><small id="charges"></small><b>∞</b></div>
+  <div class="key-hints">V 视角 &nbsp; · &nbsp; H 帮助 &nbsp; · &nbsp; F5 保存 &nbsp; · &nbsp; F9 读取</div><div id="damage-flash"></div>
+</section>
+<div id="pause" class="modal" hidden><div class="modal-panel"><small>TITAN TOWN / 暂停</small><h2>歇一会儿。</h2><button id="resume">继续 ↗</button><button id="restart">重新开始</button><button id="back-menu">返回主菜单</button><div class="pause-settings"><label><input id="sound" type="checkbox" checked>音效</label><label>画质 <select id="quality"><option value="high">高</option><option value="low">流畅</option></select></label></div><p id="gpu-name" class="gpu-status"></p><p id="gpu-advice" class="gpu-status gpu-advice"></p></div></div>
+<div id="result" class="modal" hidden><div class="modal-panel"><small id="result-tag"></small><h2 id="result-title"></h2><p id="result-copy"></p><div id="result-stats"></div><button id="retry">重试行动</button><button id="result-load">读取准备存档</button><button id="result-sandbox">进入沙盒</button></div></div>
+<div id="help" class="modal" hidden><div class="modal-panel help-panel"><small>操作手册</small><h2>先试试手。</h2><div class="help-grid"><span>W A S D / 鼠标</span><b>移动 / 观察</b><span>Shift / 空格 / Ctrl</span><b>冲刺 / 跳跃（有钩点时发钩）/ 蹲伏</b><span>按住鼠标右键</span><b>抓住近处物件，松开释放</b><span>数字键 / 滚轮</span><b>切换工具</b><span>鼠标左键 / R</span><b>使用工具 / 引爆炸药</b><span>E / B</span><b>互动、补给 / 拔出双刃</b><span>M 或 Tab / Esc</span><b>地图 / 暂停</b><span>V / H</span><b>切换视角 / 帮助</b><span>F5 / F9</span><b>保存 / 读取</b></div><p></p><button id="help-close">知道了 ↗</button></div></div>
+<div id="fatal" class="modal" hidden><div class="modal-panel"><h2>无法启动场景</h2><p id="fatal-message"></p><button onclick="location.reload()">重新加载</button></div></div>
+<script type="module" src="src/game-bootstrap.js" onerror="document.getElementById('fatal-message').textContent='启动脚本未能加载，请重新加载页面。';document.getElementById('fatal').hidden=false;"></script>
+</body></html>

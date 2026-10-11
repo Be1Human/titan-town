@@ -1,0 +1,32 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "a8d0baabc35b48f989722c9e4d8f08e0e5f2a9fdfd56b2e74316b2993bf00d15",
+ "assetId": "titan-town/barrel",
+ "kind": "quaternius-prop",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Props/OBJ/Barrel.obj",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "tags": [
+  "prop"
+ ]
+}

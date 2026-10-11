@@ -1,0 +1,15 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "c29b94e5c9af9174225c7fc3b63e49869cda3b80e77ca5ea0acb76d0103b57ee",
+ "assetId": "titan-town/stall-green",
+ "kind": "kenney-prop",
+ "pack": "kenney-fantasy-town-kit-2.0",
+ "mesh": "Models/GLB format/stall-green.glb",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "colorClasses": "classifyTownColor",
+ "tags": [
+  "prop"
+ ]
+}

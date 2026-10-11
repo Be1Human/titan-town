@@ -1,0 +1,34 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "c6367a1442d95bcc2dbba030e38ec2c08bda1929f7545e02aaebd1a79e52958e",
+ "assetId": "titan-town/market",
+ "kind": "quaternius-prop",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Props/OBJ/Gazebo.obj",
+ "scale": 4.5,
+ "surfaceOnly": true,
+ "thickenMinCells": 3,
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "tags": [
+  "market",
+  "open"
+ ]
+}

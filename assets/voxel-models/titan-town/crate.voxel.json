@@ -1,0 +1,61 @@
+{
+ "schema": "crew-voxel-resource-v1",
+ "assetId": "titan-town/crate",
+ "authorship": "third-party-cc0",
+ "cellSize": 0.1,
+ "models": [
+  {
+   "name": "body",
+   "origin": [
+    -0.3,
+    -0.1,
+    -0.3
+   ],
+   "size": [
+    6,
+    6,
+    6
+   ],
+   "materials": [
+    "",
+    "darkwood",
+    "wood"
+   ],
+   "runs": [
+    14,
+    2,
+    2,
+    0,
+    4,
+    2,
+    2,
+    0,
+    14,
+    2,
+    180,
+    1
+   ],
+   "count": 212
+  }
+ ],
+ "source": {
+  "format": "Wavefront OBJ/MTL",
+  "recipe": "voxel-models/titan-town/crate.recipe.json",
+  "recipeSha256": "1c1e79b470deaea6f71577a06bd8ab432cf6e190581f62f5893fa3f72d756172",
+  "files": [
+   {
+    "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Crate.obj",
+    "sha256": "60abe952262ab989028b474077bf4b61079c75e2df99b0da521e0d8223623612",
+    "pack": "quaternius-medieval-village-2020"
+   },
+   {
+    "file": "source/third-party/quaternius-medieval-village-2020/Props/OBJ/Crate.mtl",
+    "sha256": "f15400eef868e868fd33d291e5c0ca314dbf2136726f3201e6f1a560c9850642",
+    "pack": "quaternius-medieval-village-2020"
+   }
+  ],
+  "scale": 3,
+  "cell": 0.1,
+  "thickened": 0
+ }
+}

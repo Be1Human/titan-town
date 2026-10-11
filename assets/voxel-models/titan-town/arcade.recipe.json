@@ -1,0 +1,21 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "b85da27ea1e38480eecfef864637096573ff684285d4bae3d135b2306ab0156c",
+ "assetId": "titan-town/arcade",
+ "kind": "project-arcade",
+ "authorship": "project-original",
+ "sourceFormat": "project procedural recipe (scripts/import-titan-town.mjs)",
+ "length": 9,
+ "depth": 3,
+ "clear": 2.8,
+ "postEvery": 3,
+ "post": 0.2,
+ "roofCells": 2,
+ "overhang": 0.2,
+ "tags": [
+  "cover",
+  "arcade",
+  "prop"
+ ]
+}

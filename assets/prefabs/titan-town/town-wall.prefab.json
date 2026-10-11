@@ -1,0 +1,56 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/town-wall",
+ "authorship": "third-party-cc0",
+ "tags": [
+  "fortification",
+  "town-wall"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "masonry",
+   "file": "voxel-models/titan-town/town-wall.voxel.json",
+   "object": "masonry",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "trim",
+   "file": "voxel-models/titan-town/town-wall.voxel.json",
+   "object": "trim",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "kenney-fantasy-town-kit-2.0"
+  ]
+ }
+}

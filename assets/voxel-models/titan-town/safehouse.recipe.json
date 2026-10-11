@@ -1,0 +1,96 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "b018888a9b4e83d746681b154a8165f7eefdfb647481150f8218c5cf2daa44f7",
+ "assetId": "titan-town/safehouse",
+ "kind": "quaternius-building",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Buildings/OBJ/House_3.obj",
+ "scale": 3,
+ "surfaceOnly": true,
+ "thickenMinCells": 3,
+ "floors": [
+  {
+   "y": 0
+  },
+  {
+   "y": 2.7
+  }
+ ],
+ "floorMaterial": "wood",
+ "materialMap": {
+  "Plaster": "stone",
+  "Beige": "plaster",
+  "Wood": "darkwood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "doors": [
+  "-z",
+  "+z"
+ ],
+ "door": {
+  "width": 13,
+  "height": 23
+ },
+ "window": {
+  "width": 13,
+  "sill": 4,
+  "height": 20,
+  "spacing": 30
+ },
+ "stairs": {
+  "width": 11,
+  "run": 3,
+  "rise": 4,
+  "landing": 6
+ },
+ "furniture": {
+  "ground": [
+   "table",
+   "stool",
+   "stool",
+   "cabinet",
+   "crate",
+   "barrel"
+  ],
+  "upper": [
+   "bed",
+   "cabinet",
+   "bags",
+   "crate"
+  ],
+  "workshop": [
+   "bench",
+   "bench",
+   "table",
+   "crate",
+   "crate",
+   "barrel",
+   "cabinet"
+  ]
+ },
+ "parts": {
+  "roof": [
+   "roof"
+  ],
+  "windows": [
+   "glass"
+  ]
+ },
+ "tags": [
+  "safehouse",
+  "masonry"
+ ]
+}

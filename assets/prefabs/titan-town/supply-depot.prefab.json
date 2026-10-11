@@ -1,0 +1,72 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/supply-depot",
+ "authorship": "third-party-cc0",
+ "tags": [
+  "supply"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "structure",
+   "file": "voxel-models/titan-town/supply-depot.voxel.json",
+   "object": "structure",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "floors",
+   "file": "voxel-models/titan-town/supply-depot.voxel.json",
+   "object": "floors",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "furniture",
+   "file": "voxel-models/titan-town/supply-depot.voxel.json",
+   "object": "furniture",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "quaternius-medieval-village-2020",
+   "kenney-fantasy-town-kit-2.0"
+  ]
+ }
+}

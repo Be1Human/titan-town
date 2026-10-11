@@ -1,0 +1,15 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "629e5339aa52ef53bc4539c9b28de6025021e894f8d67a4c652c2757a2b8f5fe",
+ "assetId": "titan-town/lantern",
+ "kind": "kenney-prop",
+ "pack": "kenney-fantasy-town-kit-2.0",
+ "mesh": "Models/GLB format/lantern.glb",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "colorClasses": "classifyTownColor",
+ "tags": [
+  "prop"
+ ]
+}

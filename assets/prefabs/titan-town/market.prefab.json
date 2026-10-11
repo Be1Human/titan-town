@@ -1,0 +1,56 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/market",
+ "authorship": "third-party-cc0",
+ "tags": [
+  "market",
+  "open"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "structure",
+   "file": "voxel-models/titan-town/market.voxel.json",
+   "object": "structure",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "roof",
+   "file": "voxel-models/titan-town/market.voxel.json",
+   "object": "roof",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "quaternius-medieval-village-2020"
+  ]
+ }
+}

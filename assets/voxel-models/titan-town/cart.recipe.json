@@ -1,0 +1,32 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "3473fc450ad966bfc96ac290278b63e095a00c29e1b358f569286cee72313b39",
+ "assetId": "titan-town/cart",
+ "kind": "quaternius-prop",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Props/OBJ/Cart.obj",
+ "scale": 3,
+ "thickenMinCells": 2,
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "tags": [
+  "prop"
+ ]
+}

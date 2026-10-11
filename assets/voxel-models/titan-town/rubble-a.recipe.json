@@ -1,0 +1,32 @@
+{
+ "schema": "crew-mesh-voxel-recipe-v1",
+ "revision": 3,
+ "defaultsSha": "c0a1e76e3de2caed1cedd75c45c0df0f395de3402e84ccf560fb81eedd4d7821",
+ "assetId": "titan-town/rubble-a",
+ "kind": "quaternius-prop",
+ "pack": "quaternius-medieval-village-2020",
+ "mesh": "Props/OBJ/Rock_1.obj",
+ "scale": 4,
+ "thickenMinCells": 2,
+ "materialMap": {
+  "Plaster": "plaster",
+  "Beige": "plaster",
+  "Wood": "wood",
+  "Wood_Side": "wood",
+  "Wood_Light": "wood",
+  "DarkWood": "darkwood",
+  "Stone": "brick",
+  "Stone_Dark": "brick",
+  "Stone_Light": "stone",
+  "RoofTiles": "roof",
+  "RoofTiles_Red": "roof",
+  "Windows": "glass",
+  "Bell": "metal",
+  "Metal": "metal",
+  "Green": "leaf",
+  "Hay": "leaf"
+ },
+ "tags": [
+  "rubble"
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "schema": "crew-prefab-v1",
+ "prefabId": "titan-town/bell-tower",
+ "authorship": "third-party-cc0",
+ "tags": [
+  "landmark",
+  "tower"
+ ],
+ "bodies": [
+  {
+   "id": "structure",
+   "motion": "static",
+   "role": "structure",
+   "loadBearingSimulation": false
+  }
+ ],
+ "shapes": [
+  {
+   "id": "structure",
+   "file": "voxel-models/titan-town/bell-tower.voxel.json",
+   "object": "structure",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "roof",
+   "file": "voxel-models/titan-town/bell-tower.voxel.json",
+   "object": "roof",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "floors",
+   "file": "voxel-models/titan-town/bell-tower.voxel.json",
+   "object": "floors",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "stairs",
+   "file": "voxel-models/titan-town/bell-tower.voxel.json",
+   "object": "stairs",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  },
+  {
+   "id": "furniture",
+   "file": "voxel-models/titan-town/bell-tower.voxel.json",
+   "object": "furniture",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "body": "structure"
+  }
+ ],
+ "source": {
+  "packs": [
+   "quaternius-medieval-village-2020",
+   "kenney-fantasy-town-kit-2.0"
+  ]
+ }
+}
