@@ -1,3 +1,4 @@
+import {t} from './i18n.js';
 import * as THREE from '../vendor/three.module.js';
 import {createWallApe,APE} from './wall-ape.js';
 import {createMissionRun,standHeight} from './titan-missions.js';
@@ -82,13 +83,13 @@ export function createTitanCampaign(ctx){
     smash:(point,radius,boulder)=>onImpact(point,radius,boulder),
     sweep:(origin,direction,max)=>ctx.sweep?ctx.sweep(origin,direction,max):world.raycast(origin,direction,max),
     event:(type,a,data)=>{
-      if(type==='spot'){toast('城垣巨猿发现了你！');audio('alarm');}
+      if(type==='spot'){toast(t('城垣巨猿发现了你！'));audio('alarm');}
       else if(type==='lift'){if(data?.first){audio('roar');atmosphere?.windup(data.seconds);}else audio('heartbeat');}
       else if(type==='throw')audio('whoosh');
-      else if(type==='lost')toast('巨猿失去了你的踪迹，正沿墙道搜寻');
-      else if(type==='repelled'){audio('collapse');const done=run?.apeRepelled(ctx.player());toast(done?'城垣巨猿被击退！城墙夺回':'城垣巨猿被击退了');}
-      else if(type==='respawn')toast('城垣巨猿重新爬上了城墙');
-      else if(type==='nape'){audio('hit');toast('击中巨猿后颈！');}
+      else if(type==='lost')toast(t('巨猿失去了你的踪迹，正沿墙道搜寻'));
+      else if(type==='repelled'){audio('collapse');const done=run?.apeRepelled(ctx.player());toast(done?t('城垣巨猿被击退！城墙夺回'):t('城垣巨猿被击退了'));}
+      else if(type==='respawn')toast(t('城垣巨猿重新爬上了城墙'));
+      else if(type==='nape'){audio('hit');toast(t('击中巨猿后颈！'));}
     }
   };
   function reset(nextLevel){
@@ -136,16 +137,16 @@ export function createTitanCampaign(ctx){
     return g;
   }
   function missionEvent(type,data){
-    if(type==='complete'){audio('collect');toast(`任务完成：${data.name} ${STAR.repeat(data.stars)}`);markers.find(m=>m.userData.mission===data.id)?.removeFromParent();}
-    else if(type==='rescue-follow')toast(`${data.name}跟着你 · 护送到任意安全屋`);
-    else if(type==='rescue-lost')toast('镇民跟丢了，回去找她');
+    if(type==='complete'){audio('collect');toast(t('任务完成：{name} {stars}',{name:t(data.name),stars:STAR.repeat(data.stars)}));markers.find(m=>m.userData.mission===data.id)?.removeFromParent();}
+    else if(type==='rescue-follow')toast(t('{name}跟着你 · 护送到任意安全屋',{name:t(data.name)}));
+    else if(type==='rescue-lost')toast(t('镇民跟丢了，回去找她'));
     else if(type==='finish')showResults(data);
   }
   function start(){
     if(!active)return;
     const home=run.safehouses[0];if(home)ctx.teleport(home.spawn);
     if(level.gearAutoEquip)ctx.gear.equip();
-    toast('夺回城墙 · 7 个任务任选 · 空格对准可钩表面发钩、按住拉近、松开飞出 · 3 条命 · H 查看按键');
+    toast(t('夺回城墙 · 7 个任务任选 · 空格对准可钩表面发钩、按住拉近、松开飞出 · 3 条命 · H 查看按键'));
   }
   function onImpact(point,radius,boulder){
     ctx.smash(point,radius);
@@ -163,20 +164,20 @@ export function createTitanCampaign(ctx){
   function damage(amount,reason){
     status.health-=amount;status.hurtAgo=0;status.damageTaken+=amount;
     const flash=document.getElementById('damage-flash');if(flash){flash.style.opacity='1';setTimeout(()=>flash.style.opacity='0',300);}
-    if(status.health<=0){status.health=0;die(reason);}else toast(`被飞石擦伤 · 生命 ${Math.round(status.health)}`);
+    if(status.health<=0){status.health=0;die(reason);}else toast(t('被飞石擦伤 · 生命 {hp}',{hp:Math.round(status.health)}));
   }
   // Ground-giant grab: a short window to slash the gripping arm, else death.
   function grabbed(titan){
     if(!active||status.dying>0||status.grab||!run||run.result)return;
     const p=ctx.player();status.grab={titan,clock:CAMPAIGN.health.grabWindow,at:{x:p.x,y:p.y,z:p.z}};
-    audio('hit');toast('被巨人抓住了！左键双刃斩手挣脱');
+    audio('hit');toast(t('被巨人抓住了！左键双刃斩手挣脱'));
     return CAMPAIGN.health.grabWindow;
   }
   function slash(hit,eye,dir){
     const g=status.grab;if(!g)return false;
     const struck=hit&&hit.id===g.titan.id&&/^arm/.test(hit.part??'');
     if(!struck&&!(eye&&dir&&armInReach(g.titan.shape,eye,dir)))return false;
-    status.grab=null;status.escapes++;ctx.setGrace(CAMPAIGN.health.grabGrace);g.titan.cooldown=Math.max(g.titan.cooldown??0,CAMPAIGN.health.escapeCooldown);toast('斩中巨手 · 挣脱了！');return true;
+    status.grab=null;status.escapes++;ctx.setGrace(CAMPAIGN.health.grabGrace);g.titan.cooldown=Math.max(g.titan.cooldown??0,CAMPAIGN.health.escapeCooldown);toast(t('斩中巨手 · 挣脱了！'));return true;
   }
   function die(reason){
     if(!active||status.dying>0||!run||run.result)return;
@@ -187,10 +188,10 @@ export function createTitanCampaign(ctx){
     const p=ctx.player(),outcome=run.die(status.deathReason,p);
     const fade=document.getElementById('titan-fade');if(fade)fade.style.opacity='0';
     if(!outcome)return;
-    if(outcome.failed){toast('命数用尽 · 行动失败');return;}
+    if(outcome.failed){toast(t('命数用尽 · 行动失败'));return;}
     heal();ctx.teleport(outcome.safehouse.spawn);ctx.setGrace(CAMPAIGN.grace);ctx.titans.calm?.(outcome.safehouse.spawn,CAMPAIGN.respawnClear);ape?.calm(CAMPAIGN.respawnClear.hold);
-    const why={grab:'被巨人抓住',boulder:'被巨石砸中',fall:'高处坠落'}[status.deathReason]??'倒下';
-    toast(`${why} · 剩余 ${run.lives} 条命 · 已回到${outcome.safehouse.name}`);
+    const why={grab:t('被巨人抓住'),boulder:t('被巨石砸中'),fall:t('高处坠落')}[status.deathReason]??t('倒下');
+    toast(t('{why} · 剩余 {lives} 条命 · 已回到{place}',{why,lives:run.lives,place:t(outcome.safehouse.name)}));
   }
   // Space pressed on this map: hook if the crosshair is hookable, else jump.
   function spacePress(eye,aim){
@@ -206,7 +207,7 @@ export function createTitanCampaign(ctx){
     cross.classList.toggle('hookable',q.hookable);cross.classList.toggle('unhookable',!q.hookable);
     label.hidden=false;label.classList.toggle('hookable',q.hookable);
     label.style.left=cross.style.left||'50%';label.style.top=`calc(${cross.style.top||'50%'} - 32px)`;
-    label.textContent=q.hookable?`钩 ${Math.round(q.distance)} m`:q.distance!=null?`跳 · ${Math.round(q.distance)} m 超出射程`:'跳';
+    label.textContent=q.hookable?t('钩 {d} m',{d:Math.round(q.distance)}):q.distance!=null?t('跳 · {d} m 超出射程',{d:Math.round(q.distance)}):t('跳');
   }
   const tmp=new THREE.Vector3();
   function update(dt){
@@ -268,7 +269,7 @@ export function createTitanCampaign(ctx){
     if(!target)return false;
     const done=run.interact(target);
     if(target.type==='mission'&&target.mission.id==='supply')ctx.gear.refill();
-    if(target.type==='mission'&&target.mission.id==='signal'){atmosphere.signal(target.mission.at);ape?.alertTo(target.mission.at,.5);audio('ignite');toast('信号烟已点燃 · 巨猿转向钟楼！');}
+    if(target.type==='mission'&&target.mission.id==='signal'){atmosphere.signal(target.mission.at);ape?.alertTo(target.mission.at,.5);audio('ignite');toast(t('信号烟已点燃 · 巨猿转向钟楼！'));}
     return done;
   }
   function titanEvent(type){if(!active||!run)return;if(type==='down')run.titanDown();}
@@ -276,10 +277,10 @@ export function createTitanCampaign(ctx){
     if(!active||!run)return;
     const p=ctx.player(),panel=$('titan-panel');panel.hidden=false;
     const hearts='♥'.repeat(run.lives)+'♡'.repeat(Math.max(0,3-run.lives)),min=Math.floor(run.seconds/60),sec=Math.floor(run.seconds%60);
-    panel.innerHTML=`<h4><span>夺回城墙 · ${run.completed}/7</span><span>${hearts}</span></h4><div class="hp"><i style="width:${(status.health/CAMPAIGN.health.max*100).toFixed(1)}%"></i><span>生命 ${Math.ceil(status.health)}/${CAMPAIGN.health.max}</span></div>`+
-      (status.grab?`<div class="grab">被抓住！${status.grab.clock.toFixed(1)} s 内左键斩手挣脱</div>`:'')+
-      `<small>用时 ${min}:${String(sec).padStart(2,'0')} · 死亡 ${run.deaths} · 巨猿发现 ${Math.round((ape?.ape?.meter??0)*100)}%</small>`+
-      run.missions.map(m=>{const d=m.kind==='hunt'?`${run.downs}/${m.count} 击倒`:m.kind==='seal'?`占据 ${Math.round(run.sealRatio*100)}%`:`${Math.round(Math.hypot(m.at.x-p.x,m.at.z-p.z))} m`;return `<div class="row ${m.status}"><span><span class="stars">${STAR.repeat(m.stars)}</span> ${m.name}</span><small>${m.status==='done'?'✓':m.danger+' · '+d}</small></div>`;}).join('');
+    panel.innerHTML=`<h4><span>${t('夺回城墙')} · ${run.completed}/7</span><span>${hearts}</span></h4><div class="hp"><i style="width:${(status.health/CAMPAIGN.health.max*100).toFixed(1)}%"></i><span>${t('生命')} ${Math.ceil(status.health)}/${CAMPAIGN.health.max}</span></div>`+
+      (status.grab?`<div class="grab">${t('被抓住！{s} s 内左键斩手挣脱',{s:status.grab.clock.toFixed(1)})}</div>`:'')+
+      `<small>${t('用时 {time} · 死亡 {deaths} · 巨猿发现 {meter}%',{time:min+':'+String(sec).padStart(2,'0'),deaths:run.deaths,meter:Math.round((ape?.ape?.meter??0)*100)})}</small>`+
+      run.missions.map(m=>{const d=m.kind==='hunt'?t('{n}/{max} 击倒',{n:run.downs,max:m.count}):m.kind==='seal'?t('占据 {p}%',{p:Math.round(run.sealRatio*100)}):`${Math.round(Math.hypot(m.at.x-p.x,m.at.z-p.z))} m`;return `<div class="row ${m.status}"><span><span class="stars">${STAR.repeat(m.stars)}</span> ${t(m.name)}</span><small>${m.status==='done'?'✓':t(m.danger)+' · '+d}</small></div>`;}).join('');
   }
   function drawMap(c,px,pz){
     if(!active||!run)return;

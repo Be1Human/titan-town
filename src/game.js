@@ -1,3 +1,4 @@
+import {t} from './i18n.js';
 import * as THREE from '../vendor/three.module.js';
 import { CELL, MATERIALS, ATTACKS, shotgunPower } from './voxel-world.js';
 import {DEFAULT_MAP_ID,mapInfo,createLevelForMap,prepareLevelFactory} from './levels.js';
@@ -54,10 +55,10 @@ const canvas=$('game'),keys=new Set();
 const appearance=normalizeGameAppearance(STANDARD_GAME_APPEARANCE);
 let renderer;
 try {renderer=new THREE.WebGLRenderer({canvas,antialias:false,powerPreference:'high-performance'});}
-catch(error){$('fatal').hidden=false;$('fatal-message').textContent=`无法创建 WebGL 2 渲染器：${error.message}`;throw error;}
+catch(error){$('fatal').hidden=false;$('fatal-message').textContent=t('无法创建 WebGL 2 渲染器：{msg}',{msg:error.message});throw error;}
 renderer.debug.onShaderError=(gl,program,vertexShader,fragmentShader)=>{
   console.error('Game shader failed',{program:gl.getProgramInfoLog(program),vertex:gl.getShaderInfoLog(vertexShader),fragment:gl.getShaderInfoLog(fragmentShader)});
-  $('fatal').hidden=false;$('fatal-message').textContent='画面加载失败，请刷新页面重试。';
+  $('fatal').hidden=false;$('fatal-message').textContent=t('画面加载失败，请刷新页面重试。');
 };
 let displayHigh=true,displaySoftware=false;
 const pixelRatio=()=>displayPixelRatio({width:innerWidth,height:innerHeight,devicePixelRatio,high:displayHigh,software:displaySoftware});
@@ -87,23 +88,23 @@ lighting.activeMaterialWork=lighting.surface.activeMaterialWork=launchParams.get
 const shadowLayers=!physicsLegacy.has('shadowlayers');
 const shadowTracker=new ShadowDirtyTracker({layered:shadowLayers});
 const shadowCache=shadowLayers?new LayeredShadowCache(renderer).install():null;
-$('loading').textContent='正在准备探索场景';
+$('loading').textContent=t('正在准备探索场景');
 await new Promise(resolve=>setTimeout(resolve,0));
 let level=createLevelForMap(selectedMapId),world=level.world;
 if(photoMode==='overview')$('spawn-point').value='overview';
 else if(launchParams.has('spawn')&&level.points[launchParams.get('spawn')])$('spawn-point').value=launchParams.get('spawn');
 lighting.setDepthOfField({focusMin:3,focusMax:60,focusScale:.002,maxRadius:4,sharpCenter:true});
 lighting.setDepthOfField({enabled:referencePhoto});
-document.querySelector('#help .help-panel > p').textContent='夺回城墙：开局在安全屋，已穿戴飞索腰具，共 3 条命，死亡后在最近的安全屋复活并保留任务进度。7 个任务可任选顺序完成（M 地图查看位置），完成越多评级越高。地面巨人会看、会听：被视野锥看到或弄出大动静会被发现，躲进房屋、断开视线可甩掉追击；它们会伸手进窗户、拆房子。城垣巨猿沿四面墙顶巡逻扫视，看到你就立刻连续投石，落点不提示，保持移动、借房屋遮挡。空格：准星可钩（准星变青并显示距离）时约 0.2 秒后左右交替发钩，按住收绳拉近，松开脱钩保留惯性；准星不可钩时空格为跳跃。E 互动 / 补给点补满气体，B 拔出双刃，左键斩击后颈。Q 在本图无效。1–5 切换工具，WASD 移动，Esc 暂停。';
+document.querySelector('#help .help-panel > p').textContent=t('夺回城墙：开局在安全屋，已穿戴飞索腰具，共 3 条命，死亡后在最近的安全屋复活并保留任务进度。7 个任务可任选顺序完成（M 地图查看位置），完成越多评级越高。地面巨人会看、会听：被视野锥看到或弄出大动静会被发现，躲进房屋、断开视线可甩掉追击；它们会伸手进窗户、拆房子。城垣巨猿沿四面墙顶巡逻扫视，看到你就立刻连续投石，落点不提示，保持移动、借房屋遮挡。空格：准星可钩（准星变青并显示距离）时约 0.2 秒后左右交替发钩，按住收绳拉近，松开脱钩保留惯性；准星不可钩时空格为跳跃。E 互动 / 补给点补满气体，B 拔出双刃，左键斩击后颈。Q 在本图无效。1–5 切换工具，WASD 移动，Esc 暂停。');
 let rigidPhysics=null,rigidView=null,physicsError=null;
-$('loading').textContent='正在初始化刚体物理';
+$('loading').textContent=t('正在初始化刚体物理');
 try{await initRigidPhysics();rigidPhysics=new RigidWorld(world,{contactFracture:true,surfaceReuse:true,legacy:physicsLegacy,wholeStep:launchParams.get('physics')==='reference-step',solverBackend:launchParams.get('solver'),nearBackend:launchParams.get('near'),pipeline:launchParams.get('physics')?.startsWith('reference')?'reference':'rapier'});}catch(error){physicsError=error;console.error('Rigid physics initialization failed',error);}
 const localGrab=new PlayerGrab(rigidPhysics);
 const localCargo=new LocalCargo(rigidPhysics,localGrab);
 const pickupDefinitions=()=>level.pickups??[];
 localCargo.reset(pickupDefinitions());
 const voxelJoints=rigidPhysics?new VoxelJointSystem(rigidPhysics):null;
-$('loading').textContent='正在装配场景与工具';
+$('loading').textContent=t('正在装配场景与工具');
 await new Promise(resolve=>setTimeout(resolve,0));
 lighting.setWorld(world);
 let environment=makeEnvironment(scene,level);const tool=makeTool(toolCamera);
@@ -112,10 +113,10 @@ let worldRenderer=new WorldRenderer(scene,world),effects=new Effects(scene,world
 if(rigidPhysics)installOriginalProps(rigidPhysics,level.originalProps);
 if(voxelJoints)for(const model of level.originalDoors??[])installOriginalDoor(rigidPhysics,voxelJoints,model);
 if(rigidPhysics){rigidView=new RigidDebrisView(scene,rigidPhysics,worldRenderer.material);rigidView.onAdd=attachWallCharges;rigidView.setRenderer?.(renderer,camera);rigidView.setBackend?.('raycast');effects.rigidDebris=rigidView;}
-$('loading').textContent='正在生成地图网格';
+$('loading').textContent=t('正在生成地图网格');
 await new Promise(resolve=>setTimeout(resolve,0));
 worldRenderer.rebuild();
-$('loading').textContent='正在准备角色';
+$('loading').textContent=t('正在准备角色');
 await new Promise(resolve=>setTimeout(resolve,0));
 const characters=createCharacterSystem(scene,world,level.characters,{appearanceTransform:normalizeGameAppearance});
 const titanConfig=()=>level.titans?{...level.titans,count:launchParams.has('titans')?Math.max(0,Math.min(5,Number(launchParams.get('titans'))||0)):level.titans.count}:null;
@@ -124,11 +125,11 @@ const titans=createTitanSystem(scene,world,titanConfig(),{
   smash:(point,radius)=>titanSmash(point,radius),
   grab:(target,titan)=>titanGrab(target,titan),
   event:(type,titan,data)=>{
-    if(type==='down'){titanDowns++;campaign?.titanEvent('down');toast('击中后颈 · 巨人倒下了');audio('collapse');}
+    if(type==='down'){titanDowns++;campaign?.titanEvent('down');toast(t('击中后颈 · 巨人倒下了'));audio('collapse');}
     else if(type==='nape')audio('hit');
-    else if(type==='spot'&&titan.target==='player')toast('巨人发现你了！');
-    else if(type==='respawn')toast(titan.state==='approach'?'城墙外又出现了一个巨人，它要翻墙进来':'又一个巨人从南门破口进来了');
-    else if(type==='climb')toast('巨人正在攀爬城墙！');
+    else if(type==='spot'&&titan.target==='player')toast(t('巨人发现你了！'));
+    else if(type==='respawn')toast(titan.state==='approach'?t('城墙外又出现了一个巨人，它要翻墙进来'):t('又一个巨人从南门破口进来了'));
+    else if(type==='climb')toast(t('巨人正在攀爬城墙！'));
     else if(type==='land'){audio('collapse');const d=Math.hypot(data.x-player.x,data.z-player.z);shake=Math.max(shake,Math.max(0,1-d/30)*.3);}
   }
 });
@@ -141,11 +142,11 @@ function titanSmash(point,radius){
 }
 function titanGrab(target,titan){
   const direction={x:Math.sin(titan.yaw),y:.5,z:Math.cos(titan.yaw)};
-  if(target.kind==='npc'){characters.hit(target.id,{damage:400,direction,force:10});toast(`${target.state?.name??'镇民'}被巨人抓住了`);audio('hit');return;}
+  if(target.kind==='npc'){characters.hit(target.id,{damage:400,direction,force:10});toast(t('{name}被巨人抓住了',{name:t(target.state?.name??'镇民')}));audio('hit');return;}
   if(campaign?.active){titanCatches++;return campaign.grabbed(titan);}
   titanCatches++;titanGrace=4;audio('explosion');$('damage-flash').style.opacity='1';setTimeout(()=>$('damage-flash').style.opacity='0',380);
   const start=level.points.middle;Object.assign(player,{x:start.x,y:start.y,z:start.z,vx:0,vy:0,vz:0});yaw=start.yaw;pitch=start.pitch||0;
-  toast(`被巨人抓住了！已回到北街（第 ${titanCatches} 次）`);
+  toast(t('被巨人抓住了！已回到北街（第 {n} 次）',{n:titanCatches}));
 }
 const projectiles=createProjectileSystem(scene,{world,effects,explode,raycast:(origin,direction,range)=>{
   const wall=raycastSolids(origin,direction,range),actor=characters.raycast(origin,direction,wall?.distance??range),giant=giants.raycast(origin,direction,actor?.distance??wall?.distance??range);return giant||actor||wall;
@@ -174,13 +175,13 @@ gear.visuals.setRacks(level.gear);
 let gasSound=0;
 function gearEvent(type,data){
   if(type==='fire')audio('hook');
-  else if(type==='attach'){audio('metal');giants.noise(data.point,10,'hook');if(data.type==='titan')toast(data.part==='nape'?'钩索挂住巨人后颈附近！':'钩索挂在巨人身上');}
-  else if(type==='detach'&&data.reason==='anchor-destroyed'){audio('hook-off');toast(`挂点被破坏，${data.side==='L'?'左':'右'}钩索脱落`);}
-  else if(type==='detach'&&data.reason==='titan-down'){audio('hook-off');toast(`巨人倒下，${data.side==='L'?'左':'右'}钩索脱落`);}
+  else if(type==='attach'){audio('metal');giants.noise(data.point,10,'hook');if(data.type==='titan')toast(data.part==='nape'?t('钩索挂住巨人后颈附近！'):t('钩索挂在巨人身上'));}
+  else if(type==='detach'&&data.reason==='anchor-destroyed'){audio('hook-off');toast(t('挂点被破坏，{side}钩索脱落',{side:data.side==='L'?t('左'):t('右')}));}
+  else if(type==='detach'&&data.reason==='titan-down'){audio('hook-off');toast(t('巨人倒下，{side}钩索脱落',{side:data.side==='L'?t('左'):t('右')}));}
   else if(type==='detach')audio('hook-off');
   else if(type==='land'){audio('land');shake=Math.max(shake,Math.min(.06,data.speed*.004));}
-  else if(type==='equip'){audio('collect');toast('已穿戴飞索腰具 · 空格对准可钩表面发钩 · 按住拉近 · 松开飞出 · B 双刃');}
-  else if(type==='refill'){audio('collect');toast('气体已补满');}
+  else if(type==='equip'){audio('collect');toast(t('已穿戴飞索腰具 · 空格对准可钩表面发钩 · 按住拉近 · 松开飞出 · B 双刃'));}
+  else if(type==='refill'){audio('collect');toast(t('气体已补满'));}
 }
 function gearSpaceMode(){return gear.equipped&&Boolean(level.gear?.length||campaign.active);}
 // Space on gear maps: hook when the crosshair is hookable, otherwise jump.
@@ -219,8 +220,8 @@ const softwareGPU=/SwiftShader|llvmpipe|Software|Microsoft Basic Render/i.test(p
 const integratedGPU=!/\bArc\b|Iris.*MAX/i.test(performanceStats.gpu)&&/Intel.*(?:UHD|HD Graphics|Iris)|\b(?:UHD|Iris)\b|Radeon\(TM\) Graphics/i.test(performanceStats.gpu);
 const identifiedGPU=Boolean(debugRenderer)&&/NVIDIA|Intel|AMD|Radeon|GeForce|Apple|Adreno|Mali|SwiftShader|llvmpipe|Microsoft Basic Render/i.test(performanceStats.gpu);
 const gpuLabel=performanceStats.gpu.match(/(?:NVIDIA|Intel\(R\)|AMD).*?(?= \(0x| Direct3D|, D3D|\)$)/)?.[0]||performanceStats.gpu;
-if($('gpu-name'))$('gpu-name').textContent=`当前显卡：${gpuLabel}${softwareGPU?' · 软件渲染':integratedGPU?' · 核显':identifiedGPU?' · 硬件加速':' · 型号未公开'}`;
-if($('gpu-advice'))$('gpu-advice').textContent=softwareGPU||integratedGPU?'如有独立显卡，请在 Windows「系统 → 显示 → 图形」将当前浏览器设为高性能，完全退出后再打开。':identifiedGPU?'已请求高性能显卡。调整画质后可观察左下角帧率。':'已请求高性能显卡，浏览器未公开具体型号；可用 Windows 任务管理器的 GPU 引擎列核对。';
+if($('gpu-name'))$('gpu-name').textContent=`${t('当前显卡：')}${gpuLabel}${softwareGPU?t(' · 软件渲染'):integratedGPU?t(' · 核显'):identifiedGPU?t(' · 硬件加速'):t(' · 型号未公开')}`;
+if($('gpu-advice'))$('gpu-advice').textContent=softwareGPU||integratedGPU?t('如有独立显卡，请在 Windows「系统 → 显示 → 图形」将当前浏览器设为高性能，完全退出后再打开。'):identifiedGPU?t('已请求高性能显卡。调整画质后可观察左下角帧率。'):t('已请求高性能显卡，浏览器未公开具体型号；可用 Windows 任务管理器的 GPU 引擎列核对。');
 performanceStats.powerPreference=gl.getContextAttributes()?.powerPreference;
 // A desktop browser may select an integrated GPU even on a machine with an RTX card.
 // Keep the visible raster sharp; reduce indirect-light sampling independently.
@@ -254,7 +255,7 @@ function processCollapseQueue({allowCommit=true,commitOnly=false}={}){
   if(transaction.stale.length){supportRetryPending=true;collapseAt=.05;}
   if(transaction.rejectedDetails.length&&performance.now()-lastCollapseNotice>4000){
     const failure=transaction.rejectedDetails[0];
-    toast(failure.reason==='memory'?'物理数据内存暂不足，结构保留并排队重试':failure.reason==='runtime'?'碰撞体创建暂未完成，结构保留并排队重试':'该结构数据无效，保留原结构');lastCollapseNotice=performance.now();
+    toast(failure.reason==='memory'?t('物理数据内存暂不足，结构保留并排队重试'):failure.reason==='runtime'?t('碰撞体创建暂未完成，结构保留并排队重试'):t('该结构数据无效，保留原结构'));lastCollapseNotice=performance.now();
   }
   if(transaction.entries.length){
     const entries=transaction.entries;
@@ -267,7 +268,7 @@ function processCollapseQueue({allowCommit=true,commitOnly=false}={}){
         const p=entry.failure?.pivot??{x:(entry.cells[0].x+.5)*CELL,y:entry.cells[0].y*CELL,z:(entry.cells[0].z+.5)*CELL};
         const proximity=Math.max(0,1-Math.hypot(player.x-p.x,player.y-p.y,player.z-p.z)/18);
         shake=Math.max(shake,proximity*Math.min(.09,entry.cells.length/12000));
-        if(entry.failure&&proximity>.15&&performance.now()-lastCollapseNotice>2000){toast('承重失效 · 墙体正在坍塌');lastCollapseNotice=performance.now();}
+        if(entry.failure&&proximity>.15&&performance.now()-lastCollapseNotice>2000){toast(t('承重失效 · 墙体正在坍塌'));lastCollapseNotice=performance.now();}
       }
     }
   }
@@ -330,7 +331,7 @@ function titanSound(ctx,type){
 }
 function toast(text) {$('toast').textContent=text;$('toast').classList.add('visible');toastUntil=performance.now()+3300;}
 function setQuality(high){displayHigh=high;renderer.setPixelRatio(pixelRatio());renderer.setSize(innerWidth,innerHeight);lighting.high=high;rigidView?.setBackend?.(high?'raycast':'mesh');lastShadowRevision=-1;lighting.resize();$('quality').value=high?'high':'low';}
-function setTool(index){const count=PROJECTILE_TOOLS.length;selectedTool=(index+count)%count;swing=null;tool.models.forEach((m,i)=>m.visible=i===selectedTool);updateToolPose();document.querySelectorAll('.tool').forEach((el,i)=>el.classList.toggle('selected',i===selectedTool));$('tool-name').textContent=PROJECTILE_TOOLS[selectedTool].name;$('tool-action').textContent=PROJECTILE_TOOLS[selectedTool].action;updateHud();}
+function setTool(index){const count=PROJECTILE_TOOLS.length;selectedTool=(index+count)%count;swing=null;tool.models.forEach((m,i)=>m.visible=i===selectedTool);updateToolPose();document.querySelectorAll('.tool').forEach((el,i)=>el.classList.toggle('selected',i===selectedTool));$('tool-name').textContent=t(PROJECTILE_TOOLS[selectedTool].name);$('tool-action').textContent=t(PROJECTILE_TOOLS[selectedTool].action);updateHud();}
 function addMarkers() {
   for(const marker of markers){scene.remove(marker.group);marker.group.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)o.material.dispose();});}markers=[];
   for(const target of level.targets){
@@ -383,31 +384,31 @@ function startGame(nextMode,reset=true) {
   state='playing';manualPause=false;clearControlInputs();$('menu').hidden=true;$('hud').hidden=false;$('pause').hidden=true;$('result').hidden=true;$('help').hidden=true;
   thirdCamera.reset();movePlayer(0);tool.group.visible=!thirdPerson;setTool(0);updateHud();saveGame(false);
   if(campaign.active&&reset){campaign.start();movePlayer(0);}
-  if(physicsError)toast('刚体物理加载失败：当前使用简化碎屑，刷新页面可重试。');
+  if(physicsError)toast(t('刚体物理加载失败：当前使用简化碎屑，刷新页面可重试。'));
   else if(campaign.active){}
-  else if(level.titans)toast(`巨人来袭 · 共 ${titans.titans.length} 个 · 打后颈击倒 · 身旁发光架按 E 穿戴飞索腰具 · H 查看按键`);
-  else toast(selectedMapId==='amusement-park-blindbox-v2'?'砸开封存空间找宝物 · 1 大锤 · 2 霰弹枪 · 4 RPG · E 拿起':localCargo.activeCount?'入口工作台旁有货箱 · E 拿起 · F 装背架 · G 卸下 · V 查看背架':mode==='sandbox'?'1–5 切换工具 · 4 RPG · 5 手雷 · 3 放置炸药，R 引爆':`先拆出路线。第一件目标会触发 ${level.challengeSeconds??60} 秒倒计时。`);requestCapture();
+  else if(level.titans)toast(t('巨人来袭 · 共 {n} 个 · 打后颈击倒 · 身旁发光架按 E 穿戴飞索腰具 · H 查看按键',{n:titans.titans.length}));
+  else toast(selectedMapId==='amusement-park-blindbox-v2'?t('砸开封存空间找宝物 · 1 大锤 · 2 霰弹枪 · 4 RPG · E 拿起'):localCargo.activeCount?t('入口工作台旁有货箱 · E 拿起 · F 装背架 · G 卸下 · V 查看背架'):mode==='sandbox'?t('1–5 切换工具 · 4 RPG · 5 手雷 · 3 放置炸药，R 引爆'):t('先拆出路线。第一件目标会触发 {s} 秒倒计时。',{s:level.challengeSeconds??60}));requestCapture();
 }
-function requestCapture(){if(captureUnavailable)return;try{const promise=canvas.requestPointerLock();promise?.catch(()=>{captureUnavailable=true;toast('按住鼠标右键拖动视角，也可正常游玩');});}catch{captureUnavailable=true;toast('按住鼠标右键拖动视角，也可正常游玩');}}
+function requestCapture(){if(captureUnavailable)return;try{const promise=canvas.requestPointerLock();promise?.catch(()=>{captureUnavailable=true;toast(t('按住鼠标右键拖动视角，也可正常游玩'));});}catch{captureUnavailable=true;toast(t('按住鼠标右键拖动视角，也可正常游玩'));}}
 function pauseGame(){if(state!=='playing')return;releaseMouseGrab();jumpQueued=jumpNetworkQueued=false;state='paused';manualPause=true;clearControlInputs();$('pause').hidden=false;updateHud();document.exitPointerLock?.();}
 function resumeGame(){state='playing';manualPause=false;clearControlInputs();$('pause').hidden=true;$('help').hidden=true;canvas.focus();requestCapture();}
 function backToMenu(){closeMap();state='menu';manualPause=true;clearControlInputs();$('pause').hidden=true;$('result').hidden=true;$('hud').hidden=true;$('help').hidden=true;$('menu').hidden=false;tool.group.visible=false;document.exitPointerLock?.();}
 function showHelp(){if(state!=='playing')return;state='help';manualPause=true;clearControlInputs();$('help').hidden=false;document.exitPointerLock?.();}
 
 function saveGame(notify=true) {
-  if(mission.phase!=='planning' && mission.phase!=='sandbox'){if(notify)toast('警报响起后无法覆盖准备存档；F9 可重试路线');return;}
+  if(mission.phase!=='planning' && mission.phase!=='sandbox'){if(notify)toast(t('警报响起后无法覆盖准备存档；F9 可重试路线'));return;}
   const snapshot=world.altered.size===0&&world.damage.size===0?level.initialSnapshot:world.snapshot();
   quicksave={world:snapshot,joints:voxelJoints?.snapshot(),rigidBodies:rigidPhysics?.snapshot(),toolPolicy:TOOL_POLICY_ID,toolShotSequence,supportSettled:!supportPending&&!collapseQueue.hasPending&&collapseAt<=0&&!world.supportDirty.size,player:{...player},yaw,pitch,mission:mission.snapshot(),destruction,rigidDestruction,characters:characters.snapshot(),barrels:level.barrels.map(b=>({...b})),charges:charges.map(c=>({position:{x:c.mesh.position.x,y:c.mesh.position.y,z:c.mesh.position.z},rigidId:c.rigidId,localPoint:c.localPoint,anchorCell:c.anchorCell,rigidAnchorCell:c.rigidAnchorCell,fallVelocity:c.fallVelocity}))};
   // The in-memory quicksave is immediate. Persist after the input/render task.
   quicksave.cargo=localCargo.snapshot();quicksave.campaign=campaign.saveState();
   const save=quicksave;saveRevision++;
-  setTimeout(()=>{if(storedSave!==save)return;writeGameSave(save).then(()=>{if(notify&&storedSave===save)toast('准备存档已保存 · F9 读取');}).catch(error=>{console.warn('Persistent game save failed',error);if(storedSave===save)toast('本次存档仅保留在当前窗口，未能写入本地存储。');});},250);
+  setTimeout(()=>{if(storedSave!==save)return;writeGameSave(save).then(()=>{if(notify&&storedSave===save)toast(t('准备存档已保存 · F9 读取'));}).catch(error=>{console.warn('Persistent game save failed',error);if(storedSave===save)toast(t('本次存档仅保留在当前窗口，未能写入本地存储。'));});},250);
   storedSave=quicksave;$('continue-save').hidden=false;
-  if(notify){toast('正在保存准备状态…');audio('save');}
+  if(notify){toast(t('正在保存准备状态…'));audio('save');}
 }
 async function loadGame() {
   if(!quicksave){try{quicksave=storedSave||await readGameSave();}catch{}}
-  if(!quicksave){toast('还没有准备存档');return;}
+  if(!quicksave){toast(t('还没有准备存档'));return;}
   localGrab.release();supportRetryPending=false;
   voxelJoints?.clear();worldEpoch++;collapseQueue.clear(worldEpoch);const migratedTerrain=restoreLevelSnapshot(world,quicksave.world);lighting.setWorld(world);worldRenderer.rebuild();effects.clear();clearCharges();
   rigidView?.clear();rigidPhysics?.reset(world);rigidPhysics?.restore(quicksave.rigidBodies);if(voxelJoints&&quicksave.joints)voxelJoints.restore(quicksave.joints);rigidView?.sync();
@@ -425,7 +426,7 @@ async function loadGame() {
   rigidDestruction=quicksave.rigidDestruction||0;
   level.barrels=quicksave.barrels.map(b=>({...b}));for(const charge of quicksave.charges){placeCharge(charge.position);Object.assign(charges[charges.length-1],{rigidId:charge.rigidId,localPoint:charge.localPoint,anchorCell:charge.anchorCell,rigidAnchorCell:charge.rigidAnchorCell,fallVelocity:charge.fallVelocity});}updateCharges();
   collapseAt=0;shake=0;swing=null;actionCooldown=0;environment.signs.forEach((s,i)=>{const p=s.userData.anchor;s.visible=Boolean(world.get(Math.floor(p.x/CELL),Math.floor(p.y/CELL),Math.floor(p.z/CELL)));});
-  state='playing';manualPause=false;$('result').hidden=true;$('pause').hidden=true;$('help').hidden=true;clearControlInputs();updateHud();toast('准备存档已读取 · 再试一条更快的路线');requestCapture();
+  state='playing';manualPause=false;$('result').hidden=true;$('pause').hidden=true;$('help').hidden=true;clearControlInputs();updateHud();toast(t('准备存档已读取 · 再试一条更快的路线'));requestCapture();
   if(migratedTerrain)writeGameSave(quicksave).catch(error=>console.warn('Migrated save persistence failed',error));
 }
 
@@ -463,7 +464,7 @@ function damageLoose(point,radius,power,force,kind,id,deferVisuals=false){
   }
   rigidDestruction+=result.removed.length;
   if(!deferVisuals)showLooseDamage(result,point,force);
-  if(result.rejected.length)toast(result.rejected[0].reason==='memory'?'碎块数据内存暂不足，保留原块':'碎块碰撞体创建失败，保留原块');
+  if(result.rejected.length)toast(result.rejected[0].reason==='memory'?t('碎块数据内存暂不足，保留原块'):t('碎块碰撞体创建失败，保留原块'));
   return result;
 }
 function hitLoosePiece(hit,direction,deferVisuals=false){
@@ -520,7 +521,7 @@ function updateCharges(dt=0){
     }else charge.mesh.position.y-=drop;
   }
 }
-function detonate(){if(state!=='playing')return;if(!charges.length){toast('还没有放置炸药：按 3，再对准墙体点击左键');return;}const pending=charges.map(c=>({...c.mesh.position}));clearCharges();for(const point of pending)explode(point);actionCooldown=.5;toast(`已引爆 ${pending.length} 份炸药`);updateHud();}
+function detonate(){if(state!=='playing')return;if(!charges.length){toast(t('还没有放置炸药：按 3，再对准墙体点击左键'));return;}const pending=charges.map(c=>({...c.mesh.position}));clearCharges();for(const point of pending)explode(point);actionCooldown=.5;toast(t('已引爆 {n} 份炸药',{n:pending.length}));updateHud();}
 function useTool() {
   if(state!=='playing'||actionCooldown>0||localGrab.handle)return;
   if(gear.equipped&&gear.blades&&selectedTool===0){bladeSlash();actionCooldown=.42;return;}
@@ -545,7 +546,7 @@ function useTool() {
     if(removed.length){destruction+=removed.length;effects.burst(removed,{x:removed[0].x*CELL,y:removed[0].y*CELL,z:removed[0].z*CELL},4);worldRenderer.rebuild({budgetMs:5});collapseAt=.18;}
     igniteFuel(removed);if(hit&&!hit.rigidId)lastImpact={material:hit.mat,tool:'shotgun',removed:removed.length,damage:world.damageRatio(hit.x,hit.y,hit.z)};
   }
-  else if(selectedTool===2){if(!hit){toast('靠近一点，对准 5 米内的墙体或物品');return;}if(charges.length>=16){toast('最多同时放置 16 份炸药，按 R 引爆');return;}placeCharge({x:hit.point.x+hit.normal.x*.1,y:hit.point.y+hit.normal.y*.1,z:hit.point.z+hit.normal.z*.1},hit.rigidId,hit.rigidId?null:{x:hit.x,y:hit.y,z:hit.z},hit.voxel);audio('save');actionCooldown=.3;toast(`已放置炸药 ${charges.length} · 按 R 同时引爆`);}
+  else if(selectedTool===2){if(!hit){toast(t('靠近一点，对准 5 米内的墙体或物品'));return;}if(charges.length>=16){toast(t('最多同时放置 16 份炸药，按 R 引爆'));return;}placeCharge({x:hit.point.x+hit.normal.x*.1,y:hit.point.y+hit.normal.y*.1,z:hit.point.z+hit.normal.z*.1},hit.rigidId,hit.rigidId?null:{x:hit.x,y:hit.y,z:hit.z},hit.voxel);audio('save');actionCooldown=.3;toast(t('已放置炸药 {n} · 按 R 同时引爆',{n:charges.length}));}
   else if(projectiles.launch(selectedTool===3?'rocket':'grenade',origin,direction)){
     actionCooldown=selectedTool===3?1.15:.65;recoil=selectedTool===3?.3:.22;
     if(selectedTool===3){audio('shot');effects.muzzle(origin,direction);shake=.035;}else audio('wood');
@@ -560,21 +561,21 @@ function interact() {
   if(candidate.type==='gear'){if(!gear.equip())gear.refill();updateHud();return;}
   if(['mission','rescue','board'].includes(candidate.type)){campaign.interact(candidate);updateHud();return;}
   if(candidate.type==='piece'||candidate.type==='cargo'){
-    if(localGrab.grab(candidate.hit)){swing=null;toast(candidate.cargo?`${candidate.cargo.name} · F 装到背架 · E 放下 · Q 抛出`:'E 松手 · Q 抛出 · 重物需要慢慢拖动；放下木板后可以踩踏');}
+    if(localGrab.grab(candidate.hit)){swing=null;toast(candidate.cargo?t('{name} · F 装到背架 · E 放下 · Q 抛出',{name:t(candidate.cargo.name)}):t('E 松手 · Q 抛出 · 重物需要慢慢拖动；放下木板后可以踩踏'));}
     return;
   }
   if(candidate.type==='target') {
     const first=mission.phase==='planning';mission.collect(candidate.target.id);audio('collect');
-    if(first){toast(`倒计时开始！${level.challengeSeconds??60} 秒内收齐目标，返回交付点。`);audio('alarm');}
-    else toast(mission.collected.size===mission.total?'全部机密到手。返回绿色撤离点，按 E 撤离。':`机密 ${candidate.target.id} 已回收`);
-  }else if(mission.escape())finish();else toast(mode==='sandbox'?'这里是撤离点，沙盒可以一直游玩':`还需要 ${mission.total-mission.collected.size} 份机密`);
+    if(first){toast(t('倒计时开始！{s} 秒内收齐目标，返回交付点。',{s:level.challengeSeconds??60}));audio('alarm');}
+    else toast(mission.collected.size===mission.total?t('全部机密到手。返回绿色撤离点，按 E 撤离。'):t('机密 {id} 已回收',{id:candidate.target.id}));
+  }else if(mission.escape())finish();else toast(mode==='sandbox'?t('这里是撤离点，沙盒可以一直游玩'):t('还需要 {n} 份机密',{n:mission.total-mission.collected.size}));
   updateHud();
 }
 function nearestInteraction(){
   if(localGrab.handle)return {type:'release',cargo:localCargo.held};
   const direction=new THREE.Vector3();aimCamera.getWorldDirection(direction);
   const hit=raycastSolids(aimCamera.position,direction,2.8);
-  if(hit?.rigidId&&hit.voxel){const cargo=localCargo.byRigid(hit.rigidId);return {type:cargo?'cargo':'piece',hit,cargo,name:cargo?.name||rigidPhysics.entries.get(hit.rigidId)?.name||'体素碎块'};}
+  if(hit?.rigidId&&hit.voxel){const cargo=localCargo.byRigid(hit.rigidId);return {type:cargo?'cargo':'piece',hit,cargo,name:cargo?.name||rigidPhysics.entries.get(hit.rigidId)?.name||t('体素碎块')};}
   const nearby=localCargo.nearestHit(aimCamera.position,raycastSolids);
   if(nearby)return {type:'cargo',...nearby,name:nearby.cargo.name};
   const quest=campaign.interaction(player);
@@ -593,31 +594,31 @@ function nearestInteraction(){
 function showTitanResults(r){
   state='result';manualPause=true;clearControlInputs();$('result').hidden=false;document.exitPointerLock?.();
   $('result-tag').textContent=r.failed?'MISSION FAILED':r.kind==='complete'?'WALL RECLAIMED':'MISSION REPORT';
-  $('result-title').textContent=r.failed?'命数用尽，城墙仍在巨人手里。':r.kind==='complete'?'七项任务全部完成，城墙夺回。':'提前撤回安全屋，行动结算。';
-  $('result-copy').textContent=`评级 ${r.grade} · 分数 ${r.score}（星级 ${r.stars} × 100 − 死亡 ${r.deaths} × 80 − 用时分钟 × 5）`;
+  $('result-title').textContent=r.failed?t('命数用尽，城墙仍在巨人手里。'):r.kind==='complete'?t('七项任务全部完成，城墙夺回。'):t('提前撤回安全屋，行动结算。');
+  $('result-copy').textContent=t('评级 {grade} · 分数 {score}（星级 {stars} × 100 − 死亡 {deaths} × 80 − 用时分钟 × 5）',{grade:r.grade,score:r.score,stars:r.stars,deaths:r.deaths});
   const m=Math.floor(r.seconds/60),s=Math.floor(r.seconds%60);
-  $('result-stats').innerHTML=`<span><b>${r.completed} / ${r.total}</b>完成任务</span><span><b>${r.deaths}</b>死亡</span><span><b>${m}:${String(s).padStart(2,'0')}</b>用时</span><span><b>${r.grade}</b>评级</span>`;
+  $('result-stats').innerHTML=`<span><b>${r.completed} / ${r.total}</b>${t('完成任务')}</span><span><b>${r.deaths}</b>${t('死亡')}</span><span><b>${m}:${String(s).padStart(2,'0')}</b>${t('用时')}</span><span><b>${r.grade}</b>${t('评级')}</span>`;
   $('result-load').disabled=!quicksave;
 }
 function finish(){
   state='result';manualPause=true;clearControlInputs();$('result').hidden=false;document.exitPointerLock?.();
-  const won=mission.phase==='won';$('result-tag').textContent=won?'MISSION COMPLETE':'ALARM TIMEOUT';$('result-title').textContent=won?'干净利落。':'还差一条捷径。';
-  $('result-copy').textContent=won?'机密已回收，撤离成功。你为这个场景留下了一条自己的路。':'警报倒计时结束。读取准备存档，再拆一条更直接的路线。';
+  const won=mission.phase==='won';$('result-tag').textContent=won?'MISSION COMPLETE':'ALARM TIMEOUT';$('result-title').textContent=won?t('干净利落。'):t('还差一条捷径。');
+  $('result-copy').textContent=won?t('机密已回收，撤离成功。你为这个场景留下了一条自己的路。'):t('警报倒计时结束。读取准备存档，再拆一条更直接的路线。');
   const duration=level.challengeSeconds||60;
-  $('result-stats').innerHTML=`<span><b>${mission.collected.size} / 3</b>回收物品</span><span><b>${destruction.toLocaleString()}</b>破坏体素</span><span><b>${(won?duration-mission.remaining:duration).toFixed(1)}s</b>行动用时</span>`;
+  $('result-stats').innerHTML=`<span><b>${mission.collected.size} / 3</b>${t('回收物品')}</span><span><b>${destruction.toLocaleString()}</b>${t('破坏体素')}</span><span><b>${(won?duration-mission.remaining:duration).toFixed(1)}s</b>${t('行动用时')}</span>`;
   $('result-load').disabled=!quicksave;
 }
 
 function updatePerspectiveButton(){
-  $('view-button').setAttribute('aria-label',thirdPerson?'切换第一人称视角':'切换第三人称视角');
+  $('view-button').setAttribute('aria-label',thirdPerson?t('切换第一人称视角'):t('切换第三人称视角'));
   $('view-button').setAttribute('aria-pressed',String(thirdPerson));
-  $('view-button').innerHTML=`V <small>${thirdPerson?'第三人称':'第一人称'}</small>`;
+  $('view-button').innerHTML=`V <small>${thirdPerson?t('第三人称'):t('第一人称')}</small>`;
 }
 function togglePerspective(){
   thirdPerson=!thirdPerson;thirdCamera.reset();updatePerspectiveButton();
   if(state==='playing')movePlayer(0);
   if(!thirdPerson){camera.position.copy(aimCamera.position);camera.quaternion.copy(aimCamera.quaternion);}
-  toast(thirdPerson?'第三人称 · Alt＋右键环绕角色 · Home 回正 · V 切换':'第一人称 · V 查看角色与背架');
+  toast(thirdPerson?t('第三人称 · Alt＋右键环绕角色 · Home 回正 · V 切换'):t('第一人称 · V 查看角色与背架'));
 }
 function rotateView(deltaYaw,deltaPitch=0,freeLook=false){
   if(thirdPerson&&(freeLook||thirdCamera.orbiting)){thirdCamera.orbit(deltaYaw,deltaPitch);return;}
@@ -639,7 +640,7 @@ function updatePerspective(dt,time){
   }else{$('crosshair').style.left='50%';$('crosshair').style.top='50%';$('crosshair').style.visibility='';}
   if(campaign.active&&inWorld){aimCamera.getWorldDirection(reticleDirection);campaign.updateCrosshair(aimCamera.position,reticleDirection);}
   $('camera-hint').hidden=!thirdPerson||!inWorld;
-  $('camera-hint').textContent=thirdCameraState.orbiting?'环绕观察 · Home 回正 · 移动或左键恢复跟随':'Alt＋右键环绕 · 右键抓取 · Home 回正';
+  $('camera-hint').textContent=thirdCameraState.orbiting?t('环绕观察 · Home 回正 · 移动或左键恢复跟随'):t('Alt＋右键环绕 · 右键抓取 · Home 回正');
   const heldId=localGrab.handle?.id;
   localPlayerView.update({player,yaw,pitch,time,dt,tool:selectedTool,swing,carrying:Boolean(localGrab.handle),heldEntry:rigidPhysics?.entries.get(heldId),down:false,rack:localCargo.rack,visible:thirdPerson&&inWorld&&thirdCameraState.bodyVisible&&!referencePhoto});
   if(thirdPerson)tool.group.visible=false;
@@ -665,7 +666,7 @@ function movePlayer(dt) {
   const movementResult=!(referencePhoto&&photoMode==='overview')&&!campaign.dying?stepPlayer(player,world,{airInertia:gearFlags.airInertia,forward:forward*speedFactor,strafe:strafe*speedFactor,sprint:!gear.reeling&&localCargo.load.canSprint&&!localGrab.handle&&(keys.has('ShiftLeft')||keys.has('ShiftRight')),crouch:keys.has('ControlLeft')||keys.has('ControlRight'),jump:jumpQueued||(!spaceGear&&keys.has('Space'))},yaw,dt,rigidPhysics):{fellInWater:false};
   if(dt>0)jumpQueued=false;
   if(dt>0)gear.postStep(player,dt,{collides:(x,y,z)=>world.collides(x,y,z,player.colliderHeight,PLAYER_CONTROL.radius)||Boolean(rigidPhysics?.collides(x,y,z,player.colliderHeight,PLAYER_CONTROL.radius,{excludeId:player.excludeRigidId}))});
-  if(movementResult.fellInWater)toast('已返回出生点。');
+  if(movementResult.fellInWater)toast(t('已返回出生点。'));
   const movement=Math.hypot(player.vx,player.vz);bob+=dt*movement*1.9;
   aimCamera.position.set(player.x,player.y+(player.eyeHeight??PLAYER_CONTROL.standingEye)+(player.grounded?Math.sin(bob*2)*Math.min(.028,movement*.006):0)-Math.sin(Math.min(1,gear.landDip/.18)*Math.PI*.5)*.18,player.z);
   aimCamera.rotation.set(pitch,yaw,0);
@@ -699,29 +700,29 @@ function updateHud(){
   const direction=new THREE.Vector3();aimCamera.getWorldDirection(direction);
   const aimed=raycastSolids(aimCamera.position,direction,selectedTool===0?3.2:selectedTool===2?5:60),kind=['hammer','shotgun','explosion','explosion','explosion'][selectedTool];
   let materialStatus=null;
-  if(aimed){const info=MATERIALS[aimed.mat],ratio=aimed.rigidId?rigidPhysics.damageRatio(aimed.rigidId,aimed.voxel):world.damageRatio(aimed.x,aimed.y,aimed.z);materialStatus={id:aimed.mat,name:info.name,damage:ratio,rigidId:aimed.rigidId};const canCut=makeHoleRadiusForMaterial(aimed.mat,TOOL_POLICY[kind].radii)>0;$('material-hint').textContent=`${info.name} · ${canCut?(ratio>.02?'接触损伤 '+Math.round(ratio*100)+'%':info.hardness):makeHoleRadiusForMaterial(aimed.mat,TOOL_POLICY.explosion.radii)>0?'使用炸药破拆':'不可破拆构件'}`;}
+  if(aimed){const info=MATERIALS[aimed.mat],ratio=aimed.rigidId?rigidPhysics.damageRatio(aimed.rigidId,aimed.voxel):world.damageRatio(aimed.x,aimed.y,aimed.z);materialStatus={id:aimed.mat,name:info.name,damage:ratio,rigidId:aimed.rigidId};const canCut=makeHoleRadiusForMaterial(aimed.mat,TOOL_POLICY[kind].radii)>0;$('material-hint').textContent=`${t(info.name)} · ${canCut?(ratio>.02?t('接触损伤 {p}%',{p:Math.round(ratio*100)}):t(info.hardness)):makeHoleRadiusForMaterial(aimed.mat,TOOL_POLICY.explosion.radii)>0?t('使用炸药破拆'):t('不可破拆构件')}`;}
   $('material-hint').hidden=!aimed;
   const activeMission=mission;
   const rack=localCargo.rack;
   $('cargo-status').hidden=!localCargo.activeCount;
-  if(!$('cargo-status').hidden){const load=rack?.load??localCargo.load;$('cargo-status-count').textContent=`${rack?.items?.length??0} 件 · ${load.kg} / ${load.maxKg} kg`;$('cargo-status-slots').textContent=`背架 ${load.usedBackCells} / ${load.backCells} 格${load.canSprint?'':' · 负重慢行'}`;}
+  if(!$('cargo-status').hidden){const load=rack?.load??localCargo.load;$('cargo-status-count').textContent=t('{n} 件 · {kg} / {max} kg',{n:rack?.items?.length??0,kg:load.kg,max:load.maxKg});$('cargo-status-slots').textContent=t('背架 {used} / {total} 格',{used:load.usedBackCells,total:load.backCells})+(load.canSprint?'':t(' · 负重慢行'));}
   $('gear-status').hidden=!gear.equipped;
   if(gear.equipped){
-    const label={idle:'—',windup:'蓄力',flying:'飞行',attached:'挂住',retract:'回收'};
-    $('gear-gas').textContent=`气体 ${Math.round(gear.gas)}%`;$('gear-bar').firstElementChild.style.width=`${gear.gas}%`;$('gear-status').classList.toggle('low',gear.gas<25);
-    $('gear-hooks').textContent=`左钩 ${label[gear.hooks[0].state]} · 右钩 ${label[gear.hooks[1].state]} · 双刃 ${gear.blades?'出鞘':'收起'}`;
+    const label={idle:'—',windup:t('蓄力'),flying:t('飞行'),attached:t('挂住'),retract:t('回收')};
+    $('gear-gas').textContent=t('气体 {gas}%',{gas:Math.round(gear.gas)});$('gear-bar').firstElementChild.style.width=`${gear.gas}%`;$('gear-status').classList.toggle('low',gear.gas<25);
+    $('gear-hooks').textContent=t('左钩 {l} · 右钩 {r} · 双刃 {b}',{l:label[gear.hooks[0].state],r:label[gear.hooks[1].state],b:gear.blades?t('出鞘'):t('收起')});
   }
   performanceStats.physics=rigidPhysics?.stats;campaign.updateHud();
   canvas.dataset.diagnostics=JSON.stringify({campaign:campaign.snapshot(),farWall:Boolean(world.farWall),gear:level.gear?.length||campaign.active?gear.snapshot():null,state,view:thirdPerson?'third':'first',viewCamera:{...thirdCameraState,x:camera.position.x,y:camera.position.y,z:camera.position.z},localCharacter:localPlayerView.visual?.appearance,simulation:'local',phase:activeMission?.phase,voxels:world.cells.size,destruction,rigidDestruction,remaining:activeMission?.remaining,player:{x:player.x,y:player.y,z:player.z},charges:charges.length,bodies:rigidPhysics?.stats.bodies??0,rigid:rigidPhysics?.stats,grab:localGrab.handle,cargo:localCargo.diagnostics(),joints:voxelJoints?.stats(),toolPolicy:TOOL_POLICY_ID,toolShotSequence,assetProfile:level.assetProfile,assetStats:level.assetStats,titans:level.titans?{...titans.stats,catches:titanCatches,downs:titanDowns,list:titans.snapshot()}:null,tool:selectedTool,hammerHits,swing,particles:effects.particles.length,quality:lighting.high?'high':'low',material:materialStatus,lastImpact,performance:{...performanceStats,physicsScope:'local-solver',rebuild:worldRenderer.stats,pixelRatio:renderer.getPixelRatio(),resolution:[canvas.width,canvas.height]}});
   $('hud').classList.toggle('sandbox',mode==='sandbox');
-  const labels={planning:['准备阶段','不限时','勘察场地，拆出捷径。第一份机密会触发警报。'],alarm:['警报已触发',mission.remaining.toFixed(1).padStart(4,'0'),'收集全部机密，回到绿色撤离点。'],sandbox:['自由沙盒','∞','无限工具，自由破坏。'],won:['撤离成功','完成',''],failed:['警报结束','00.0','']};
+  const labels={planning:[t('准备阶段'),t('不限时'),t('勘察场地，拆出捷径。第一份机密会触发警报。')],alarm:[t('警报已触发'),mission.remaining.toFixed(1).padStart(4,'0'),t('收集全部机密，回到绿色撤离点。')],sandbox:[t('自由沙盒'),'∞',t('无限工具，自由破坏。')],won:[t('撤离成功'),t('完成'),''],failed:[t('警报结束'),'00.0','']};
   const [label,timer,hint]=labels[mission.phase];$('phase-label').textContent=label;$('timer').textContent=timer;$('phase-hint').textContent=hint;$('phase').classList.toggle('alarm',mission.phase==='alarm');$('phase').classList.toggle('urgent',mission.phase==='alarm'&&mission.remaining<15);
   const campaignRun=campaign.active?campaign.run:null;
-  $('mode-label').textContent=campaignRun?`夺回城墙 · ${campaignRun.result?(campaignRun.result.failed?'行动失败':'已完成'):'任务进行中'}`:mode==='sandbox'?'自由探索 · 不限时':`${level.name||mapInfo(selectedMapId).name} · 回收`;$('target-count').textContent=`${mission.collected.size} / 3`;
-  $('objectives-title').textContent=mode==='sandbox'?'场地标记 · 可选':'行动目标';
-  document.querySelector('.escape-label').innerHTML=campaignRun?`<span>★</span> 任务 ${campaignRun.completed}/7 · 剩余 ${campaignRun.lives} 条命`:mode==='sandbox'?'<span>∞</span> 不限时，自由探索，无需撤离':'<span>↗</span> 收集完成后，返回撤离点';
-  $('target-list').innerHTML=level.targets.map(t=>{const done=mission.collected.has(t.id);return `<div class="target-row ${done?'done':''}"><i>${done?'✓':t.id}</i><span>${t.name}<small>${done?'已回收':Math.round(Math.hypot(t.x-player.x,t.z-player.z))+' 米 · 靠近后按 E'}</small></span></div>`;}).join('');
-  $('destroyed').innerHTML=`${destruction.toLocaleString()} <small>体素</small>`;$('charges').textContent=selectedTool===2?`已放置 ${charges.length} / 16 · 按 R 引爆`:'工具不限次数';
+  $('mode-label').textContent=campaignRun?`${t('夺回城墙')} · ${campaignRun.result?(campaignRun.result.failed?t('行动失败'):t('已完成')):t('任务进行中')}`:mode==='sandbox'?t('自由探索 · 不限时'):`${t(level.name||mapInfo(selectedMapId).name)} · ${t('回收')}`;$('target-count').textContent=`${mission.collected.size} / 3`;
+  $('objectives-title').textContent=mode==='sandbox'?t('场地标记 · 可选'):t('行动目标');
+  document.querySelector('.escape-label').innerHTML=campaignRun?`<span>★</span> ${t('任务 {done}/7 · 剩余 {lives} 条命',{done:campaignRun.completed,lives:campaignRun.lives})}`:mode==='sandbox'?t('<span>∞</span> 不限时，自由探索，无需撤离'):t('<span>↗</span> 收集完成后，返回撤离点');
+  $('target-list').innerHTML=level.targets.map(target=>{const done=mission.collected.has(target.id);return `<div class="target-row ${done?'done':''}"><i>${done?'✓':target.id}</i><span>${t(target.name)}<small>${done?t('已回收'):Math.round(Math.hypot(target.x-player.x,target.z-player.z))+t(' 米 · 靠近后按 E')}</small></span></div>`;}).join('');
+  $('destroyed').innerHTML=`${destruction.toLocaleString()} <small>${t('体素')}</small>`;$('charges').textContent=selectedTool===2?t('已放置 {n} / 16 · 按 R 引爆',{n:charges.length}):t('工具不限次数');
   for(const marker of markers)marker.group.visible=mode!=='sandbox'&&!mission.collected.has(marker.target.id);
 }
 
@@ -735,7 +736,7 @@ function drawMap(){
       const h=world.foundation?.[x+512+(z+512)*1024]??-1;
       if(h>=0&&h<115)c.fillRect(px(x*CELL),pz(z*CELL),scale*.5+.1,scale*.5+.1);
     }
-    c.fillStyle='#d7c881';c.font='bold 12px Arial';for(const label of level.mapLabels||[{text:'B',x:-23,z:-37},{text:'MID',x:9,z:-12}])c.fillText(label.text,px(label.x)-5,pz(label.z)+4);mapFoundation=world.foundation;
+    c.fillStyle='#d7c881';c.font='bold 12px Arial';for(const label of level.mapLabels||[{text:'B',x:-23,z:-37},{text:'MID',x:9,z:-12}])c.fillText(t(label.text),px(label.x)-5,pz(label.z)+4);mapFoundation=world.foundation;
   }
   ctx.clearRect(0,0,240,240);ctx.drawImage(mapCache,0,0);
   if(mode!=='sandbox'&&!campaign.active)for(const t of level.targets){if(mission.collected.has(t.id))continue;ctx.fillStyle='#e8ce76';ctx.fillRect(px(t.x)-2.5,pz(t.z)-2.5,5,5);}
@@ -793,7 +794,7 @@ function animate(now) {
       // Consume fixed-step credit as jobs complete, instead of throttling
       // simulation to one tick per displayed frame. No accumulated tick drops.
       while(epoch===worldEpoch&&state==='playing'&&accumulator>=1/60){processCollapseQueue({commitOnly:true});await update(1/60);if(epoch!==worldEpoch)return;accumulator=Math.max(0,accumulator-1/60);}
-    })().catch(error=>{console.error('Physics task failed',error);state='paused';toast('物理任务异常，场景已暂停');}).finally(()=>{pendingPhysicsUpdate=null;});break;}
+    })().catch(error=>{console.error('Physics task failed',error);state='paused';toast(t('物理任务异常，场景已暂停'));}).finally(()=>{pendingPhysicsUpdate=null;});break;}
     accumulator-=1/60;
   }
   lastTickSpent=tickSpent;
@@ -812,7 +813,7 @@ function renderFrame(now,elapsed=0,started=performance.now()){
   for(const marker of markers){marker.diamond.rotation.y=now*.001;marker.diamond.position.y=.75+Math.sin(now*.003+marker.target.x)*.06;}
   environment.ring.material.opacity=.45+Math.sin(now*.002)*.15;
   if(state==='playing'){
-    if(now-lastUi>140){updateHud();lastInteraction=nearestInteraction();$('interaction').classList.toggle('visible',Boolean(lastInteraction));$('interaction').innerHTML=lastInteraction?`<kbd>E</kbd> ${lastInteraction.type==='release'?(lastInteraction.cargo?'放下 · F 装到背架 · Q 抛出':'松手 · Q 抛出'):lastInteraction.type==='cargo'?'拿起 '+lastInteraction.name+' · '+lastInteraction.cargo.rackSize+' · '+lastInteraction.cargo.rackKg+' kg':lastInteraction.type==='piece'?'抓住 '+lastInteraction.name:lastInteraction.type==='target'?'回收 '+lastInteraction.target.name:lastInteraction.type==='gear'?(gear.equipped?'补给点 · 补满气体':'穿戴飞索腰具'):lastInteraction.label?lastInteraction.label:mission.collected.size===3?'撤离场景':'撤离点 · 先收集全部机密'}`:'';lastUi=now;}
+    if(now-lastUi>140){updateHud();lastInteraction=nearestInteraction();$('interaction').classList.toggle('visible',Boolean(lastInteraction));$('interaction').innerHTML=lastInteraction?`<kbd>E</kbd> ${lastInteraction.type==='release'?(lastInteraction.cargo?t('放下 · F 装到背架 · Q 抛出'):t('松手 · Q 抛出')):lastInteraction.type==='cargo'?t('拿起 {name} · {size} · {kg} kg',{name:t(lastInteraction.name),size:lastInteraction.cargo.rackSize,kg:lastInteraction.cargo.rackKg}):lastInteraction.type==='piece'?t('抓住 {name}',{name:t(lastInteraction.name)}):lastInteraction.type==='target'?t('回收 {name}',{name:t(lastInteraction.target.name)}):lastInteraction.type==='gear'?(gear.equipped?t('补给点 · 补满气体'):t('穿戴飞索腰具')):lastInteraction.label?lastInteraction.label:mission.collected.size===3?t('撤离场景'):t('撤离点 · 先收集全部机密')}`:'';lastUi=now;}
     if(now-lastMap>250){drawMap();lastMap=now;}
   }
   if(now>toastUntil)$('toast').classList.remove('visible');
@@ -861,16 +862,16 @@ document.addEventListener('keydown',e=>{
   keys.add(e.code);
   if(e.code==='Space'){if(gearSpaceMode())gearSpace();else jumpQueued=jumpNetworkQueued=true;}
   // A quick arrow tap can begin and end between rendered frames.
-  if(e.code==='Home'&&thirdPerson){thirdCamera.follow();updatePerspective(0,performance.now()*.001);toast('镜头已回到角色背后');}
+  if(e.code==='Home'&&thirdPerson){thirdCamera.follow();updatePerspective(0,performance.now()*.001);toast(t('镜头已回到角色背后'));}
   if(e.code==='ArrowLeft')rotateView(.045,0,e.altKey);if(e.code==='ArrowRight')rotateView(-.045,0,e.altKey);
   if(e.code==='PageUp')rotateView(0,.055,e.altKey);if(e.code==='PageDown')rotateView(0,-.055,e.altKey);
   if(e.code.startsWith('Digit')&&Number(e.code.slice(-1))<=PROJECTILE_TOOLS.length&&Number(e.code.slice(-1))>=1)setTool(Number(e.code.slice(-1))-1);
-  if(e.code==='KeyQ'&&campaign.active)toast('城墙小镇不使用 Q：空格发钩，E 互动');
+  if(e.code==='KeyQ'&&campaign.active)toast(t('城墙小镇不使用 Q：空格发钩，E 互动'));
   else if(e.code==='KeyQ'&&localGrab.handle){const direction=new THREE.Vector3();aimCamera.getWorldDirection(direction);localGrab.release(direction);}
-  if(e.code==='KeyF'){{const result=localCargo.mount();toast(result.ok?`${result.cargo.name} 已装到背架 · G 卸下 · V 查看`:result.error);rigidView?.sync();lastShadowRevision=-1;updateHud();}}
-  if(e.code==='KeyG'){{const result=localCargo.unmount(player,yaw);toast(result.ok?`${result.cargo.name} 已卸到面前 · E 可再拿起`:result.error);rigidView?.sync();lastShadowRevision=-1;updateHud();}}
+  if(e.code==='KeyF'){{const result=localCargo.mount();toast(result.ok?t('{name} 已装到背架 · G 卸下 · V 查看',{name:t(result.cargo.name)}):result.error);rigidView?.sync();lastShadowRevision=-1;updateHud();}}
+  if(e.code==='KeyG'){{const result=localCargo.unmount(player,yaw);toast(result.ok?t('{name} 已卸到面前 · E 可再拿起',{name:t(result.cargo.name)}):result.error);rigidView?.sync();lastShadowRevision=-1;updateHud();}}
   if(level.gear?.length){
-    if(e.code==='KeyB'&&gear.equipped){gear.blades=!gear.blades;if(gear.blades)setTool(0);toast(gear.blades?'双刃已拔出 · 左键斩击 · 高速掠过后颈伤害加倍':'双刃已收回');}
+    if(e.code==='KeyB'&&gear.equipped){gear.blades=!gear.blades;if(gear.blades)setTool(0);toast(gear.blades?t('双刃已拔出 · 左键斩击 · 高速掠过后颈伤害加倍'):t('双刃已收回'));}
   }
   if(e.code==='KeyE')interact();if(e.code==='KeyR')detonate();if(e.code==='KeyM'||e.code==='Tab')toggleMap();if(e.code==='KeyH')showHelp();if(e.code==='F5')saveGame();if(e.code==='F9')loadGame();
 });
@@ -883,17 +884,17 @@ document.addEventListener('mouseup',e=>{if(e.button===2)releaseMouseGrab();if(e.
 document.addEventListener('mousemove',e=>{if(state==='playing'&&(document.pointerLockElement===canvas||dragging)){rotateView(-e.movementX*.0022,-e.movementY*.0022,e.altKey);}});
 canvas.addEventListener('wheel',e=>{if(state==='playing'){e.preventDefault();if(mouseGrabActive){const delta=e.deltaY>0?.2:-.2;localGrab.adjustDistance(delta);}else setTool(selectedTool+(e.deltaY>0?1:-1));}},{passive:false});
 document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===canvas;if(wasLocked&&!locked&&state==='playing'&&!manualPause)pauseGame();wasLocked=locked;});
-document.addEventListener('pointerlockerror',()=>{captureUnavailable=true;if(state==='playing')toast('视角捕获不可用：按住右键拖动，或用方向键观察');});
+document.addEventListener('pointerlockerror',()=>{captureUnavailable=true;if(state==='playing')toast(t('视角捕获不可用：按住右键拖动，或用方向键观察'));});
 window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.fov=verticalCameraFov(camera.aspect);camera.updateProjectionMatrix();toolCamera.aspect=camera.aspect;toolCamera.fov=camera.fov;toolCamera.updateProjectionMatrix();renderer.setPixelRatio(pixelRatio());renderer.setSize(innerWidth,innerHeight);lighting.resize();});
 window.addEventListener('error',e=>{console.error('Game error:',e.error);});
 
 // Read-only diagnostics for integration tests and performance checks.
 Object.defineProperty(window,'breachDiagnostics',{get:()=>({state,appearance:{...appearance},characterCount:characters.characters.length,characterInstances:characters.mesh?.count,characterVisuals:characters.stats,phase:mission.phase,mode,voxels:world.cells.size,initialVoxels,destruction,remaining:mission.remaining,collected:[...mission.collected],player:{...player},yaw,pitch,tool:selectedTool,charges:charges.length,bodies:effects.bodies.length,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,hasSave:Boolean(quicksave)})});
-$('loading').textContent='正在准备画面';
+$('loading').textContent=t('正在准备画面');
 await new Promise(resolve=>setTimeout(resolve,0));
 await environment.ready;
 warmWorldShaders();
-$('loading').textContent=physicsError?'场景就绪 · 简化碎屑模式':'场景就绪';
+$('loading').textContent=physicsError?t('场景就绪 · 简化碎屑模式'):t('场景就绪');
 if(referencePhoto)startGame('sandbox',false);
 requestAnimationFrame(animate);
 

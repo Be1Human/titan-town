@@ -17,6 +17,7 @@ import {fragmentGeometry} from './engine/render/fragment-geometry.js';
 import {restoreFragmentGeometry} from './engine/render/fragment-transfer.js';
 import {batchFragmentMaterials} from './engine/render/fragment-material-batches.js';
 import {RigidSurfaceCache} from './engine/render/rigid-surface-cache.js';
+import {t as tr} from './i18n.js';
 
 function geometry(data){
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(data.positions,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(data.normals,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(data.uvs,2));g.setIndex(data.indices);
@@ -431,7 +432,7 @@ export function makeEnvironment(scene,level){
     const canvas=document.createElement('canvas');canvas.width=1024;canvas.height=sign.style==='hub-industrial-plaque'?310:512;
     const c=canvas.getContext('2d');c.textAlign='center';c.textBaseline='middle';
     if(sign.style==='park-enamel'){
-      c.fillStyle='#e4d6b6';c.fillRect(0,0,1024,512);c.strokeStyle='#6a5741';c.lineWidth=14;c.strokeRect(12,12,1000,488);c.fillStyle='#554634';c.font='bold 150px Microsoft YaHei';c.fillText(sign.text,512,260,950);
+      c.fillStyle='#e4d6b6';c.fillRect(0,0,1024,512);c.strokeStyle='#6a5741';c.lineWidth=14;c.strokeRect(12,12,1000,488);c.fillStyle='#554634';c.font='bold 150px Microsoft YaHei';c.fillText(tr(sign.text),512,260,950);
     }else if(sign.style==='hub-industrial-plaque'){
       c.fillStyle='#c1b085';c.fillRect(0,0,canvas.width,canvas.height);c.strokeStyle='#786e54';c.lineWidth=16;c.strokeRect(12,12,1000,286);
       // Industrial sign drawn as typography on an actual mounted plaque.

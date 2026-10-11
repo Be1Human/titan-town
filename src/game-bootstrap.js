@@ -1,3 +1,4 @@
+import {t,applyDom,bindLangToggle} from './i18n.js';
 // Keep the menu honest while the large game module graph initializes. Dynamic
 // import also catches dependency download, syntax and initialization failures.
 export async function bootGame({doc=globalThis.document,load=()=>import('./game.js'),setTimer=setTimeout,clearTimer=clearTimeout,reload=()=>globalThis.location.reload(),report=console.error}={}){
@@ -11,7 +12,7 @@ export async function bootGame({doc=globalThis.document,load=()=>import('./game.
   try{
     const runtime=await load();
     // A renderer failure may already have displayed the existing error panel.
-    if(!doc.getElementById('fatal').hidden)throw new Error(doc.getElementById('fatal-message').textContent||'画面初始化失败');
+    if(!doc.getElementById('fatal').hidden)throw new Error(doc.getElementById('fatal-message').textContent||t('画面初始化失败'));
     doc.documentElement.dataset.gameStartup='ready';
     // The co-op form is created inside game.js while load() is awaiting shader
     // preparation. Query again so those late controls unlock only now.
@@ -21,12 +22,12 @@ export async function bootGame({doc=globalThis.document,load=()=>import('./game.
     return true;
   }catch(error){
     doc.documentElement.dataset.gameStartup='error';
-    loading.textContent='游戏加载失败';hint.hidden=true;retry.hidden=false;
-    doc.getElementById('fatal-message').textContent=`游戏未能启动，请重新加载。${error?.message?'\n'+error.message:''}`;
+    loading.textContent=t('游戏加载失败');hint.hidden=true;retry.hidden=false;
+    doc.getElementById('fatal-message').textContent=`${t('游戏未能启动，请重新加载。')}${error?.message?'\n'+error.message:''}`;
     doc.getElementById('fatal').hidden=false;
     report('Game startup failed:',error);
     return false;
   }finally{clearTimer(slowTimer);}
 }
 
-if(typeof document!=='undefined')bootGame();
+if(typeof document!=='undefined'){applyDom(document);bindLangToggle(document);bootGame();}

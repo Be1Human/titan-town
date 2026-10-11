@@ -1,6 +1,7 @@
 // "夺回城墙" mission run: seven starred missions, three lives, nearest
 // safehouse respawn and a graded result. Pure logic; the game supplies the
 // player, world queries and events.
+import {t} from './i18n.js';
 export const MISSION_RULES={lives:3,interactRadius:2.2,rescueSaveRadius:4,rescueFollow:1.6,rescueSpeed:4.2,rescueLeash:26,rescueTrailStep:.4,rescueTrailMax:240,sealEvery:.5,starPoints:100,deathPenalty:80,minutePenalty:5,
   grades:[['S',1800],['A',1300],['B',800],['C',300]],failCap:'C'};
 
@@ -66,10 +67,10 @@ export function createMissionRun(definition,{lives=MISSION_RULES.lives,events=nu
     if(run.result)return null;
     for(const m of run.missions){
       if(m.status==='done')continue;
-      if(m.kind==='interact'&&near(m.at,player,undefined,m.reachY))return {type:'mission',mission:m,label:m.id==='signal'?'点燃信号烟':m.id==='supply'?'领取补给':m.id==='documents'?'取走文件':m.name};
+      if(m.kind==='interact'&&near(m.at,player,undefined,m.reachY))return {type:'mission',mission:m,label:m.id==='signal'?t('点燃信号烟'):m.id==='supply'?t('领取补给'):m.id==='documents'?t('取走文件'):t(m.name)};
     }
-    const r=run.rescue;if(r&&r.state!=='saved'&&r.state!=='following'&&near(r,player))return {type:'rescue',label:`让${r.name}跟着你`};
-    const home=run.safehouses[0];if(home&&run.completed>0&&near(home.spawn,player,2.6))return {type:'board',label:'任务板 · 提前结算'};
+    const r=run.rescue;if(r&&r.state!=='saved'&&r.state!=='following'&&near(r,player))return {type:'rescue',label:t('让{name}跟着你',{name:t(r.name)})};
+    const home=run.safehouses[0];if(home&&run.completed>0&&near(home.spawn,player,2.6))return {type:'board',label:t('任务板 · 提前结算')};
     return null;
   }
   function interact(target){

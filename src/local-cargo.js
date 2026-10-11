@@ -1,3 +1,4 @@
+import {t} from './i18n.js';
 import {placeCargo,removeCargo,validateCargoLayout,cargoLoad,CARGO_MASS} from './courier-layout.js';
 import {createOriginalCargo} from './engine/assets/original-cargo.js';
 import {CELL} from './voxel-world.js';
@@ -33,11 +34,11 @@ export class LocalCargo {
     return null;
   }
   mount(){
-    const c=this.held;if(!c)return fail('先按 E 拿起货箱，再按 F 装到背架');
+    const c=this.held;if(!c)return fail(t('先按 E 拿起货箱，再按 F 装到背架'));
     try{
       const items=placeCargo(this.items,{id:c.id,size:c.rackSize},this.extended);
-      if(cargoLoad(items,this.extended,i=>this.records.get(i.id)?.rackKg??CARGO_MASS[i.size]).overweight)return fail('超过背架 40 kg 承重，请先卸货');
-      const e=this.physics.entries.get(c.rigidId);if(!e)return fail('物件已经损坏或不在手上');
+      if(cargoLoad(items,this.extended,i=>this.records.get(i.id)?.rackKg??CARGO_MASS[i.size]).overweight)return fail(t('超过背架 40 kg 承重，请先卸货'));
+      const e=this.physics.entries.get(c.rigidId);if(!e)return fail(t('物件已经损坏或不在手上'));
       const body={cells:e.cells.map(v=>({...v})),cellSize:e.cellSize,density:e.density,strength:e.strength,revision:e.revision,
         damage:[...e.damage].map(([k,amount])=>[...k.split(',').map(Number),amount])};
       this.grab.release();this.physics.remove(c.rigidId);c.stowedBody=body;c.mounted=true;this.items=items.map(i=>({...i}));
@@ -45,7 +46,7 @@ export class LocalCargo {
     }catch(e){return fail(e.message);}
   }
   unmount(player,yaw,id=this.items.at(-1)?.id){
-    const c=this.records.get(id);if(!c?.mounted||!c.stowedBody)return fail('背架是空的');
+    const c=this.records.get(id);if(!c?.mounted||!c.stowedBody)return fail(t('背架是空的'));
     try{
       const items=removeCargo(this.items,id,this.extended),body=c.stowedBody;
       const bounds={};for(const a of ['x','y','z']){const values=body.cells.map(v=>v[a]);bounds[a]={min:Math.min(...values),max:Math.max(...values)+1};}
@@ -59,9 +60,9 @@ export class LocalCargo {
         const blocked=body.cells.some(v=>this.physics.voxelWorld.getId(Math.floor((p.x+(v.x+.5)*body.cellSize-center.x)/CELL),Math.floor((p.y+(v.y+.5)*body.cellSize-center.y)/CELL),Math.floor((p.z+(v.z+.5)*body.cellSize-center.z)/CELL)));
         if(!blocked&&!this.physics.collides(p.x,p.y-height/2,p.z,height,radius)){position=p;break;}
       }
-      if(!position)return fail('前方没有卸货空间，请走到空地再按 G');
+      if(!position)return fail(t('前方没有卸货空间，请走到空地再按 G'));
       const entry=this.physics.addPersistent(body.cells,{...body,id:c.rigidId,position,contactFracture:true});
-      if(!entry)return fail('物理物件数量已满，背架保留原物件，请稍后卸下');
+      if(!entry)return fail(t('物理物件数量已满，背架保留原物件，请稍后卸下'));
       entry.name=c.name;this.items=items.map(i=>({...i}));c.mounted=false;c.stowedBody=null;
       return {ok:true,cargo:c};
     }catch(e){return fail(e.message);}

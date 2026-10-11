@@ -17,6 +17,7 @@
       <button id="menu-help" class="ui-button-grey" disabled>操作说明</button>
     </nav>
     <details class="spawn-setting"><summary>出发位置</summary><select id="spawn-point" aria-label="出生位置"><option value="middle">北街</option><option value="ct">南门内</option><option value="mid">中央广场</option><option value="tunnel">西环街</option><option value="site">东环街</option><option value="repair">钟楼前</option><option value="warehouse">旅馆前</option><option value="overview">俯视全镇</option><option value="breach">南门破口</option></select></details>
+    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Language / 语言">English</button>
   </div>
   <div class="menu-footnote"><span>项目为风格致敬的原创体素游戏，素材许可见 THIRD_PARTY.md。</span></div>
 </div><section id="hud" hidden>
@@ -47,5 +48,5 @@
 <div id="result" class="modal" hidden><div class="modal-panel"><small id="result-tag"></small><h2 id="result-title"></h2><p id="result-copy"></p><div id="result-stats"></div><button id="retry">重试行动</button><button id="result-load">读取准备存档</button><button id="result-sandbox">进入沙盒</button></div></div>
 <div id="help" class="modal" hidden><div class="modal-panel help-panel"><small>操作手册</small><h2>先试试手。</h2><div class="help-grid"><span>W A S D / 鼠标</span><b>移动 / 观察</b><span>Shift / 空格 / Ctrl</span><b>冲刺 / 跳跃（有钩点时发钩）/ 蹲伏</b><span>按住鼠标右键</span><b>抓住近处物件，松开释放</b><span>数字键 / 滚轮</span><b>切换工具</b><span>鼠标左键 / R</span><b>使用工具 / 引爆炸药</b><span>E / B</span><b>互动、补给 / 拔出双刃</b><span>M 或 Tab / Esc</span><b>地图 / 暂停</b><span>V / H</span><b>切换视角 / 帮助</b><span>F5 / F9</span><b>保存 / 读取</b></div><p></p><button id="help-close">知道了 ↗</button></div></div>
 <div id="fatal" class="modal" hidden><div class="modal-panel"><h2>无法启动场景</h2><p id="fatal-message"></p><button onclick="location.reload()">重新加载</button></div></div>
-<script type="module" src="src/game-bootstrap.js" onerror="document.getElementById('fatal-message').textContent='启动脚本未能加载，请重新加载页面。';document.getElementById('fatal').hidden=false;"></script>
+<script type="module" src="src/game-bootstrap.js" onerror="document.getElementById('fatal-message').textContent='启动脚本未能加载，请重新加载页面。 / The game script failed to load, please reload the page.';document.getElementById('fatal').hidden=false;"></script>
 </body></html>

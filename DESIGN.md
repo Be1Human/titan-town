@@ -1,37 +1,40 @@
-# Titan Town 需求与设计
+# Titan Town Requirements and Design
 
-## 1. 目标
+**English** | [简体中文](DESIGN.zh-CN.md)
 
-在体素破坏引擎上做一张"被高墙围住的中世纪小镇"，风格致敬巨人题材：
+## 1. Goals
 
-- 建筑、城墙、道具全部是静态体素，可被工具和巨人切除；断开的部分走支撑检测与坍塌，碎块成为刚体。
-- 地面巨人会看、会听、会拆房子；城墙上的巨猿投石；玩家靠飞索腰具（钩索摆荡 + 喷气）机动。
-- 玩法是 3 条命内完成 7 个任务（取补给、寻找文件、救援镇民、点燃信号烟、讨伐巨人、封堵城门破口、夺回城墙），完成越多评级越高。
-- 版权边界：只做风格致敬；无官方角色、名称、模型、贴图；素材均为 CC0 / CC BY 并记录来源（见 `THIRD_PARTY.md`）。
+Build a "medieval town enclosed by high walls" on a voxel destruction engine, in a style that pays homage to the giants genre:
 
-## 2. 架构
+- Buildings, walls and props are all static voxels that tools and titans can cut away; disconnected parts go through support checks and collapse, and the debris becomes rigid bodies.
+- Ground titans see, hear and tear houses apart; an ape on the wall throws stones; the player moves with grapple gear (hook swinging + gas jets).
+- Gameplay is 7 missions within 3 lives (fetch supplies, find documents, rescue a villager, light the signal smoke, slay the titans, seal the gate breach, reclaim the wall); the more missions are completed, the higher the grade.
+- Copyright boundary: a style homage only; no official characters, names, models or textures; every asset is CC0 / CC BY with its source recorded (see `THIRD_PARTY.md`). The project is not affiliated with any official work.
 
-纯浏览器 ES module，无打包器；`server.js` 是零依赖静态服务器（路径白名单）。
+## 2. Architecture
 
-| 层 | 位置 | 要点 |
+Pure browser ES modules with no bundler; `server.js` is a zero-dependency static server (path allow-list).
+
+| Layer | Location | Notes |
 | --- | --- | --- |
-| 体素世界 | `src/voxel-world.js`、`src/engine/core` | 32³ 区块、10 cm 格；材质、血量、支撑检测，一份占据同时驱动显示、碰撞、破坏、遮光 |
-| 破坏与坍塌 | `src/engine/physics`、`src/rigid-fracture.js`、`src/support*.js` | 切除实际体素并补洞壁；支撑计算在 worker 内；断开的块变成刚体 |
-| 物理 | `src/rigid-world.js`、`vendor/rapier.js` | Rapier WASM（SIMD）管理刚体与碰撞，体素碎裂、伤害和支撑由本项目实现 |
-| 渲染 | `src/render.js`、`src/lighting.js`、`src/engine/render` | three.js；体素网格、体素光照体积、阴影缓存、色调映射；失败时保留可见回退 |
-| 场景资产 | `src/engine/assets/scene-assets.js`、`assets/` | 场景 JSON 引用预制体，预制体引用体素模型与命名调色板；`import.json` 记录第三方来源 |
-| 小镇与玩法 | `src/titan-town.js`、`titan-ai.js`、`titan-model.js`、`titan-missions.js`、`titan-campaign.js`、`grapple-gear.js`、`wall-ape.js`、`far-wall.js`、`titan-atmosphere.js` | 场景工厂、巨人 AI（视野锥/听觉/游荡/追逐/攀墙）、巨人骨骼动画、任务与评级、飞索腰具 |
-| UI | `game.html`、`src/game.js` | 菜单、HUD、地图、暂停、存档（IndexedDB） |
+| Voxel world | `src/voxel-world.js`, `src/engine/core` | 32³ chunks, 10 cm cells; materials, health and support checks; one occupancy drives display, collision, destruction and shadowing |
+| Destruction and collapse | `src/engine/physics`, `src/rigid-fracture.js`, `src/support*.js` | Removes the actual voxels and patches hole walls; support is computed in a worker; disconnected chunks become rigid bodies |
+| Physics | `src/rigid-world.js`, `vendor/rapier.js` | Rapier WASM (SIMD) manages rigid bodies and collisions; voxel fracture, damage and support are implemented by this project |
+| Rendering | `src/render.js`, `src/lighting.js`, `src/engine/render` | three.js; voxel meshes, a voxel light volume, shadow caches and tone mapping; a visible fallback is kept on failure |
+| Scene assets | `src/engine/assets/scene-assets.js`, `assets/` | The scene JSON references prefabs, prefabs reference voxel models and a named palette; `import.json` records third-party sources |
+| Town and gameplay | `src/titan-town.js`, `titan-ai.js`, `titan-model.js`, `titan-missions.js`, `titan-campaign.js`, `grapple-gear.js`, `wall-ape.js`, `far-wall.js`, `titan-atmosphere.js` | Scene factory, titan AI (view cone / hearing / wandering / chasing / wall climbing), titan skeletal animation, missions and grading, grapple gear |
+| UI | `game.html`, `src/game.js`, `src/i18n.js` | Menu, HUD, map, pause, saves (IndexedDB); English / Simplified Chinese text through a small dictionary module |
 
-## 3. 关键设计取舍
+## 3. Key design decisions
 
-- **占据唯一**：墙、楼板、地基有真实体积（≥ 3 格厚），房间空气明确保留；显示、碰撞、破坏、遮光读同一份体素。
-- **局部破坏**：保留完整原表面，裁掉实际被移除的格并补洞壁；邻块、阴影和光照缓存同步失效。
-- **巨人感知**：视野锥 + 噪声（破坏、爆炸、冲刺）触发发现；断开视线、躲进房屋可甩掉；巨人以骨骼命中体判定，后颈是弱点。
-- **飞索**：钩爪逐帧分段检测，命中静态体素（DDA）、刚体碎块或巨人骨骼；挂点被破坏、碎块挂点格消失或巨人倒下时钩索立即脱落。
-- **资产**：建筑与道具由 CC0 模型体素化后修改；巨人骨骼来自 CC0 人形动画库，比例、五官、毛发与变体在运行时生成。
-- **存档**：只存必要状态（体素差异、任务进度、命数）；键名按地图命名空间隔离。
+- **One occupancy**: walls, floors and foundations have real volume (at least 3 cells thick) and room air is kept explicitly; display, collision, destruction and shadowing read the same voxels.
+- **Local destruction**: keep the complete original surface, cut away only the cells that were actually removed and patch the hole walls; neighboring chunks, shadow and lighting caches are invalidated together.
+- **Titan perception**: a view cone plus noise (destruction, explosions, sprinting) triggers detection; breaking line of sight or hiding in a house shakes them off; titans use skeletal hit volumes and the nape is the weak point.
+- **Grapple**: the hook is swept in segments every frame and hits static voxels (DDA), rigid debris or titan bones; it detaches immediately when its anchor is destroyed, the anchor cell of a debris chunk disappears, or the titan falls.
+- **Assets**: buildings and props are voxelized and modified CC0 models; the titan skeleton comes from a CC0 humanoid animation library, and proportions, facial features, hair and variants are generated at runtime.
+- **Saves**: only the necessary state is stored (voxel differences, mission progress, lives); keys are namespaced per map.
+- **Languages**: source strings are Chinese and double as dictionary keys in `src/i18n.js`; the language comes from `?lang=en|zh`, then the saved menu choice, then `navigator.language`. Gameplay logic never depends on the language.
 
-## 4. 范围外
+## 4. Out of scope
 
-联机、角色编辑器、多地图、VOX 导入、打包成桌面应用。
+Multiplayer, a character editor, multiple maps, VOX import, packaging as a desktop app.
